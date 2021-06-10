@@ -1,0 +1,264 @@
+/*START MOE#PATRIMOINE*/
+.patrimoine-heading {
+    margin-bottom: 15px;
+    text-align: center;
+}
+    .patrimoine-progress-bars {
+    margin-top: 20px;
+}
+
+
+.invoice-patrimoine .panel_s{
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.invoice-patrimoine .panel_s .panel-body{
+padding: 5px;
+border: 0;
+}
+
+.invoice-patrimoine .btn-tr {
+display: none;
+}
+
+
+.invoice-patrimoine .modal-lg {
+width: 1100px;
+}
+
+
+@media (max-width: 768px) {
+.invoice-patrimoine .modal-lg{
+    width: auto;
+}
+}
+
+@media only screen and (max-width: 1200px) {
+
+.invoice-patrimoine .modal-lg{
+    width: auto;
+}
+}
+
+.patrimoine-percent {
+position: absolute;
+font-size: 33px;
+font-weight: 500;
+top: 35%;
+left: 0;
+right: 0;
+}
+
+.patrimoine-info-bg {
+background: #FBFBFB !important;
+color: #333 !important;
+border-top: 1px solid #E4E5E7;
+border-left: 1px solid #E4E5E7;
+border-right: 1px solid #E4E5E7;
+font-weight: 500;
+}
+
+body.rtl .patrimoine-info {
+margin-left: -15px;
+margin-right: -20px;
+}
+
+body.rtl .hr-panel-heading.patrimoine-area-separation {
+margin-left: -15px;
+margin-right: -20px;
+}
+
+.patrimoine-file-image {
+border: 1px solid #f0f0f0;
+border-radius: 4px;
+margin-right: 15px;
+}
+
+.patrimoine-progress-bars i {
+font-size: 24px;
+}
+
+.patrimoine-progress-bars i:not(.text-success) {
+color: #bfbfbf;
+}
+
+.patrimoine_invoices .new-invoice-list {
+display: none;
+}
+
+.patrimoine_estimates .new-estimate-btn,
+.patrimoine_estimates .switch-pipeline {
+display: none;
+}
+
+.patrimoine_invoices .panel-body,
+.patrimoine_estimates .panel-body {
+border: 0;
+padding: 0;
+}
+
+.patrimoine_invoices .toggle-small-view,
+.patrimoine_estimates .toggle-small-view {
+display: none;
+}
+
+.patrimoine_invoices,
+.patrimoine_estimates {
+margin-left: -15px;
+margin-right: -15px;
+}
+
+#pre_invoice_patrimoine_settings .popover {
+width: 300px !important;
+}
+
+.patrimoines-activity .activity-feed {
+overflow-y: scroll;
+height: 750px;
+}
+
+#side-menu.nav>li.pinned_patrimoine {
+padding-bottom: 15px;
+}
+
+#side-menu.nav>li.pinned_patrimoine>a:hover,
+#side-menu.nav>li.pinned_patrimoine>a:focus,
+#side-menu.nav>li.pinned_patrimoine.active,
+#side-menu.nav>li.pinned_patrimoine.active>a {
+background: transparent;
+color: #fff;
+}
+
+#side-menu.nav>li.pinned_patrimoine:last-child {
+border-bottom: 1px solid #85898E;
+}
+
+.patrimoine_progress_slider_horizontal {
+height: 20px;
+}
+
+.patrimoine_progress_slider_horizontal.ui-widget.ui-widget-content {
+height: 20px;
+border-color: #bfcbd9;
+background: #fff;
+}
+
+.patrimoine_progress_slider_horizontal .ui-slider-handle {
+height: 25px;
+background: #84c529;
+border: 1px solid #84c529;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+.patrimoine-percent-col {
+    margin-top: 25px;
+}
+}
+
+
+
+.patrimoine_file_discusssions_area,
+.patrimoine_file_area {
+overflow-y: scroll;
+height: 400px;
+}
+
+@media(max-width:768px) {
+
+.patrimoine_file_discusssions_area,
+.patrimoine_file_area {
+    height: auto !important;
+}
+.patrimoine_file_discusssions_area {
+    margin-top: 30px;
+}
+}
+
+.patrimoine-tabs .dropdown-menu>li:first-child>a {
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+
+.patrimoine-overview-tags ul.tagit {
+margin-bottom: -10px;
+}
+
+.table.patrimoine-overview-table>tbody>tr>td {
+padding-left: 2px;
+}
+
+.table.patrimoine-overview-table>tbody>tr:first-child>td {
+border-top: 0;
+}
+
+#patrimoine_view_name .bootstrap-select button[data-id="patrimoine_top"] {
+border: 0 !important;
+font-size: 18px;
+font-weight: 500;
+margin-bottom: 0px;
+padding-top: 4px;
+padding-left: 17px;
+}
+
+#patrimoine_view_name .bootstrap-select .bs-caret {
+margin-left: 10px;
+}
+
+#patrimoine_view_name .bootstrap-select .bs-caret .caret {
+margin-top: 4px;
+}
+
+.panel_s.patrimoine-menu-panel,
+.patrimoine-top-panel {
+margin-bottom: 12px;
+}
+
+.panel_s.patrimoine-menu-panel .panel-body {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+#patrimoine_vault_entries hr:last-child {
+display: none;
+}
+
+.hr-panel-heading.patrimoine-area-separation {
+margin-right: -15px;
+}
+
+#patrimoine-expense-form {
+background-color: transparent;
+}
+
+.patrimoine-overview-left {
+margin-top: -20px;
+padding-top: 20px;
+}
+
+.patrimoine-overview-right .hr-panel-heading {
+margin-left: -15px;
+}
+
+.patrimoine-info {
+margin-left: -20px;
+margin-right: -15px;
+margin-top: -10px;
+padding: 8px 22px;
+font-size: 13px;
+text-transform: uppercase;
+}
+
+.patrimoine_estimates .panel_s,
+.patrimoine_invoices .panel_s {
+-webkit-box-shadow: none !important;
+box-shadow: none !important;
+}
+
+body.patrimoine.patrimoine-milestones .kan-ban-col .panel_s {
+margin-bottom: 0;
+}
+/*END MOE#PATRIMOINE*/
