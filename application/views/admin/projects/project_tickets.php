@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-    $this->load->view('admin/tickets/summary',array('project_id'=>$project->id));
+    // $this->load->view('admin/tickets/summary',array('project_id'=>$project->id));
     echo form_hidden('project_id',$project->id);
     echo '<div class="clearfix"></div>';
     if(((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member())){

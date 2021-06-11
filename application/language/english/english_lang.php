@@ -3775,3 +3775,57 @@ $lang['customers_estimate_request_link_text']                 = 'Request Estimat
 $lang['total_expenses_deleted']                               = 'Total Expenses Deleted: %s';
 $lang['estimate_convert_to_project']                          = 'Convert to Project';
 $lang['estimate_items_convert_to_tasks']                      = 'Items that will be converted to tasks';
+
+# patremoin
+$lang['new_patrimonial']  = 'new user info';
+$lang['update_patrimonial']  = 'update your information';
+$lang['patrimonial_about']  = 'about';
+///vous form
+$lang['patrimonial_me'] = 'About You';
+$lang['patrimonial_me_firstname'] = 'First Name :';
+$lang['patrimonial_me_lastname'] = 'Last Name :';
+$lang['patrimonial_me_date_birth'] = 'Date of birth';
+/// Partner
+
+$lang['patrimonial_partner'] = 'you';
+$lang['patrimonial_me_firstname'] = 'Prénom :';
+$lang['patrimonial_me_lastname'] = 'Nom :';
+$lang['patrimonial_me_date_birth'] = 'Date de naissance :';
+
+/// Votre conjoint
+$lang['patrimonial_conjoint'] = 'Votre conjoint';
+
+$lang['patrimonial_conjoint_situation'] = 'Situation familiale :';
+$lang['patrimonial_conjoint_situation_marie'] = 'Marié';
+$lang['patrimonial_conjoint_situation_celibataire'] = 'Célibataire';
+$lang['patrimonial_conjoint_situation_diverce'] = 'Divorcé';
+$lang['patrimonial_conjoint_situation_veuf'] = 'Veuf';
+$lang['patrimonial_conjoint_situation_union'] = 'Union libre';
+$lang['patrimonial_conjoint_situation_pacs'] = 'PACS';
+
+$lang['patrimonial_conjoint_profession'] = 'Profession :';
+$lang['patrimonial_conjoint_date_depart'] = 'Date dedépart en retraite :';
+$lang['patrimonial_conjoint_NSS'] = 'N°SS:';
+$lang['patrimonial_conjoint_adresse'] = 'Adresse :';
+
+$lang['patrimonial_conjoint_date_mariage'] = 'Date de mariage :';
+$lang['patrimonial_conjoint_regime'] = 'Régime matrimonial :';
+$lang['patrimonial_conjoint_donation'] = 'Donation entre époux :';
+// $lang['patrimonial_conjoint_donation_yes'] = 'Oui';
+// $lang['patrimonial_conjoint_donation_no'] = 'Non';
+// $lang['patrimonial_conjoint_modification'] = 'Si Modification du régime & date :';
+
+$lang['patrimonial_conjoint_tel_perso'] = 'Tél perso :';
+$lang['patrimonial_conjoint_tel_mobile_m'] = 'Tél mobile : M ';
+$lang['patrimonial_conjoint_tel_mobile_mme'] = 'Tél mobile : Mme ';
+$lang['patrimonial_conjoint_email_one'] = 'E-mail Addresse First :';
+$lang['patrimonial_conjoint_email_two'] = 'E-mail Addresse Second :';
+
+$lang['patrimonial_conjoint_more_question'] = 'Questions complémentaires :';
+$lang['patrimonial_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
+$lang['patrimonial_conjoint_more_question_mariage_durée'] = 'Quelle est la durée des mariages précédents ?';
+$lang['patrimonial_conjoint_more_question_situation'] = 'Quelle est la situation du premier conjoint ?';
+$lang['patrimonial_conjoint_more_question_finance'] = 'Quelles conséquences financières du jugement de divorce ?';
+
+$lang['add_info'] = 'save information';
+$lang['patrimoines_information_updated_success'] = 'information updated success for patrimoine with id :';

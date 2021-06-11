@@ -20,16 +20,16 @@ function render_yes_no_option($option_value, $label, $tooltip = '', $replace_yes
         echo 'checked';
     } ?>>
             <label for="y_opt_1_<?php echo $label; ?>">
-                <?php echo $replace_yes_text == '' ? _l('settings_yes') : $replace_yes_text; ?>
+                <?php echo $replace_yes_text == '' ? _l('settings_yes') : _l($replace_yes_text); ?>
             </label>
         </div>
         <div class="radio radio-primary radio-inline">
-                <input type="radio" id="y_opt_2_<?php echo $label; ?>" name="settings[<?php echo $option_value; ?>]" value="<?php echo $replace_0 == '' ? 0 : $replace_0; ?>" <?php if (get_option($option_value) == ($replace_0 == '' ? '0' : $replace_0)) {
+            <input type="radio" id="y_opt_2_<?php echo $label; ?>" name="settings[<?php echo $option_value; ?>]" value="<?php echo $replace_0 == '' ? 0 : $replace_0; ?>" <?php if (get_option($option_value) == ($replace_0 == '' ? '0' : $replace_0)) {
         echo 'checked';
     } ?>>
-                <label for="y_opt_2_<?php echo $label; ?>">
-                    <?php echo $replace_no_text == '' ? _l('settings_no') : $replace_no_text; ?>
-                </label>
+            <label for="y_opt_2_<?php echo $label; ?>">
+                <?php echo $replace_no_text == '' ? _l('settings_no') : _l($replace_no_text); ?>
+            </label>
         </div>
     </div>
     <?php

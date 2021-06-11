@@ -111,7 +111,7 @@
             </div>
 
             <div class="panel_s patrimoine-menu-panel">
-               <div class="panel-body">
+               <div class="panel-body custom-panel">
                   <?php hooks()->do_action('before_render_patrimoine_view', $patrimoine->id); ?>
                   <?php $this->load->view('wealth_management/patrimoine_tabs'); ?>
                </div>

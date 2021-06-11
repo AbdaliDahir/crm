@@ -13,6 +13,7 @@ class Wealth_management extends AdminController
         }
 
         $this->load->model('patrimoines_model');
+        $this->load->model('patrimoines_info_model');
         $this->load->model('currencies_model');
         $this->load->helper('date');
     }
@@ -99,11 +100,8 @@ class Wealth_management extends AdminController
     }
 
 
-
     public function view($id)
     {
-
-
 
         if (staff_can('view', 'patrimoines') || $this->patrimoines_model->is_member($id)) {
             close_setup_menu();
@@ -267,6 +265,8 @@ class Wealth_management extends AdminController
                 // Completed tasks are excluded from this list because you can't add timesheet on completed task.
                 $data['tasks']                = $this->patrimoines_model->get_tasks($id, 'status != ' . Tasks_model::STATUS_COMPLETE . ' AND billed=0');
                 $data['timesheets_staff_ids'] = $this->patrimoines_model->get_distinct_tasks_timesheets_staff($id);
+            } elseif ($group == 'patrimoine_about') {
+                $data['info'] = $this->patrimoines_info_model->get_info($id);
             }
 
             // Discussions
@@ -1246,5 +1246,35 @@ class Wealth_management extends AdminController
 
             echo json_encode($members);
         }
+    }
+
+
+    public function add()
+    {
+        if ($this->input->post()) {
+            $data            = $this->input->post();
+            $id              = $this->patrimoines_info_model->add($data); 
+            if ($id) {
+                // echo "hello world now ";
+                set_alert('success', _l('patrimoines_information_updated_success', $id));
+                redirect(admin_url('wealth_management/view/'.$data['patrimoineid'].'?group=patrimoine_about'));
+            }
+        }
+        
+        $data = [];
+
+        $id = $_GET['patrimoine_id'];
+        $patrimoine = $this->patrimoines_model->get($id);
+
+        
+        if (!$patrimoine) {
+            blank_page(_l('patrimoine_not_found'));
+        } else {
+            $data['info'] = $this->patrimoines_info_model->get_info($id);
+        }
+
+        $data['patrimoine_id'] = $patrimoine->id;
+        
+        $this->load->view('wealth_management/patrimonial/add', $data);
     }
 }

@@ -11,24 +11,24 @@
                <div class="col-md-6 border-right patrimoine_file_area">
                   <?php
                      if ($file->staffid == get_staff_user_id() || has_permission('patrimoines', '', 'create')) {
-                         ?>
+                  ?>
                   <?php echo render_input('file_subject', 'patrimoine_discussion_subject', $file->subject, 'text', ['onblur' => 'update_file_data(' . $file->id . ')']); ?>
                   <?php echo render_textarea('file_description', 'patrimoine_discussion_description', $file->description, ['onblur' => 'update_file_data(' . $file->id . ')']); ?>
                   <hr />
                   <?php
                      } else {
-                         ?>
+                  ?>
                   <?php if (!empty($file->description)) {
-                             ?>
+                  ?>
                   <p class="bold"><?php echo _l('patrimoine_discussion_description'); ?></p>
                   <p class="text-muted"><?php echo $file->description; ?></p>
                   <hr />
                   <?php
-                         } ?>
+                  } ?>
                   <?php
                      } ?>
                   <?php if (!empty($file->external) && $file->external == 'dropbox') {
-                         ?>
+                     ?>
                      <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mbot20">
                         <i class="fa fa-dropbox" aria-hidden="true"></i>
                         <?php echo _l('open_in_dropbox'); ?>

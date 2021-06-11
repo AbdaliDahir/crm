@@ -129,7 +129,8 @@ function get_relation_data($type, $rel_id = '', $extra = [])
         /*STRAT MOE#PATRIMOINE */
     } elseif ($type == 'patrimoine') {
         if ($rel_id != '') {
-            $CI->load->model('patrimoines_model');
+            $CI->load->model('patrimoines_model'); 
+            $CI->load->model('patrimoines_info_model');
             $data = $CI->patrimoines_model->get($rel_id);
         } else {
             $where_patrimoines = '';
@@ -393,7 +394,8 @@ function init_relation_options($data, $type, $rel_id = '')
     $CI                            = &get_instance();
     $CI->load->model('projects_model');
     $CI->load->model('patrimoines_model');
-
+    $CI->load->model('patrimoines_info_model');
+    
     foreach ($data as $relation) {
         $relation_values = get_relation_values($relation, $type);
         if ($type == 'project') {

@@ -255,7 +255,6 @@ function app_init_admin_sidebar_menu_items()
         'badge'    => [],
     ]);
 
-
     if (is_admin()) {
         $CI->app_menu->add_sidebar_children_item('utilities', [
             'slug'     => 'announcements',

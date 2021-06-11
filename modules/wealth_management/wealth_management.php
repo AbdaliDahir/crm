@@ -64,6 +64,7 @@ function wealth_management_module_init_menu_items()
         $CI = &get_instance();
         //$CI->load->model(MODULE_WEALTH_MANAGEMENT . '/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_model');
+        $CI->load->model('wealth_management/patrimoines_info_model');
         $CI->app_menu->add_sidebar_menu_item('wealth-management', [
             'collapse' => true,
             'name'     => 'Wealth Management',
@@ -91,7 +92,14 @@ function app_init_patrimoine_tabs()
         'name'     => _l('patrimoine_overview'),
         'icon'     => 'fa fa-th',
         'view'     => 'wealth_management/patrimoine_overview',
-        'position' => 5,
+        'position' => 1,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_about', [
+        'name'     => _l('patrimonial_about'),
+        'icon'     => 'fa fa-user',
+        'view'     => 'wealth_management/patrimoine_about',
+        'position' => 3,
     ]);
 
     // $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [

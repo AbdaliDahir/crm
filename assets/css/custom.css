@@ -1,0 +1,10 @@
+.custom-panel {
+  padding: 0px !important;
+  border: none;
+}
+.custom-panel .horizontal-scrollable-tabs ul {
+  border: none;
+}
+.custom-panel .horizontal-scrollable-tabs {
+  min-height: auto;
+}
