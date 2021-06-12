@@ -17,6 +17,7 @@
 							<h4 class="mbot5 bold"><?php echo _l('patrimonial_me'); ?></h4> 
 							<hr class="mtop5">
 							<?php echo form_hidden('patrimoineid', $patrimoine_id) ?>
+							<?php echo form_hidden('id', $info ? $info->id : '') ?>
 							<?php echo render_input('patr_me_firstname','patrimonial_me_firstname', $info ? $info->patr_me_firstname : '','text'); ?>
 							<?php echo render_input('patr_me_lastname','patrimonial_me_lastname', $info ? $info->patr_me_lastname : '','text'); ?>
 							<?php echo render_date_input('patr_me_birthday','patrimonial_me_date_birth',  $info ? $info->patr_me_birthday: ''); ?>
@@ -46,6 +47,8 @@
 							<?php echo render_date_input('patr_partner_precedent_marriage_date','patrimonial_conjoint_date_mariage',  $info ? $info->patr_partner_precedent_marriage_date : ''); ?> 
 							<?php echo render_input('patr_partner_regime','patrimonial_conjoint_regime', $info ? $info->patr_partner_regime : '','text'); ?> 
 							<?php echo render_yes_no_option('patr_partner_donation','patrimonial_conjoint_donation', '', '', '',  $info ? $info->patr_partner_donation : '',  $info ? $info->patr_partner_donation : ''); ?> 
+							<?php echo $info->patr_partner_donation; ?>
+							<?php echo $info->patr_partner_donation == '1' ? 'selected' : ''; ?>
 							<div> 
 								<h6 class="font-weight-bold mbot15"><?php echo _l('patrimonial_conjoint_more_question'); ?> </h6>
 								<?php echo render_date_input('patr_partner_marriage_date','patrimonial_conjoint_more_question_mariage_date',  $info ? $info->patr_partner_marriage_date : ''); ?> 

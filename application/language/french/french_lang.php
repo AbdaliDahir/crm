@@ -3796,6 +3796,16 @@ $lang['estimate_items_convert_to_tasks']                      = 'Items that will
 $lang['new_patrimonial']  = 'new user info fr';
 $lang['update_patrimonial']  = 'update your information fr';
 $lang['patrimonial_about']  = 'about fr';
+///tabs
+$lang['patrimonial_info']  = 'information fr';
+$lang['patrimonial_proches']  = 'proches fr';
+$lang['patrimonial_votre']  = 'patrimoine fr';
+$lang['patrimonial_passif']  = 'passif fr';
+$lang['patrimonial_budget']  = 'budget fr';
+$lang['patrimonial_administrative']  = 'Situation administrative fr';
+$lang['patrimonial_taches']  = 'taches fr';
+$lang['patrimonial_childs']  = 'children fr';
+
 ///vous form
 $lang['patrimonial_me'] = 'Vous';
 $lang['patrimonial_me_firstname'] = 'Prénom :';

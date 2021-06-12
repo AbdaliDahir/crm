@@ -1,7 +1,7 @@
 <div class="row">
   <!-- START::You Info -->
   <div class="col-md-6">
-    <h4 class="mbot5 bold"><?php echo _l('patrimonial_me'); ?></h4> 
+    <h4 class="mbot30 bold"><?php echo _l('patrimonial_me'); ?></h4> 
     
     <div class="text mbot15">
       <strong><?php echo _l('patrimonial_me_firstname') ?></strong>
@@ -54,7 +54,7 @@
   </div>
   <!-- END::You Info -->
   <div class="col-md-6">
-    <h4 class="mbot5 bold"><?php echo _l('patrimonial_conjoint'); ?></h4> 
+    <h4 class="mbot30 bold"><?php echo _l('patrimonial_conjoint'); ?></h4> 
     
     <div class="text mbot15">
       <strong><?php echo _l('patrimonial_me_firstname') ?></strong>

@@ -95,11 +95,88 @@ function app_init_patrimoine_tabs()
         'position' => 1,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimoine_about', [
+    // $CI->app_tabs->add_patrimoine_tab('patrimoine_about', [
+    //     'name'     => _l('patrimonial_about'),
+    //     'icon'     => 'fa fa-user',
+    //     'view'     => 'wealth_management/patrimoine_about',
+    //     'position' => 3,
+    // ]);
+
+    $CI->app_tabs->add_patrimoine_tab('about', [
         'name'     => _l('patrimonial_about'),
         'icon'     => 'fa fa-user',
-        'view'     => 'wealth_management/patrimoine_about',
+        'position' => 50,
+        'collapse' => true,
+        'visible'  => ( has_permission('estimates', '', 'view') || 
+                        has_permission('estimates', '', 'view_own') || 
+                        (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates())) || 
+                        (has_permission('invoices', '', 'view') || 
+                        has_permission('invoices', '', 'view_own') || 
+                        (get_option('allow_staff_view_invoices_assigned') == 1 && staff_has_assigned_invoices())) || 
+                        (has_permission('expenses', '', 'view') || has_permission('expenses', '', 'view_own')),
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_about_info',
+        'name'     => _l('patrimonial_info'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_about_info',
+        'position' => 1,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_proches',
+        'name'     => _l('patrimonial_proches'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_proches',
+        'position' => 2,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_votre',
+        'name'     => _l('patrimonial_votre'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_votre_patrimoine',
         'position' => 3,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_passif',
+        'name'     => _l('patrimonial_passif'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_passif',
+        'position' => 4,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_budget',
+        'name'     => _l('patrimonial_budget'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_budget',
+        'position' => 5,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_fiscale',
+        'name'     => _l('patrimonial_fiscale'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_fiscale',
+        'position' => 6,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_administrative',
+        'name'     => _l('patrimonial_administrative'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_administrative',
+        'position' => 7,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_taches',
+        'name'     => _l('patrimonial_taches'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_taches',
+        'position' => 8,
+    ]);
+
+    $CI->app_tabs->add_patrimoine_tab_children_item('about', [
+        'slug'     => 'patrimoine_childs',
+        'name'     => _l('patrimonial_childs'),
+        'view'     => 'wealth_management/patrimonial/tabs/patrimoine_childs',
+        'position' => 9,
     ]);
 
     // $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [

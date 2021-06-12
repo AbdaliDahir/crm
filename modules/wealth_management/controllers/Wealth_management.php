@@ -265,8 +265,10 @@ class Wealth_management extends AdminController
                 // Completed tasks are excluded from this list because you can't add timesheet on completed task.
                 $data['tasks']                = $this->patrimoines_model->get_tasks($id, 'status != ' . Tasks_model::STATUS_COMPLETE . ' AND billed=0');
                 $data['timesheets_staff_ids'] = $this->patrimoines_model->get_distinct_tasks_timesheets_staff($id);
-            } elseif ($group == 'patrimoine_about') {
+            } elseif ($group == 'patrimoine_about_info') {
                 $data['info'] = $this->patrimoines_info_model->get_info($id);
+            } elseif ($group == 'patrimoine_proches') {
+                $data['proches'] = null;
             }
 
             // Discussions
@@ -1253,11 +1255,23 @@ class Wealth_management extends AdminController
     {
         if ($this->input->post()) {
             $data            = $this->input->post();
-            $id              = $this->patrimoines_info_model->add($data); 
-            if ($id) {
-                // echo "hello world now ";
-                set_alert('success', _l('patrimoines_information_updated_success', $id));
-                redirect(admin_url('wealth_management/view/'.$data['patrimoineid'].'?group=patrimoine_about'));
+            $postId = $data['id'];
+            
+            if($postId) {
+                $id              = $this->patrimoines_info_model->update($data); 
+                echo "welcome :" . $id;
+                if ($id) {
+                    // echo "hello world now ";
+                    set_alert('success', _l('patrimoines_information_updated_success'), $id);
+                    redirect(admin_url('wealth_management/view/'.$data['patrimoineid'].'?group=patrimoine_about_info'));
+                }
+            } else {
+                $id              = $this->patrimoines_info_model->add($data); 
+                if ($id) {
+                    // echo "hello world now ";
+                    set_alert('success', _l('patrimoines_information_updated_success'), $id);
+                    redirect(admin_url('wealth_management/view/'.$data['patrimoineid'].'?group=patrimoine_about_info'));
+                }
             }
         }
         
@@ -1276,5 +1290,21 @@ class Wealth_management extends AdminController
         $data['patrimoine_id'] = $patrimoine->id;
         
         $this->load->view('wealth_management/patrimonial/add', $data);
+    }
+    
+    public function addProches() {
+
+        $data = []; 
+
+        $id = $_GET['patrimoine_id'];
+        $patrimoine = $this->patrimoines_model->get($id);
+
+        if (!$patrimoine) {
+            blank_page(_l('patrimoine_not_found'));
+        } else {
+            $data['proches'] = null;
+        }
+
+        $this->load->view('wealth_management/patrimonial/add-proches', $data);
     }
 }
