@@ -385,6 +385,7 @@ class Tasks extends AdminController
 
         $data['id']    = $id;
         $data['title'] = $title;
+        
         $this->load->view('admin/tasks/task', $data);
     }
 

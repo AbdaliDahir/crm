@@ -3,8 +3,8 @@
 <div class="modal fade<?php if (isset($task)) {
                            echo ' edit';
                         } ?>" id="_task_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" <?php if ($this->input->get('opened_from_lead_id')) {
-                                                                                                               echo 'data-lead-id=' . $this->input->get('opened_from_lead_id');
-                                                                                                            } ?>>
+                              echo 'data-lead-id=' . $this->input->get('opened_from_lead_id');
+                           } ?>>
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header">

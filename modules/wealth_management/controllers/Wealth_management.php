@@ -14,6 +14,7 @@ class Wealth_management extends AdminController
 
         $this->load->model('patrimoines_model');
         $this->load->model('patrimoines_info_model');
+        $this->load->model('proches_model');
         $this->load->model('currencies_model');
         $this->load->helper('date');
     }
@@ -129,9 +130,6 @@ class Wealth_management extends AdminController
             if (!$data['tab']) {
                 show_404();
             }
-
-
-
 
             $this->load->model('payment_modes_model');
             $data['payment_modes'] = $this->payment_modes_model->get('', [], true);
@@ -269,6 +267,12 @@ class Wealth_management extends AdminController
                 $data['info'] = $this->patrimoines_info_model->get_info($id);
             } elseif ($group == 'patrimoine_proches') {
                 $data['proches'] = null;
+                /* List all staff roles */ 
+                if ($this->input->is_ajax_request()) {
+                    $this->app->get_table_data('roles');
+                }
+                $data['title'] = _l('all_roles');
+                $data['proches'] = $data; 
             }
 
             // Discussions
@@ -1292,19 +1296,80 @@ class Wealth_management extends AdminController
         $this->load->view('wealth_management/patrimonial/add', $data);
     }
     
-    public function addProches() {
+    // public function addProches() {
 
-        $data = []; 
+    //     $data = []; 
 
-        $id = $_GET['patrimoine_id'];
-        $patrimoine = $this->patrimoines_model->get($id);
+    //     $id = $_GET['patrimoine_id'];
+    //     $patrimoine = $this->patrimoines_model->get($id);
 
+    //     if (!$patrimoine) {
+    //         blank_page(_l('patrimoine_not_found'));
+    //     } else {
+    //         $data['proches'] = null;
+    //     }
+
+    //     $this->load->view('wealth_management/patrimonial/add-proches', $data);
+    // }
+
+    /* Add new task or update existing */
+    public function addProches($id = '')
+    {
+        $data = [];
+
+        if ($this->input->post()) {
+            $data                = $this->input->post();
+            $data['description'] = html_purify($this->input->post('description', false));
+            if ($id == '') {
+                $id      = $this->tasks_model->add($data);
+                $_id     = false;
+                $success = false;
+                $message = '';
+                if ($id) {
+                    $success       = true;
+                    $_id           = $id;
+                    $message       = _l('added_successfully', _l('proche'));
+                }
+                echo json_encode([
+                    'success' => $success,
+                    'id'      => $_id,
+                    'message' => $message,
+                ]);
+            } else {
+                $success = $this->tasks_model->update($data, $id);
+                $message = '';
+                if ($success) {
+                    $message = _l('updated_successfully', _l('proche'));
+                }
+                echo json_encode([
+                    'success' => $success,
+                    'message' => $message,
+                    'id'      => $id,
+                ]);
+            }
+            die;
+        } 
+        // add or edit.
+        if ($id == '') {
+            $title = _l('add_new', _l('proches_lowercase'));
+            $data['proche'] = null;
+        } else {
+            $data['proche'] = $this->proche_model->get_info($id);
+            $data['task'] = $this->tasks_model->get($id);
+            $title = _l('edit', _l('proches_lowercase')) . ' ' . $data['task']->name;
+        }
+
+        $patrimoine_id = $_GET['patrimoine_id'];
+        $patrimoine = $this->patrimoines_model->get($id); 
+        
         if (!$patrimoine) {
             blank_page(_l('patrimoine_not_found'));
         } else {
-            $data['proches'] = null;
-        }
 
-        $this->load->view('wealth_management/patrimonial/add-proches', $data);
+        }
+        $data['patrimoine_id'] = $patrimoine_id;
+        $data['id']    = $id;
+        $data['title'] = $title;
+        $this->load->view('wealth_management/patrimonial/modals/proche_modal', $data);
     }
 }

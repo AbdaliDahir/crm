@@ -29,6 +29,7 @@ module.exports = function(grunt) {
                     'assets/themes/perfex/js/clients.min.js': ['assets/themes/perfex/js/clients.js'],
                     'assets/themes/perfex/js/global.min.js': ['assets/themes/perfex/js/global.js'],
                     'assets/js/main.min.js': ['assets/js/main.js'],
+                    'assets/js/wealth_management.min.js': ['assets/js/wealth_management.js'],
                     'assets/js/map.min.js': ['assets/js/map.js'],
                     'assets/js/projects.min.js': ['assets/js/projects.js'],
                     'assets/js/tickets.min.js': ['assets/js/tickets.js'],
@@ -275,6 +276,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'assets/js/main.min.js': 'assets/js/main.min.js',
+                    'assets/js/wealth_management.min.js': 'assets/js/wealth_management.min.js',
                     'assets/js/map.min.js': 'assets/js/map.min.js',
                     'assets/js/projects.min.js': 'assets/js/projects.min.js',
                     'assets/js/tickets.min.js': 'assets/js/tickets.min.js',

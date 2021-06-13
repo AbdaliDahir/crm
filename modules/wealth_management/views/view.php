@@ -182,6 +182,10 @@ echo form_hidden('patrimoine_percent', $percent);
 <script>
    taskid = '<?php echo $this->input->get('taskid'); ?>';
 </script>
+
+<script>
+   initDataTabe('.table-roles', window.location.href, [1], [1]);
+</script>
 <script>
    var gantt_data = {};
    <?php if (isset($gantt_data)) { ?>

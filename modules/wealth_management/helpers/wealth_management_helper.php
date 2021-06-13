@@ -214,3 +214,73 @@ function get_patrimoine_name_by_id($id)
 
     return '';
 }
+/**
+ * Tasks html table used all over the application for relation tasks
+ * This table is not used for the main tasks table
+ * @param  array  $table_attributes
+ * @return string
+ */
+function init_relation_proches_table($table_attributes = [])
+{
+    $table_data = [
+        _l('the_proches_username'),
+        [
+            'name'     => _l('proches_birthday'),
+            'th_attrs' => [
+                'style' => 'width:200px',
+            ],
+        ],
+        _l('proches_lien'),
+        [
+            'name'     => _l('proches_charge'),
+            'th_attrs' => [
+                'style' => 'width:75px',
+            ],
+        ],
+        [
+            'name'     => _l('proches_particularité'),
+            'th_attrs' => [
+                'style' => 'width:75px'
+            ],
+        ],
+        _l('proches_lien'),
+        _l('proches_lien')
+    ];
+
+    $custom_fields = get_custom_fields('patrimoines_proches', [
+        'show_on_table' => 1,
+    ]);
+
+    foreach ($custom_fields as $field) {
+        array_push($table_data, $field['name']);
+    }
+
+    $table_data = hooks()->apply_filters('tasks_related_table_columns', $table_data);
+
+    $name = 'rel-tasks';
+
+    $table      = '';
+    $CI         = &get_instance();
+    $table_name = '.table-' . $name;
+    
+    $disabled   = '';
+    $table_name = addslashes($table_name);
+    
+    echo "<a href='#' class='btn btn-info pull-left mbot25 mright5 new-proche-relation" . $disabled . "' onclick=\"new_proches_from_relation('$table_name'); return false;\" data-rel-id='" . $table_attributes['data-new-rel-id'] . "'>" . _l('new_patrimonial_proches') . '</a>';
+
+    echo "<div class='clearfix'></div>";
+
+    // If new column is added on tasks relations table this will not work fine
+    // In this case we need to add new identifier eq task-relation
+    // $table_attributes['data-last-order-identifier'] = 'tasks';
+    // $table_attributes['data-default-order']         = get_table_last_order('tasks');
+
+    
+    echo "<pre>";
+        echo $table;
+    echo "</pre>";
+
+    $table .= render_datatable($table_data, $name, [], $table_attributes);
+
+    return $table;
+}

@@ -59,12 +59,13 @@ function _init_admin_assets()
     add_google_api_js_assets();
 
     $CI->app_scripts->add('common-js', 'assets/builds/common.js');
+    $CI->app_scripts->add('wealth_management', 'assets/js/wealth_management.min.js');
 
     $CI->app_scripts->add(
         'app-js',
         base_url($CI->app_scripts->core_file('assets/js', 'main.js')) . '?v=' . $CI->app_css->core_version(),
         'admin',
-        ['vendor-js', 'datatables-js', 'bootstrap-select-js', 'tinymce-js', 'jquery-migrate-js', 'jquery-validation-js', 'moment-js', 'common-js']
+        ['vendor-js', 'datatables-js', 'bootstrap-select-js', 'tinymce-js', 'jquery-migrate-js', 'jquery-validation-js', 'moment-js', 'common-js', 'wealth_management']
     );
 
     // CSS

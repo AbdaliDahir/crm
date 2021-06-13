@@ -14,6 +14,7 @@ class Roles extends AdminController
             $this->app->get_table_data('roles');
         }
         $data['title'] = _l('all_roles');
+        
         $this->load->view('admin/roles/manage', $data);
     }
 

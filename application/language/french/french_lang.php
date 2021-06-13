@@ -3805,7 +3805,8 @@ $lang['patrimonial_budget']  = 'budget fr';
 $lang['patrimonial_administrative']  = 'Situation administrative fr';
 $lang['patrimonial_taches']  = 'taches fr';
 $lang['patrimonial_childs']  = 'children fr';
-
+/// new data
+$lang['new_patrimonial_proches']  = 'new proche fr';
 ///vous form
 $lang['patrimonial_me'] = 'Vous';
 $lang['patrimonial_me_firstname'] = 'Prénom :';
@@ -3849,3 +3850,15 @@ $lang['patrimonial_conjoint_more_question_finance'] = 'Quelles conséquences
 financières du jugement de divorce ?';
 
 $lang['add_info'] = 'sauvgarder';
+
+// proches data
+$lang['proches_username'] = 'prenom nom fr';
+$lang['proches_birthday'] = 'birthday fr';
+$lang['proches_lien'] = 'Lien de parenté fr';
+$lang['proches_charge'] = 'A charge fiscalement ?';
+$lang['proches_particularité'] = 'Particularités';
+$lang['proches_parente_e_petit'] = 'Enfant/petit fr';
+$lang['proches_parente_e_parent'] = 'Enfant/parent fr';
+
+$lang['proches'] = 'Proches';
+$lang['proches_lowercase'] = 'proches';

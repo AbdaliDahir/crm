@@ -7,4 +7,4 @@ if ($patrimoine->settings->hide_tasks_on_main_tasks_table == '1') {
 ?>
 <div class="tasks-table">
     <?php init_relation_tasks_table(array('data-new-rel-id' => $patrimoine->id, 'data-new-rel-type' => 'patrimoine')); ?>
-</div>
+</div> 

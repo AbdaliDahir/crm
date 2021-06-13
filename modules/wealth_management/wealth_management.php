@@ -65,6 +65,7 @@ function wealth_management_module_init_menu_items()
         //$CI->load->model(MODULE_WEALTH_MANAGEMENT . '/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_info_model');
+        $CI->load->model('wealth_management/proches_model');
         $CI->app_menu->add_sidebar_menu_item('wealth-management', [
             'collapse' => true,
             'name'     => 'Wealth Management',
@@ -179,45 +180,45 @@ function app_init_patrimoine_tabs()
         'position' => 9,
     ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [
-    //     'name'                      => _l('tasks'),
-    //     'icon'                      => 'fa fa-check-circle',
-    //     'view'                      => 'wealth_management/patrimoine_tasks',
-    //     'position'                  => 10,
-    //     'linked_to_customer_option' => ['view_tasks'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [
+        'name'                      => _l('tasks'),
+        'icon'                      => 'fa fa-check-circle',
+        'view'                      => 'wealth_management/patrimoine_tasks',
+        'position'                  => 10,
+        'linked_to_customer_option' => ['view_tasks'],
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_timesheets', [
-    //     'name'                      => _l('patrimoine_timesheets'),
-    //     'icon'                      => 'fa fa-clock-o',
-    //     'view'                      => 'wealth_management/patrimoine_timesheets',
-    //     'position'                  => 15,
-    //     'linked_to_customer_option' => ['view_timesheets'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_timesheets', [
+        'name'                      => _l('patrimoine_timesheets'),
+        'icon'                      => 'fa fa-clock-o',
+        'view'                      => 'wealth_management/patrimoine_timesheets',
+        'position'                  => 15,
+        'linked_to_customer_option' => ['view_timesheets'],
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_milestones', [
-    //     'name'                      => _l('patrimoine_milestones'),
-    //     'icon'                      => 'fa fa-rocket',
-    //     'view'                      => 'wealth_management/patrimoine_milestones',
-    //     'position'                  => 20,
-    //     'linked_to_customer_option' => ['view_milestones'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_milestones', [
+        'name'                      => _l('patrimoine_milestones'),
+        'icon'                      => 'fa fa-rocket',
+        'view'                      => 'wealth_management/patrimoine_milestones',
+        'position'                  => 20,
+        'linked_to_customer_option' => ['view_milestones'],
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_files', [
-    //     'name'                      => _l('patrimoine_files'),
-    //     'icon'                      => 'fa fa-files-o',
-    //     'view'                      => 'wealth_management/patrimoine_files',
-    //     'position'                  => 25,
-    //     'linked_to_customer_option' => ['upload_files'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_files', [
+        'name'                      => _l('patrimoine_files'),
+        'icon'                      => 'fa fa-files-o',
+        'view'                      => 'wealth_management/patrimoine_files',
+        'position'                  => 25,
+        'linked_to_customer_option' => ['upload_files'],
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_discussions', [
-    //     'name'                      => _l('patrimoine_discussions'),
-    //     'icon'                      => 'fa fa-commenting',
-    //     'view'                      => 'wealth_management/patrimoine_discussions',
-    //     'position'                  => 30,
-    //     'linked_to_customer_option' => ['open_discussions'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_discussions', [
+        'name'                      => _l('patrimoine_discussions'),
+        'icon'                      => 'fa fa-commenting',
+        'view'                      => 'wealth_management/patrimoine_discussions',
+        'position'                  => 30,
+        'linked_to_customer_option' => ['open_discussions'],
+    ]);
 
     $CI->app_tabs->add_patrimoine_tab('patrimoine_gantt', [
         'name'                      => _l('patrimoine_gant'),
@@ -243,70 +244,70 @@ function app_init_patrimoine_tabs()
         'visible'  => has_permission('contracts', '', 'view') || has_permission('contracts', '', 'view_own'),
     ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('sales', [
-    //     'name'     => _l('sales_string'),
-    //     'icon'     => 'fa fa-balance-scale',
-    //     'position' => 50,
-    //     'collapse' => true,
-    //     'visible'  => (has_permission('estimates', '', 'view') || has_permission('estimates', '', 'view_own') || (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates()))
-    //         || (has_permission('invoices', '', 'view') || has_permission('invoices', '', 'view_own') || (get_option('allow_staff_view_invoices_assigned') == 1 && staff_has_assigned_invoices()))
-    //         || (has_permission('expenses', '', 'view') || has_permission('expenses', '', 'view_own')),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('sales', [
+        'name'     => _l('sales_string'),
+        'icon'     => 'fa fa-balance-scale',
+        'position' => 50,
+        'collapse' => true,
+        'visible'  => (has_permission('estimates', '', 'view') || has_permission('estimates', '', 'view_own') || (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates()))
+            || (has_permission('invoices', '', 'view') || has_permission('invoices', '', 'view_own') || (get_option('allow_staff_view_invoices_assigned') == 1 && staff_has_assigned_invoices()))
+            || (has_permission('expenses', '', 'view') || has_permission('expenses', '', 'view_own')),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
-    //     'slug'     => 'patrimoine_invoices',
-    //     'name'     => _l('patrimoine_invoices'),
-    //     'view'     => 'wealth_management/patrimoine_invoices',
-    //     'position' => 5,
-    //     'visible'  => (has_permission('invoices', '', 'view') || has_permission('invoices', '', 'view_own') || (get_option('allow_staff_view_invoices_assigned') == 1 && staff_has_assigned_invoices())),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
+        'slug'     => 'patrimoine_invoices',
+        'name'     => _l('patrimoine_invoices'),
+        'view'     => 'wealth_management/patrimoine_invoices',
+        'position' => 5,
+        'visible'  => (has_permission('invoices', '', 'view') || has_permission('invoices', '', 'view_own') || (get_option('allow_staff_view_invoices_assigned') == 1 && staff_has_assigned_invoices())),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
-    //     'slug'     => 'patrimoine_estimates',
-    //     'name'     => _l('estimates'),
-    //     'view'     => 'wealth_management/patrimoine_estimates',
-    //     'position' => 10,
-    //     'visible'  => (has_permission('estimates', '', 'view') || has_permission('estimates', '', 'view_own') || (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates())),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
+        'slug'     => 'patrimoine_estimates',
+        'name'     => _l('estimates'),
+        'view'     => 'wealth_management/patrimoine_estimates',
+        'position' => 10,
+        'visible'  => (has_permission('estimates', '', 'view') || has_permission('estimates', '', 'view_own') || (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates())),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
-    //     'slug'     => 'patrimoine_expenses',
-    //     'name'     => _l('patrimoine_expenses'),
-    //     'view'     => 'wealth_management/patrimoine_expenses',
-    //     'position' => 15,
-    //     'visible'   => has_permission('expenses', '', 'view') || has_permission('expenses', '', 'view_own'),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
+        'slug'     => 'patrimoine_expenses',
+        'name'     => _l('patrimoine_expenses'),
+        'view'     => 'wealth_management/patrimoine_expenses',
+        'position' => 15,
+        'visible'   => has_permission('expenses', '', 'view') || has_permission('expenses', '', 'view_own'),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
-    //     'slug'     => 'patrimoine_credit_notes',
-    //     'name'     => _l('credit_notes'),
-    //     'view'     => 'wealth_management/patrimoine_credit_notes',
-    //     'position' => 20,
-    //     'visible'  => has_permission('credit_notes', '', 'view') || has_permission('credit_notes', '', 'view_own'),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
+        'slug'     => 'patrimoine_credit_notes',
+        'name'     => _l('credit_notes'),
+        'view'     => 'wealth_management/patrimoine_credit_notes',
+        'position' => 20,
+        'visible'  => has_permission('credit_notes', '', 'view') || has_permission('credit_notes', '', 'view_own'),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
-    //     'slug'     => 'patrimoine_subscriptions',
-    //     'name'     => _l('subscriptions'),
-    //     'view'     => 'wealth_management/patrimoine_subscriptions',
-    //     'position' => 25,
-    //     'visible'  => has_permission('subscriptions', '', 'view') || has_permission('subscriptions', '', 'view_own'),
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab_children_item('sales', [
+        'slug'     => 'patrimoine_subscriptions',
+        'name'     => _l('subscriptions'),
+        'view'     => 'wealth_management/patrimoine_subscriptions',
+        'position' => 25,
+        'visible'  => has_permission('subscriptions', '', 'view') || has_permission('subscriptions', '', 'view_own'),
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_notes', [
-    //     'name'     => _l('patrimoine_notes'),
-    //     'icon'     => 'fa fa-file-o',
-    //     'view'     => 'wealth_management/patrimoine_notes',
-    //     'position' => 55,
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_notes', [
+        'name'     => _l('patrimoine_notes'),
+        'icon'     => 'fa fa-file-o',
+        'view'     => 'wealth_management/patrimoine_notes',
+        'position' => 55,
+    ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_activity', [
-    //     'name'                      => _l('patrimoine_activity'),
-    //     'icon'                      => 'fa fa-exclamation',
-    //     'view'                      => 'wealth_management/patrimoine_activity',
-    //     'position'                  => 60,
-    //     'linked_to_customer_option' => ['view_activity_log'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_activity', [
+        'name'                      => _l('patrimoine_activity'),
+        'icon'                      => 'fa fa-exclamation',
+        'view'                      => 'wealth_management/patrimoine_activity',
+        'position'                  => 60,
+        'linked_to_customer_option' => ['view_activity_log'],
+    ]);
 
     // auto create custom js file
     if (!file_exists(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js')) {

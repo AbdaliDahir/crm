@@ -3789,7 +3789,8 @@ $lang['patrimonial_budget']  = 'budget';
 $lang['patrimonial_administrative']  = 'Situation administrative';
 $lang['patrimonial_taches']  = 'taches';
 $lang['patrimonial_childs']  = 'children';
-
+/// new data
+$lang['new_patrimonial_proches']  = 'new proche';
 ///vous form
 $lang['patrimonial_me'] = 'About You';
 $lang['patrimonial_me_firstname'] = 'First Name :';
@@ -3839,3 +3840,15 @@ $lang['patrimonial_conjoint_more_question_finance'] = 'Quelles conséquences fin
 
 $lang['add_info'] = 'save information';
 $lang['patrimoines_information_updated_success'] = 'information updated success for patrimoine with id :';
+
+//proches
+// proches data
+$lang['proches_username'] = 'prenom nom fr';
+$lang['proches_birthday'] = 'birthday fr';
+$lang['proches_lien'] = 'Lien de parenté fr';
+$lang['proches_charge'] = 'A charge fiscalement ?';
+$lang['proches_particularité'] = 'Particularités';
+$lang['proches_parente_e_petit'] = 'Enfant/petit';
+$lang['proches_parente_e_parent'] = 'Enfant/parent';
+$lang['proches'] = 'Proches';
+$lang['proches_lowercase'] = 'proches';
