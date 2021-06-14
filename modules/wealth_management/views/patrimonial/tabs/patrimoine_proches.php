@@ -8,7 +8,7 @@
   </div>
   <div class="panel-body">   
     <div class="tasks-table">
-      <?php init_relation_proches_table(array('data-new-rel-id' => $patrimoine->id)); ?>
+      <?php $this->load->view('wealth_management/patrimonial/tables/_proches'); ?>
     </div>  
   </div>
 </div>

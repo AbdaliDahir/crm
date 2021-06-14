@@ -215,6 +215,42 @@ class App
         die;
     }
 
+     /**
+     * Function that will parse table data from the tables folder for amin area
+     * @param  string $table  table filename
+     * @param  array  $params additional params
+     * @return void
+     */
+    public function get_wea_table_data($table, $params = [])
+    {
+        $params = hooks()->apply_filters('table_params', $params, $table);
+
+        foreach ($params as $key => $val) {
+            $$key = $val;
+        }
+
+        $customFieldsColumns = [];
+
+        $path = VIEWPATH . 'wealth_management/tables/' . $table . EXT;
+
+        if (!file_exists($path)) {
+            $path = $table;
+            if (!endsWith($path, EXT)) {
+                $path .= EXT;
+            }
+        } else {
+            $myPrefixedPath = VIEWPATH . 'wealth_management/tables/my_' . $table . EXT;
+            if (file_exists($myPrefixedPath)) {
+                $path = $myPrefixedPath;
+            }
+        }
+
+        include_once($path);
+
+        echo json_encode($output);
+        die;
+    }
+
     /**
      * All available reminders keys for the features
      * @return array

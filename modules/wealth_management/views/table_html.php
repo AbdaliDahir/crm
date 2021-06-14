@@ -15,6 +15,7 @@ $table_data = [
 ];
 
 $custom_fields = get_custom_fields('patrimoines', ['show_on_table' => 1]);
+
 foreach ($custom_fields as $field) {
   array_push($table_data, $field['name']);
 }

@@ -35,6 +35,10 @@ class Wealth_management extends AdminController
         ]);
     }
 
+    public function proches()
+    { 
+        $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/proches'));
+    }
 
     public function clientApp($id = '')
     {
@@ -1372,4 +1376,9 @@ class Wealth_management extends AdminController
         $data['title'] = $title;
         $this->load->view('wealth_management/patrimonial/modals/proche_modal', $data);
     }
+    // public function proches()
+    // {
+    //     $this->app->get_table_data('patrimoines_proches');
+    // }
+
 }

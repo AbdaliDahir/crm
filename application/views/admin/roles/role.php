@@ -29,7 +29,7 @@
                <?php $attrs = (isset($role) ? array() : array('autofocus'=>true)); ?>
                <?php $value = (isset($role) ? $role->name : ''); ?>
                <?php echo render_input('name','role_add_edit_name',$value,'text',$attrs); ?>
-                <?php
+               <?php
                   $permissionsData = [ 'funcData' => ['role'=> isset($role) ? $role : null ] ];
                   $this->load->view('admin/staff/permissions', $permissionsData);
                ?>

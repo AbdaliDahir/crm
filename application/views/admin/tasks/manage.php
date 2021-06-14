@@ -6,7 +6,7 @@
          <div class="col-md-12">
             <div class="panel_s">
                <div class="panel-body">
-                <div class="row _buttons">
+                  <div class="row _buttons">
                      <div class="col-md-8">
                         <?php if(has_permission('tasks','','create')){ ?>
                         <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-info pull-left new"><?php echo _l('new_task'); ?></a>
@@ -56,7 +56,7 @@
 <script>
    taskid = '<?php echo $taskid; ?>';
    $(function(){
-       tasks_kanban();
+      tasks_kanban();
    });
 </script>
 </body>
