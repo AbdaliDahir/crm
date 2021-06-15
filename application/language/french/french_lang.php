@@ -3801,6 +3801,7 @@ $lang['patrimonial_info']  = 'information fr';
 $lang['patrimonial_proches']  = 'proches fr';
 $lang['patrimonial_votre']  = 'patrimoine fr';
 $lang['patrimonial_passif']  = 'passif fr';
+$lang['patrimonial_fiscale']  = 'Particularités fiscales';
 $lang['patrimonial_budget']  = 'budget fr';
 $lang['patrimonial_administrative']  = 'Situation administrative fr';
 $lang['patrimonial_taches']  = 'taches fr';
@@ -3859,6 +3860,23 @@ $lang['proches_charge'] = 'A charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
 $lang['proches_parente_e_petit'] = 'Enfant/petit fr';
 $lang['proches_parente_e_parent'] = 'Enfant/parent fr';
-
+$lang['proches_contact_tel'] = 'Tele fr';
+$lang['proches_contact_email'] = 'email address fr';
+$lang['proches_contact_address'] = 'Adresse fr';
+$lang['proches_contact_option'] = 'peut-on les contacter ?';
 $lang['proches'] = 'Proches';
 $lang['proches_lowercase'] = 'proches';
+
+$lang['proche_contact_yes']      = 'Oui';
+$lang['proche_contact_no']       = 'Non';
+
+
+//usage 
+$lang['patremoine_usage_designation'] = 'Désignation';
+$lang['patremoine_usage_valeur'] = 'valuer(en $)';
+$lang['patremoine_usage_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patremoine_usage_date_achat'] = 'Charges associées/Date d’achat';
+$lang['patremoine_usage_capital'] = 'Capital emprunté ou restant dû';
+$lang['patremoine_usage_duree'] = 'Durée';
+$lang['patremoine_usage_taux'] = 'Taux';
+$lang['patremoine_usage_deces '] = 'Ass. ** Décès';

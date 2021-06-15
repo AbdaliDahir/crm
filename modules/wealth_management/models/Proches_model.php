@@ -18,47 +18,57 @@ class Proches_model extends App_Model
      */
     public function add($data)
     {   
-        $data['patr_me_firstname']   = trim($data['patr_me_firstname']);
-        $data['patr_me_lastname']   = trim($data['patr_me_lastname']);
-        $data['patr_me_address']   = trim($data['patr_me_address']);
 
-        if (isset($data['patr_me_birthday'])) {
-            $data['patr_me_birthday'] = to_sql_date($data['patr_me_birthday']);
+        $data['patr_proches_username']   = trim($data['patr_proches_username']);
+        $data['patr_proches_charge']   = trim($data['patr_proches_charge']);
+        $data['patr_proches_particularites']   = trim($data['patr_proches_particularites']);
+
+        if (isset($data['patr_proches_birthday'])) {
+            $data['patr_proches_birthday'] = to_sql_date($data['patr_proches_birthday']);
         }
 
-        // add created date and last updated date.
-        $data['created_date'] = date('Y-m-d H:i:s');
-        $data['updated_date'] = date('Y-m-d H:i:s');
-        $data['patr_partner_donation'] = $data['settings']['patr_partner_donation'];
+        //radio
+        if($data['patr_proches_lien_parente'] == 1 || $data['patr_proches_lien_parente'] == 0) {
+            if(isset($data['patr_proches_contact']) && $data['patr_proches_contact'] == 'yes') {
+                $data['patr_proches_contact'] = 1;
+            } else {
+                $data['patr_proches_contact'] = 0;
+            }
+            // add created date and last updated date.
+            $data['created_date'] = date('Y-m-d H:i:s');
+            $data['updated_date'] = date('Y-m-d H:i:s');
+            
+            $this->db->insert(db_prefix() . 'patrimoines_proches', $data);
+            $patrimoines_info_id = $this->db->insert_id();
 
-        unset($data['settings']);
+            if ($patrimoines_info_id) {
 
+                // if (isset($custom_fields)) {
+                //     handle_custom_fields_post($patrimoines_info_id, $custom_fields);
+                // }
 
-        $this->db->insert(db_prefix() . 'patrimoines_proches', $data);
-        $patrimoines_info_id = $this->db->insert_id();
+                // hooks()->do_action('ticket_created', $patrimoines_info_id);
+                // log_activity('Patremoines info has been changed [ID: ' . $patrimoines_info_id . ']');
 
-        if ($patrimoines_info_id) {
-
-            // if (isset($custom_fields)) {
-            //     handle_custom_fields_post($patrimoines_info_id, $custom_fields);
-            // }
-
-            // hooks()->do_action('ticket_created', $patrimoines_info_id);
-            // log_activity('Patremoines info has been changed [ID: ' . $patrimoines_info_id . ']');
-
-            return $patrimoines_info_id;
+                return $patrimoines_info_id;
+            } 
+        } else {
+            return false;
         }
-
         return false;
     }
+        /**
+     * Get task by id
+     * @param  mixed $id task id
+     * @return object
+     */
+    public function get($id, $where = [])
+    { 
+        $this->db->where('id', $id);
+        $this->db->where($where);
+        $proche = $this->db->get(db_prefix() . 'patrimoines_proches')->row();
 
-    public function get_info($id) {
-        if($id) {
-            $query = $this->db->get_where('patrimoines_proches', array('patrimoineid' => $id));
-			return $query->row();
-        } else {
-            return null;
-        }
+        return hooks()->apply_filters('get_proche', $proche);
     }
 
     public function update($data)
@@ -68,31 +78,57 @@ class Proches_model extends App_Model
 
         $this->db->select('patrimoineid');
         $this->db->where('id', $postId);
-        $exist_post_patrimoine_id = $this->db->get(db_prefix() . 'patrimoines_info')->row()->patrimoineid;
+        $exist_post_patrimoine_id = $this->db->get(db_prefix() . 'patrimoines_proches')->row()->patrimoineid;
 
         if( $exist_post_patrimoine_id == $patrimoine_id) {
             // remova some element from array before save
             unset($data['patrimoineid']);
-            unset($data['settings']);
-
+            if(isset($data['patr_proches_contact']) && $data['patr_proches_contact'] == 'yes') {
+                $data['patr_proches_contact'] = 1;
+            } else {
+                $data['patr_proches_contact'] = 0;
+            }
             $data['updated_date'] = date('Y-m-d H:i:s');
-            $data['patr_me_firstname']   = trim($data['patr_me_firstname']);
-            $data['patr_me_lastname']   = trim($data['patr_me_lastname']);
-            $data['patr_me_address']   = trim($data['patr_me_address']);
-    
-            if (isset($data['patr_me_birthday'])) {
-                $data['patr_me_birthday'] = to_sql_date($data['patr_me_birthday']);
+            $data['patr_proches_username']   = trim($data['patr_proches_username']);
+            $data['patr_proches_charge']   = trim($data['patr_proches_charge']);
+            $data['patr_proches_particularites']   = trim($data['patr_proches_particularites']);
+
+            if (isset($data['patr_proches_birthday'])) {
+                $data['patr_proches_birthday'] = to_sql_date($data['patr_proches_birthday']);
             }
         }
         
-        $patrimoines_info_id = $this->db->update(db_prefix() . 'patrimoines_info', $data); 
+        $this->db->where('id', $data['id']);
+        $_id = $this->db->update(db_prefix() . 'patrimoines_proches', $data); 
 
-        if ($patrimoines_info_id) {
+        if ($_id) {
 
-            return $patrimoines_info_id;
+            return $_id;
         }
 
         return false;
+    }
+
+    /**
+     * Delete task and all connections
+     * @param  mixed $id taskid
+     * @return boolean
+     */
+    public function delete_proche($id)
+    {
+        // $patrimoine_name = get_patrimoine_name_by_id($patrimoine_id);
+
+        // $this->db->where('id', $patrimoine_id);
+        // $this->db->delete(db_prefix() . 'patrimoines');
+
+        // if($this->db->affected_rows() > 0) {
+
+        // }
+
+        $this->db->where('id', $id);
+        $this->db->delete(db_prefix() . 'patrimoines_proches');
+        
+        return true;
     }
 
 }

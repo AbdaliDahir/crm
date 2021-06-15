@@ -77,6 +77,7 @@ $output  = $result['output'];
 $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
+    
     $row = [];
 
     $link = admin_url('wealth_management/view/' . $aRow['id']);

@@ -15,6 +15,7 @@ class Wealth_management extends AdminController
         $this->load->model('patrimoines_model');
         $this->load->model('patrimoines_info_model');
         $this->load->model('proches_model');
+        $this->load->model('usage_model');
         $this->load->model('currencies_model');
         $this->load->helper('date');
     }
@@ -35,9 +36,18 @@ class Wealth_management extends AdminController
         ]);
     }
 
-    public function proches()
+    public function proches($id = '')
     { 
-        $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/proches'));
+        $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/proches'), [
+            'patrimoine_id' => $id
+        ]);
+    }
+
+    public function usage($id = '')
+    { 
+        $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/usage'), [
+            'patrimoine_id' => $id
+        ]);
     }
 
     public function clientApp($id = '')
@@ -1323,9 +1333,9 @@ class Wealth_management extends AdminController
 
         if ($this->input->post()) {
             $data                = $this->input->post();
-            $data['description'] = html_purify($this->input->post('description', false));
+            // $data['description'] = html_purify($this->input->post('description', false));
             if ($id == '') {
-                $id      = $this->tasks_model->add($data);
+                $id      = $this->proches_model->add($data);
                 $_id     = false;
                 $success = false;
                 $message = '';
@@ -1340,7 +1350,7 @@ class Wealth_management extends AdminController
                     'message' => $message,
                 ]);
             } else {
-                $success = $this->tasks_model->update($data, $id);
+                $success = $this->proches_model->update($data, $id);
                 $message = '';
                 if ($success) {
                     $message = _l('updated_successfully', _l('proche'));
@@ -1358,27 +1368,123 @@ class Wealth_management extends AdminController
             $title = _l('add_new', _l('proches_lowercase'));
             $data['proche'] = null;
         } else {
-            $data['proche'] = $this->proche_model->get_info($id);
-            $data['task'] = $this->tasks_model->get($id);
-            $title = _l('edit', _l('proches_lowercase')) . ' ' . $data['task']->name;
+            $data['proche'] = $this->proches_model->get($id);
+            $title = _l('edit', _l('proches_lowercase')) . ' ' . $id;
         }
 
-        $patrimoine_id = $_GET['patrimoine_id'];
-        $patrimoine = $this->patrimoines_model->get($id); 
-        
-        if (!$patrimoine) {
-            blank_page(_l('patrimoine_not_found'));
-        } else {
-
+        if(isset($_GET['patrimoine_id'])) {
+            $patrimoine_id = $_GET['patrimoine_id'];
+            $patrimoine = $this->patrimoines_model->get($id); 
+            
+            if (!$patrimoine) {
+                blank_page(_l('patrimoine_not_found'));
+            } else {
+    
+            }
+            $data['patrimoine_id'] = $patrimoine_id;
         }
-        $data['patrimoine_id'] = $patrimoine_id;
         $data['id']    = $id;
         $data['title'] = $title;
         $this->load->view('wealth_management/patrimonial/modals/proche_modal', $data);
     }
-    // public function proches()
-    // {
-    //     $this->app->get_table_data('patrimoines_proches');
-    // }
+    
+    /* Delete task from database */
+    public function delete_proche($id)
+    {
+        $success = $this->proches_model->delete_proche($id);
+        $message = _l('problem_deleting', _l('proche_lowercase'));
+        if ($success) {
+            $message = _l('deleted', _l('proche'));
+            set_alert('success', $message);
+        } else {
+            set_alert('warning', $message);
+        }
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    /*********************************** */
+    /**********   Usage     ************ */
+    /*********************************** */ 
+    /* Add new usage or update existing */
+    public function addUsage($id = '')
+    {
+        $data = [];
+
+        if ($this->input->post()) {
+            $data                = $this->input->post();
+            // $data['description'] = html_purify($this->input->post('description', false));
+            if ($id == '') {
+                $id      = $this->usage_model->add($data);
+                $_id     = false;
+                $success = false;
+                $message = '';
+                if ($id) {
+                    $success       = true;
+                    $_id           = $id;
+                    $message       = _l('added_successfully', _l('usage'));
+                }
+                echo json_encode([
+                    'success' => $success,
+                    'id'      => $_id,
+                    'message' => $message,
+                ]);
+            } else {
+                $success = $this->usage_model->update($data, $id);
+                $message = '';
+                if ($success) {
+                    $message = _l('updated_successfully', _l('usage'));
+                }
+                echo json_encode([
+                    'success' => $success,
+                    'message' => $message,
+                    'id'      => $id,
+                ]);
+            }
+            die;
+        } 
+        // add or edit.
+        if ($id == '') {
+            $title = _l('add_new', _l('usage_lowercase'));
+            $data['usage'] = null;
+        } else {
+            $data['usage'] = $this->usage_model->get($id);
+            $title = _l('edit', _l('usage_lowercase')) . ' ' . $id;
+        }
+
+        if(isset($_GET['patrimoine_id'])) {
+            $patrimoine_id = $_GET['patrimoine_id'];
+            $patrimoine = $this->patrimoines_model->get($id); 
+            
+            if (!$patrimoine) {
+                blank_page(_l('patrimoine_not_found'));
+            } else {
+    
+            }
+            $data['patrimoine_id'] = $patrimoine_id;
+        }
+        $data['id']    = $id;
+        $data['title'] = $title;
+        $this->load->view('wealth_management/patrimonial/modals/usage_modal', $data);
+    }
+    
+    /* Delete task from database */
+    public function delete_usage($id)
+    {
+        $success = $this->usage_model->delete_usage($id);
+        $message = _l('problem_deleting', _l('usage_lowercase'));
+        if ($success) {
+            $message = _l('deleted', _l('usage'));
+            set_alert('success', $message);
+        } else {
+            set_alert('warning', $message);
+        }
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    /*********************************** */
+    /**********   END::Usage   ********* */
+    /*********************************** */
+
 
 }

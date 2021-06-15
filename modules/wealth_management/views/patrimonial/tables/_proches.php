@@ -8,7 +8,12 @@ $table_data = [
     _l('proches_birthday'),
     _l('proches_lien'),
     _l('proches_charge'),
-    _l('proches_particularité')
+    _l('proches_particularité'),
+    _l('proches_contact_tel'),
+    _l('proches_contact_email'),
+    _l('proches_contact_address'),
+    _l('proches_contact_option'),
+    'action'
 ];
 
 // $custom_fields = get_custom_fields('patrimoines_proches', ['show_on_table' => 1]);

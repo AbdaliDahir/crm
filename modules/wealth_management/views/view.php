@@ -186,7 +186,7 @@ echo form_hidden('patrimoine_percent', $percent);
 <script>
    // initDataTabe('.table-roles', window.location.href, [1], [1]);
    var PatrimoinesServerParams = {};
-   initDataTable('.table-patrimoines_proches', admin_url + 'wealth_management/proches', undefined, undefined, PatrimoinesServerParams);
+   initDataTable('.table-patrimoines_proches', admin_url + 'wealth_management/proches/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
 </script>
 <script>

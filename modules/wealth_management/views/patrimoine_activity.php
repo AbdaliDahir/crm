@@ -5,19 +5,19 @@
         <div class="feed-item">
             <div class="row">
                 <div class="col-md-8">
-                 <div class="date"><span class="text-has-action" data-toggle="tooltip" data-title="<?php echo _dt($activity['dateadded']); ?>"><?php echo time_ago($activity['dateadded']); ?></span></div>
-                 <div class="text">
-                  <?php
-                  $fullname = $activity['fullname'];
-                  if($activity['staff_id'] != 0){ ?>
-                      <a href="<?php echo admin_url('profile/'.$activity['staff_id']); ?>"><?php echo staff_profile_image($activity['staff_id'],array('staff-profile-xs-image','pull-left mright10')); ?></a>
-                  <?php } else if($activity['contact_id'] != 0){
+                    <div class="date"><span class="text-has-action" data-toggle="tooltip" data-title="<?php echo _dt($activity['dateadded']); ?>"><?php echo time_ago($activity['dateadded']); ?></span></div>
+                    <div class="text">
+                    <?php
+                        $fullname = $activity['fullname'];
+                        if($activity['staff_id'] != 0){ ?>
+                            <a href="<?php echo admin_url('profile/'.$activity['staff_id']); ?>"><?php echo staff_profile_image($activity['staff_id'],array('staff-profile-xs-image','pull-left mright10')); ?></a>
+                        <?php } else if($activity['contact_id'] != 0){
                     $fullname = '<span class="label label-info inline-block mbot5">'._l('is_customer_indicator') . '</span> ' . $fullname = $activity['fullname']; ?>
                     <a href="<?php echo admin_url('clients/client/'.get_user_id_by_contact_id($activity['contact_id']).'?contactid='.$activity['contact_id']); ?>">
                         <img src="<?php echo contact_profile_image_url($activity['contact_id']); ?>" class="staff-profile-xs-image pull-left mright10">
                     </a>
                 <?php } ?>
-                <?php if($activity['visible_to_customer'] == 1){
+                <?php if($activity['visible_to_customer'] == 1) {
                     $checked = 'checked';
                 } else {
                     $checked = '';

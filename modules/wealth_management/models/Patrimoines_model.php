@@ -265,6 +265,12 @@ class Patrimoines_model extends App_Model
                 $patrimoine->client_data = new StdClass();
                 $patrimoine->client_data = $this->clients_model->get($patrimoine->clientid);
 
+                $patrimoine->info = new StdClass();
+                $patrimoine->info = $this->patrimoines_info_model->get_info($id);
+                // foreach($patrimoine->info as $key => $value) {
+                //     $patrimoine[$key] = $value;
+                // }
+
                 $patrimoine            = hooks()->apply_filters('patrimoine_get', $patrimoine);
                 $GLOBALS['patrimoine'] = $patrimoine;
 
@@ -1076,10 +1082,41 @@ class Patrimoines_model extends App_Model
             unset($data['tags']);
         }
 
+        // add patremoins info //
+        
+        $patr_info = [];
+        $patr_info_attributes = ['patr_me_firstname', 'patr_me_lastname', 'patr_me_birthday','patr_me_profession','patr_me_depart','patr_me_nss', 'patr_me_address', 'patr_me_tele_perso', 'patr_me_tele_m', 'patr_me_tele_mme', 'patr_me_email_one', 'patr_me_email_two', 'patr_partner_firstname', 'patr_partner_lastname', 'patr_partner_birthday', 'patr_partner_profession', 'patr_partner_depart', 'patr_partner_nss', 'patr_partner_precedent_marriage_date', 'patr_partner_regime', 'patr_partner_marriage_date', 'patr_partner_marriage_duration', 'patr_partner_situtation', 'patr_partner_finance', 'patr_partner_donation'];
+        
+        foreach($patr_info_attributes as $patr) {
+            $patr_info[$patr] = $data[$patr];
+            unset($data[$patr]);
+        }
+
         $this->db->insert(db_prefix() . 'patrimoines', $data);
         $insert_id = $this->db->insert_id();
+
         if ($insert_id) {
+
             handle_tags_save($tags, $insert_id, 'patrimoine');
+
+            /*** save information */
+            $patr_info['patr_me_firstname']   = trim($patr_info['patr_me_firstname']);
+            $patr_info['patr_me_lastname']   = trim($patr_info['patr_me_lastname']);
+            $patr_info['patr_me_address']   = trim($patr_info['patr_me_address']);
+    
+            if (isset($patr_info['patr_me_birthday'])) {
+                $patr_info['patr_me_birthday'] = to_sql_date($patr_info['patr_me_birthday']);
+            }
+    
+            // add created date and last updated date.
+            $patr_info['created_date'] = date('Y-m-d H:i:s');
+            $patr_info['updated_date'] = date('Y-m-d H:i:s');
+            $patr_info['patrimoineid'] = $insert_id;
+    
+            $this->db->insert(db_prefix() . 'patrimoines_info', $patr_info);
+            $this->db->insert_id();
+    
+            /*****./END::save information */
 
             if (isset($custom_fields)) {
                 handle_custom_fields_post($insert_id, $custom_fields);
