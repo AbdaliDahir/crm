@@ -99,7 +99,7 @@ class Wealth_management extends AdminController
         ]);
     }
 
-    public function passif($id = '')
+    public function passifs($id = '')
     { 
         $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/passif'), [
             'patrimoine_id' => $id
@@ -893,7 +893,6 @@ class Wealth_management extends AdminController
         }
     }
 
-
     public function delete_milestone($patrimoine_id, $id)
     {
         if (staff_can('delete_milestones', 'patrimoines')) {
@@ -1360,22 +1359,49 @@ class Wealth_management extends AdminController
     }
 
     /* Add new task or update existing */
-    public function addProches($id = '')
+    public function addInfo()
     {
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }
+        if(isset($_GET['type'])) {
+            $type = $_GET['type'];
+        }
+
         $data = [];
 
         if ($this->input->post()) {
             $data                = $this->input->post();
             // $data['description'] = html_purify($this->input->post('description', false));
             if ($id == '') {
-                $id      = $this->proches_model->add($data);
+                
+                if($type == 'proche') {
+                    $id      = $this->proches_model->add($data);
+                } else if ($type == 'usage') {
+                    $id      = $this->usage_model->add($data);
+                } else if ($type == 'rapport') {
+                    $id      = $this->rapport_model->add($data);
+                } else if ($type == 'bien') {
+                    $id      = $this->bien_model->add($data);
+                } else if ($type == 'assurance') {
+                    $id      = $this->assurance_model->add($data);
+                } else if ($type == 'availability') {
+                    $id      = $this->availability_model->add($data);
+                } else if ($type == 'epargne') {
+                    $id      = $this->epargne_model->add($data);
+                } else if ($type == 'passif') {
+                    $id      = $this->passif_model->add($data);
+                } else if ($type == 'estates') {
+                    $id      = $this->estates_model->add($data);
+                } 
+
                 $_id     = false;
                 $success = false;
                 $message = '';
                 if ($id) {
                     $success       = true;
                     $_id           = $id;
-                    $message       = _l('added_successfully', _l('proche'));
+                    $message       = _l('added_successfully', _l($type));
                 }
                 echo json_encode([
                     'success' => $success,
@@ -1383,10 +1409,28 @@ class Wealth_management extends AdminController
                     'message' => $message,
                 ]);
             } else {
-                $success = $this->proches_model->update($data, $id);
+                if($type == 'proche') {
+                    $success      = $this->proches_model->update($data);
+                } else if ($type == 'usage') {
+                    $success      = $this->usage_model->update($data);
+                } else if ($type == 'rapport') {
+                    $success      = $this->rapport_model->update($data);
+                } else if ($type == 'bien') {
+                    $success      = $this->bien_model->update($data);
+                } else if ($type == 'assurance') {
+                    $success      = $this->assurance_model->update($data);
+                } else if ($type == 'availability') {
+                    $success      = $this->availability_model->update($data);
+                } else if ($type == 'epargne') {
+                    $success      = $this->epargne_model->update($data);
+                } else if ($type == 'passif') {
+                    $success      = $this->passif_model->update($data);
+                } else if ($type == 'estates') {
+                    $success      = $this->estates_model->update($data);
+                }
                 $message = '';
                 if ($success) {
-                    $message = _l('updated_successfully', _l('proche'));
+                    $message = _l('updated_successfully', _l($type));
                 }
                 echo json_encode([
                     'success' => $success,
@@ -1398,14 +1442,32 @@ class Wealth_management extends AdminController
         } 
         // add or edit.
         if ($id == '') {
-            $title = _l('add_new', _l('proches_lowercase'));
-            $data['proche'] = null;
+            $title = _l('add_new', _l($type.'_lowercase'));
+            $data[$type] = null;
         } else {
-            $data['proche'] = $this->proches_model->get($id);
-            $title = _l('edit', _l('proches_lowercase')) . ' ' . $id;
+            if($type == 'proche') {
+                $data['proche']      = $this->proches_model->add($data);
+            } else if ($type == 'usage') {
+                $data['usage'] = $this->usage_model->get($id);
+            } else if ($type == 'rapport') {
+                $data['rapport'] = $this->rapport_model->get($id);
+            } else if ($type == 'bien') {
+                $data['bien'] = $this->bien_model->get($id);
+            } else if ($type == 'assurance') {
+                $data['assurance'] = $this->assurance_model->get($id);
+            } else if ($type == 'availability') {
+                $data['availability'] = $this->availability_model->get($id);
+            } else if ($type == 'epargne') {
+                $data['epargne']      = $this->epargne_model->get($data);
+            } else if ($type == 'passif') {
+                $data['passif']      = $this->passif_model->get($data);
+            } else if ($type == 'estates') {
+                $data['estates']      = $this->estates_model->get($data);
+            }
+            $title = _l('edit', _l($type.'_lowercase')) . ' ' . $id;
         }
 
-        if(isset($_GET['patrimoine_id'])) {
+        if(isset($_GET['patrimoine_id']) && !empty($_GET['patrimoine_id'])) {
             $patrimoine_id = $_GET['patrimoine_id'];
             $patrimoine = $this->patrimoines_model->get($id); 
             
@@ -1418,7 +1480,7 @@ class Wealth_management extends AdminController
         }
         $data['id']    = $id;
         $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/proche_modal', $data);
+        $this->load->view('wealth_management/patrimonial/modals/'.$type.'_modal', $data);
     }
     
     /* Delete task from database */
@@ -1435,72 +1497,10 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-
     /*********************************** */
     /**********   Usage     ************ */
     /*********************************** */ 
-    /* Add new usage or update existing */
-    public function addUsage($id = '')
-    {
-        $data = [];
 
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->usage_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('usage'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->usage_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('usage'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('usage_lowercase'));
-            $data['usage'] = null;
-        } else {
-            $data['usage'] = $this->usage_model->get($id);
-            $title = _l('edit', _l('usage_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/usage_modal', $data);
-    }
-    
     /* Delete task from database */
     public function delete_usage($id)
     {
@@ -1515,7 +1515,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-
     /*********************************** */
     /**********   END::Usage   ********* */
     /*********************************** */
@@ -1524,68 +1523,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Rapport     ************ */
     /*********************************** */ 
-    /* Add new usage or update existing */
-    public function addRapport($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->rapport_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('rapport'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->rapport_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('rapport'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('rapport_lowercase'));
-            $data['rapport'] = null;
-        } else {
-            $data['rapport'] = $this->rapport_model->get($id);
-            $title = _l('edit', _l('rapport_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/rapport_modal', $data);
-    }
-    
     /* Delete task from database */
     public function delete_rapport($id)
     {
@@ -1607,68 +1544,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Bien      ************ */
     /*********************************** */ 
-
-    public function addBien($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->bien_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('bien'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->bien_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('bien'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('bien_lowercase'));
-            $data['bien'] = null;
-        } else {
-            $data['bien'] = $this->bien_model->get($id);
-            $title = _l('edit', _l('bien_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/bien_modal', $data);
-    }
-    
     /* Delete task from database */
     public function delete_bien($id)
     {
@@ -1683,7 +1558,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /**********   END::Bien   ********* */
     /*********************************** */
@@ -1691,68 +1565,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Assurance     ******* */
     /********************************* */ 
-
-    public function addAssurance($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->assurance_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('assurance'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->assurance_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('assurance'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('assurance_lowercase'));
-            $data['assurance'] = null;
-        } else {
-            $data['assurance'] = $this->assurance_model->get($id);
-            $title = _l('edit', _l('assurance_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/assurance_modal', $data);
-    }
-    
     public function delete_assurance($id)
     {
         $success = $this->assurance_model->delete_assurance($id);
@@ -1766,7 +1578,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /******   END::Asssurance   ******* */
     /********************************* */
@@ -1775,68 +1586,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Availability   ******* */
     /********************************* */ 
-
-    public function addAvailability($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->availability_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('availability'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->availability_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('availability'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('availability_lowercase'));
-            $data['availability'] = null;
-        } else {
-            $data['availability'] = $this->availability_model->get($id);
-            $title = _l('edit', _l('availability_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/availability_modal', $data);
-    }
-    
     public function delete_availability($id)
     {
         $success = $this->availability_model->delete_availability($id);
@@ -1850,7 +1599,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /******   END::Availability   ***** */
     /********************************* */
@@ -1858,68 +1606,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Epargne       ******* */
     /********************************* */ 
-
-    public function addEpargne($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->epargne_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('epargne'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->epargne_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('epargne'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('epargne_lowercase'));
-            $data['epargne'] = null;
-        } else {
-            $data['epargne'] = $this->epargne_model->get($id);
-            $title = _l('edit', _l('epargne_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/epargne_modal', $data);
-    }
-    
     public function delete_epargne($id)
     {
         $success = $this->epargne_model->delete_epargne($id);
@@ -1933,7 +1619,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /******   END::Epargne        ***** */
     /********************************* */
@@ -1941,68 +1626,6 @@ class Wealth_management extends AdminController
     /*********************************** */
     /**********   Estates      ******* */
     /********************************* */ 
-
-    public function addEstates($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->estates_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('estates'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->estates_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('estates'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('estates_lowercase'));
-            $data['estates'] = null;
-        } else {
-            $data['estates'] = $this->estates_model->get($id);
-            $title = _l('edit', _l('estates_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/estates_modal', $data);
-    }
-    
     public function delete_estates($id)
     {
         $success = $this->estates_model->delete_estates($id);
@@ -2016,75 +1639,12 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /******   END::Epargne        ***** */
     /********************************* */
     /*********************************** */
     /**********   Passif        ******* */
     /********************************* */ 
-
-    public function addPassif($id = '')
-    {
-        $data = [];
-
-        if ($this->input->post()) {
-            $data                = $this->input->post();
-            // $data['description'] = html_purify($this->input->post('description', false));
-            if ($id == '') {
-                $id      = $this->passif_model->add($data);
-                $_id     = false;
-                $success = false;
-                $message = '';
-                if ($id) {
-                    $success       = true;
-                    $_id           = $id;
-                    $message       = _l('added_successfully', _l('passif'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'id'      => $_id,
-                    'message' => $message,
-                ]);
-            } else {
-                $success = $this->passif_model->update($data, $id);
-                $message = '';
-                if ($success) {
-                    $message = _l('updated_successfully', _l('passif'));
-                }
-                echo json_encode([
-                    'success' => $success,
-                    'message' => $message,
-                    'id'      => $id,
-                ]);
-            }
-            die;
-        } 
-        // add or edit.
-        if ($id == '') {
-            $title = _l('add_new', _l('passif_lowercase'));
-            $data['passif'] = null;
-        } else {
-            $data['passif'] = $this->passif_model->get($id);
-            $title = _l('edit', _l('passif_lowercase')) . ' ' . $id;
-        }
-
-        if(isset($_GET['patrimoine_id'])) {
-            $patrimoine_id = $_GET['patrimoine_id'];
-            $patrimoine = $this->patrimoines_model->get($id); 
-            
-            if (!$patrimoine) {
-                blank_page(_l('patrimoine_not_found'));
-            } else {
-    
-            }
-            $data['patrimoine_id'] = $patrimoine_id;
-        }
-        $data['id']    = $id;
-        $data['title'] = $title;
-        $this->load->view('wealth_management/patrimonial/modals/passif_modal', $data);
-    }
-    
     public function delete_passif($id)
     {
         $success = $this->passif_model->delete_passif($id);
@@ -2098,7 +1658,6 @@ class Wealth_management extends AdminController
 
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
     /*********************************** */
     /******   END::Epargne        ***** */
     /********************************* */

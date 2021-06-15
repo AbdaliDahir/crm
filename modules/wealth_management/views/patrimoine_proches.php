@@ -5,7 +5,7 @@
         <div class="info-title text-left mtop5"> Vos proches </div>
       </div>
       <div class="col-xs-6 text-right"> 
-        <a href='#' class='btn btn-info pull-right mright5 new-proche-relation' onclick="new_proches_from_relation(<?php echo $patrimoine->id ?>); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-proche-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'proche'); return false;">
           <?php echo _l('new_patrimonial_proches') ?> 
         </a> 
       </div>

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addProches/' . $id), array('id' => 'proches-form')); ?> <div
-  class="modal fade<?php if (isset($proche)) { echo ' edit'; } ?>" id="_proche_modal" tabindex="-1" role="dialog"
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=proche'), array('id' => 'proche-form')); ?> <div
+  class="modal _info_modal fade<?php if (isset($proche)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
   <div class="modal-dialog" role="document">
@@ -54,14 +54,13 @@
   </div> <?php echo form_close(); ?> <script>
     $(function () {
       
-      appValidateForm($('#proches-form'), {
+      appValidateForm($('#proche-form'), {
         patr_proches_username: 'required',
         patr_proches_birthday: 'required',
         patr_proches_charge: 'required',
         patr_proches_particularites: 'required'
-      }, proche_form_handler);
+      }, patremoine_form_handler);
       init_datepicker();
-      init_selectpicker();
     });
 
   </script>

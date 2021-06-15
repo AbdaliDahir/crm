@@ -7,12 +7,12 @@
         <div class="info-title text-left mtop5"> <?php echo _l('usage_title'); ?> </div>
       </div>
       <div class="col-xs-6 text-right"> 
-        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="new_usage_from_relation(<?php echo $patrimoine->id ?>); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'usage'); return false;">
           <?php echo _l('new_patrimonial_usage') ?> 
         </a> 
-        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="new_rapport_from_relation(<?php echo $patrimoine->id ?>); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'rapport'); return false;">
           <?php echo _l('new_patrimonial_rapport') ?> 
-        <a href='#' class='btn btn-info pull-right mright5 new-bien-relation' onclick="new_bien_from_relation(<?php echo $patrimoine->id ?>); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-bien-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'bien'); return false;">
           <?php echo _l('new_patrimonial_bien') ?> 
         </a> 
       </div>

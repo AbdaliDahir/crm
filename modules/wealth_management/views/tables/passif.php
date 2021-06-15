@@ -18,7 +18,6 @@ if ($patrimoine_id != '') {
     array_push($sWhere, 'WHERE patrimoineid = ' . $patrimoine_id );
 }
 
-
 // if ($this->ci->input->post('activity_log_date')) {
 //     array_push($sWhere, 'AND date LIKE "' . $this->ci->db->escape_like_str(to_sql_date($this->ci->input->post('activity_log_date'))) . '%" ESCAPE \'!\'');
 // }
@@ -45,7 +44,7 @@ foreach ($rResult as $aRow) {
 
     $name .= '<div class="actions">';
         
-    $name .=  ' <a href="#" onclick="edit_passif(' . $aRow[$aColumns[0]] . ', ' . 3 .'); return false">' . _l('edit') . '</a>';
+    $name .=  ' <a href="#" onclick="edit_info_patremoine(' . $aRow[$aColumns[0]] . ', \'passif\'); return false">' . _l('edit') . '</a>';
     
     $name .= ' | <a href="' . admin_url('wealth_management/delete_passif/' . $aRow[$aColumns[0]]) . '" class="text-danger _delete">' . _l('delete') . '</a>';
 

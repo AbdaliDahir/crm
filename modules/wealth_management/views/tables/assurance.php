@@ -40,7 +40,7 @@ foreach ($rResult as $aRow) {
 
     $name .= '<div class="actions">';
         
-    $name .=  ' <a href="#" onclick="edit_assurance(' . $aRow[$aColumns[0]] . ', ' . 3 .'); return false">' . _l('edit') . '</a>';
+    $name .=  ' <a href="#" onclick="edit_info_patremoine(' . $aRow[$aColumns[0]] . ', \'assurance\'); return false">' . _l('edit') . '</a>';
     
     $name .= ' | <a href="' . admin_url('wealth_management/delete_assurance/' . $aRow[$aColumns[0]]) . '" class="text-danger _delete">' . _l('delete') . '</a>';
 

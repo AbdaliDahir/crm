@@ -44,7 +44,7 @@ foreach ($rResult as $aRow) {
 
     $name .= '<div class="actions">';
         
-    $name .=  ' <a href="#" onclick="edit_bien(' . $aRow[$aColumns[0]] . ', ' . 3 .'); return false">' . _l('edit') . '</a>';
+    $name .=  ' <a href="#" onclick="edit_info_patremoine(' . $aRow[$aColumns[0]] . ', \'bien\'); return false">' . _l('edit') . '</a>';
     
     $name .= ' | <a href="' . admin_url('wealth_management/delete_bien/' . $aRow[$aColumns[0]]) . '" class="text-danger _delete">' . _l('delete') . '</a>';
 

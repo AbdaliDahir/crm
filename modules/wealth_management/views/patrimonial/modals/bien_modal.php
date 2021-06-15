@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addBien/' . $id), array('id' => 'bien-form')); ?> <div
-  class="modal fade<?php if (isset($bien)) { echo ' edit'; } ?>" id="_bien_modal" tabindex="-1" role="dialog"
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=bien'), array('id' => 'bien-form')); ?> <div
+  class="modal _info_modal fade<?php if (isset($bien)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
   <div class="modal-dialog" role="document">
@@ -37,7 +37,7 @@
         patr_bien_detenteur: 'required',
         patr_bien_charges: 'required',
         patr_bien_particularites: 'required',
-      }, bien_form_handler);
+      }, patremoine_form_handler);
       init_datepicker();
     });
 

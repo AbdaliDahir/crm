@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addRapport/' . $id), array('id' => 'rapport-form')); ?> <div
-  class="modal fade<?php if (isset($rapport)) { echo ' edit'; } ?>" id="_rapport_modal" tabindex="-1" role="dialog"
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=rapport'), array('id' => 'rapport-form')); ?> <div
+  class="modal _info_modal fade<?php if (isset($rapport)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
   <div class="modal-dialog" role="document">
@@ -46,7 +46,7 @@
         patr_rapport_duree: 'required',
         patr_rapport_taux: 'required',
         patr_rapport_deces: 'required',
-      }, rapport_form_handler);
+      }, patremoine_form_handler);
       init_datepicker();
     });
   </script>

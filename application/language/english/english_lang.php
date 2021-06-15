@@ -3898,10 +3898,8 @@ $lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*';
 $lang['patremoine_bien_charges'] = 'Charges';
 $lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
 
-
 //passifs
 $lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
-
 $lang['patremoine_passifs_designation'] = 'Désignation';
 $lang['patremoine_passifs_capital'] = 'Capital emprunté ou restant dû';
 $lang['patremoine_passifs_souscription'] = 'Durée';
