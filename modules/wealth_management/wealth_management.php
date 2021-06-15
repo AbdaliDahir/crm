@@ -65,7 +65,7 @@ function wealth_management_module_init_menu_items()
         //$CI->load->model(MODULE_WEALTH_MANAGEMENT . '/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_info_model');
-        $CI->load->model('wealth_management/proches_model');
+
         $CI->app_menu->add_sidebar_menu_item('wealth-management', [
             'collapse' => true,
             'name'     => 'Wealth Management',

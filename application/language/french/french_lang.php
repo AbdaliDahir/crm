@@ -3880,3 +3880,25 @@ $lang['patremoine_usage_capital'] = 'Capital emprunté ou restant dû';
 $lang['patremoine_usage_duree'] = 'Durée';
 $lang['patremoine_usage_taux'] = 'Taux';
 $lang['patremoine_usage_deces '] = 'Ass. ** Décès';
+
+// rapport
+$lang['new_patrimonial_rapport'] = 'new rapport';
+$lang['rapport'] = 'rapport';
+$lang['rapport_lowercase'] = 'rapport';
+$lang['patremoine_rapport_designation'] = 'Désignation';
+$lang['patremoine_rapport_valeur'] = 'valuer(en $)';
+$lang['patremoine_rapport_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patremoine_rapport_revenus_fiscal'] = 'Revenus et Fiscalité';
+$lang['patremoine_rapport_charges'] = 'Charges';
+$lang['patremoine_rapport_capital'] = 'Capital emprunté ou restant dû';
+$lang['patremoine_rapport_duree'] = 'Durée';
+$lang['patremoine_rapport_taux'] = 'Taux';
+$lang['patremoine_rapport_deces'] = 'Ass. ** Décès';
+
+
+//bien
+$lang['patremoine_bien_designation'] = 'Désignation';
+$lang['patremoine_bien_valeur'] = 'valuer(en $)';
+$lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
+$lang['patremoine_bien_charges'] = 'Charges';
+$lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';

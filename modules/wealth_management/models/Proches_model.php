@@ -4,8 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Proches_model extends App_Model
 {
-    private $patrimoine_settings;
-
     public function __construct()
     {
         parent::__construct();
@@ -57,7 +55,8 @@ class Proches_model extends App_Model
         }
         return false;
     }
-        /**
+    
+    /**
      * Get task by id
      * @param  mixed $id task id
      * @return object
