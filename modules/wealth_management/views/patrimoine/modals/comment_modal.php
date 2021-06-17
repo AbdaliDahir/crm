@@ -29,8 +29,9 @@
     </div>
   </div> <?php echo form_close(); ?> <script>
     $(function () {
-      
-      appValidateForm($('#comment-form'), {}, comment_form_handler);
+      appValidateForm($('#comment-form'), {
+        patr_comment_text: 'required'
+      }, comment_form_handler);
     });
 
   </script>

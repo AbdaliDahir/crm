@@ -16,15 +16,9 @@
           <?php echo _l('new_patrimoine_bien') ?> 
         </a> 
 
-        <?php if (isset($usage_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="edit_comment_patremoine(<?php echo $usage_comment->id ?>, 'usage'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'usage'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
+        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="edit_comment_patremoine(<?php echo isset($usage_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($usage_comment) ? $usage_comment->id : 0 ?>, 'usage'); return false;">
+          <?php echo isset($usage_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a>  
 
       </div>
     </div>
@@ -48,15 +42,9 @@
         <div class="info-title text-left mtop5"> <?php echo _l('rapport_title'); ?> </div>
       </div>
       <div class="col-xs-6 text-right"> 
-        <?php if (isset($rapport_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="edit_comment_patremoine(<?php echo $rapport_comment->id ?>, 'rapport'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'rapport'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
+        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="edit_comment_patremoine(<?php echo isset($rapport_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($rapport_comment) ? $rapport_comment->id : 0 ?>, 'rapport'); return false;">
+          <?php echo isset($rapport_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a> 
       </div>
     </div>
   </div>

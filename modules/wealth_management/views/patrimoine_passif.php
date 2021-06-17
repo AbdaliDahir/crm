@@ -31,15 +31,9 @@
           <?php echo _l('new_patrimoine_assurance') ?> 
         </a> 
         
-        <?php if (isset($assurance_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-assurance-relation' onclick="edit_comment_patremoine(<?php echo $assurance_comment->id ?>, 'assurance'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-assurance-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'assurance'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
+        <a href='#' class='btn btn-info pull-right mright5 new-assurance-relation' onclick="edit_comment_patremoine(<?php echo isset($assurance_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($assurance_comment) ? $assurance_comment->id : 0 ?>, 'assurance'); return false;">
+        <?php echo isset($assurance_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a>  
         
       </div>
     </div>
@@ -67,15 +61,9 @@
           <?php echo _l('new_patrimoine_epargne') ?> 
         </a> 
 
-        <?php if (isset($epargne_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-epargne-relation' onclick="edit_comment_patremoine(<?php echo $epargne_comment->id ?>, 'epargne'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-epargne-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'epargne'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
+        <a href='#' class='btn btn-info pull-right mright5 new-epargne-relation' onclick="edit_comment_patremoine(<?php echo isset($epargne_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($epargne_comment) ? $epargne_comment->id : 0 ?>, 'epargne'); return false;">
+        <?php echo isset($epargne_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a>  
 
       </div>
     </div>
@@ -103,15 +91,9 @@
           <?php echo _l('new_patrimoine_estates') ?> 
         </a> 
 
-        <?php if (isset($estates_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-estates-relation' onclick="edit_comment_patremoine(<?php echo $estates_comment->id ?>, 'estates'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-estates-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'estates'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
+        <a href='#' class='btn btn-info pull-right mright5 new-estates-relation' onclick="edit_comment_patremoine(<?php echo isset($estates_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($estates_comment) ? $estates_comment->id : 0 ?>, 'estates'); return false;">
+        <?php echo isset($estates_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?>  
+        </a>  
 
       </div>
     </div>
@@ -138,16 +120,11 @@
         <a href='#' class='btn btn-info pull-right mright5 new-availability-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'availability'); return false;">
           <?php echo _l('new_patrimoine_availability') ?> 
         </a> 
+        
+        <a href='#' class='btn btn-info pull-right mright5 new-availability-relation' onclick="edit_comment_patremoine(<?php echo isset($availability_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($availability_comment) ? $availability_comment->id : 0 ?>, 'availability'); return false;">
+        <?php echo isset($availability_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a>  
 
-        <?php if (isset($availability_comment)) { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-availability-relation' onclick="edit_comment_patremoine(<?php echo $availability_comment->id ?>, 'availability'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a> 
-        <?php } else { ?>
-          <a href='#' class='btn btn-info pull-right mright5 new-availability-relation' onclick="new_patremoione_comment(<?php echo $patrimoine->id ?>, 'availability'); return false;">
-            <?php echo _l('new_patrimoine_comment') ?> 
-          </a> 
-        <?php } ?>
       </div>
     </div>
   </div>

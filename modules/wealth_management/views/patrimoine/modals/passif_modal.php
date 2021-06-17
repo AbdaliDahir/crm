@@ -20,7 +20,7 @@
             <?php echo render_input('patr_passifs_duree', 'patremoine_passifs_duree',  isset($passif) ? $passif->patr_passifs_duree : '','text'); ?>
             <?php echo render_input('patr_passifs_taux', 'patremoine_passifs_taux',  isset($passif) ? $passif->patr_passifs_taux : '','text'); ?>
             <?php echo render_input('patr_passifs_deces', 'patremoine_passifs_deces',  isset($passif) ? $passif->patr_passifs_deces : '','text'); ?>
-            <?php echo render_input('patr_passifs_particularites', 'patremoine_passifs_particularite',  isset($passif) ? $passif->patr_passifs_particularites : '','text'); ?>
+            <?php echo render_input('patr_passifs_particularites', 'patremoine_passifs_particularites',  isset($passif) ? $passif->patr_passifs_particularites : '','text'); ?>
           </div>
         </div>
       </div>
@@ -34,10 +34,10 @@
       
       appValidateForm($('#passif-form'), {
         patr_passifs_designation: 'required',
-        atr_passifs_capital: 'required',
+        patr_passifs_capital: 'required',
         patr_passifs_duree: 'required',
-        patremoine_passifs_taux: 'required',
-        patremoine_passifs_deces: 'required',
+        patr_passifs_taux: 'required',
+        patr_passifs_deces: 'required',
         patr_passifs_particularites: 'required',
       }, patremoine_form_handler);
       init_datepicker();

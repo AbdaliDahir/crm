@@ -55,10 +55,15 @@
     $(function () {
       
       appValidateForm($('#proche-form'), {
-        patr_proches_username: 'required',
-        patr_proches_birthday: 'required',
-        patr_proches_charge: 'required',
-        patr_proches_particularites: 'required'
+        rules: {
+          patr_proches_username: 'required',
+          patr_proches_birthday: {
+            required: true,
+            date: true
+          },
+          patr_proches_charge: 'required',
+          patr_proches_particularites: 'required'
+        }
       }, patremoine_form_handler);
       init_datepicker();
     });

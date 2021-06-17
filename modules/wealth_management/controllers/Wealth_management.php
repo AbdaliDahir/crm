@@ -1836,10 +1836,10 @@ class Wealth_management extends AdminController
 
         // add or edit.
         if ($id == '') {
-            $title = _l('add_new', _l('bien_qst_lowercase'));
+            $title = _l('bien_qst_title');
         } else {
             $data['bien_qst']      = $this->bien_question_model->get($id);
-            $title = _l('edit', _l('bien_qst_lowercase')) . ' ' . $id;
+            $title = _l('bien_qst_title') . ' ' . $id;
         }
 
         if(isset($_GET['patrimoine_id']) && !empty($_GET['patrimoine_id'])) {

@@ -9,9 +9,9 @@
           <?php echo _l('new_patrimoine_proches') ?> 
         </a> 
         
-          <a href='#' class='btn btn-info pull-right mright5 new-proche-relation' onclick="edit_comment_patremoine(<?php echo isset($proche_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($proche_comment) ? $proche_comment->id : 0 ?>, 'proches'); return false;">
-            <?php echo _l('update_patrimoine_comment') ?> 
-          </a>  
+        <a href='#' class='btn btn-info pull-right mright5 new-proche-relation' onclick="edit_comment_patremoine(<?php echo isset($proche_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($proche_comment) ? $proche_comment->id : 0 ?>, 'proches'); return false;">
+        <?php echo isset($proche_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?>  
+        </a>  
       </div>
     </div>
   </div>
