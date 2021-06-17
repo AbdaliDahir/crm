@@ -386,33 +386,34 @@
                         <hr class="hr-panel-heading" />
                         <div class="row">
                             <div class="col-md-6">
-                                <?php echo render_input('patr_me_firstname','patrimonial_me_firstname', isset($patrimoine->info) ? $patrimoine->info->patr_me_firstname : '','text'); ?>
-                                <?php echo render_input('patr_me_lastname','patrimonial_me_lastname', isset($patrimoine->info) ? $patrimoine->info->patr_me_lastname : '','text'); ?>
-                                <?php echo render_date_input('patr_me_birthday','patrimonial_me_date_birth',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_birthday) : ''); ?>
+                                <?php echo form_hidden('info_id', isset($patrimoine->info) ? $patrimoine->info->id : '') ?>
+                                <?php echo render_input('patr_me_firstname','patrimoine_me_firstname', isset($patrimoine->info) ? $patrimoine->info->patr_me_firstname : '','text'); ?>
+                                <?php echo render_input('patr_me_lastname','patrimoine_me_lastname', isset($patrimoine->info) ? $patrimoine->info->patr_me_lastname : '','text'); ?>
+                                <?php echo render_date_input('patr_me_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_birthday) : ''); ?>
     
-                                <?php echo render_input('patr_me_profession','patrimonial_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_me_profession: '','text'); ?>
-                                <?php echo render_date_input('patr_me_depart','patrimonial_conjoint_date_depart',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_depart) : ''); ?>
-                                <?php echo render_input('patr_me_nss','patrimonial_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_me_nss : '','text'); ?> 
-                                <?php echo render_textarea('patr_me_address','patrimonial_conjoint_adresse',  isset($patrimoine->info) ? $patrimoine->info->patr_me_address : ''); ?> 
+                                <?php echo render_input('patr_me_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_me_profession: '','text'); ?>
+                                <?php echo render_date_input('patr_me_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_depart) : ''); ?>
+                                <?php echo render_input('patr_me_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_me_nss : '','text'); ?> 
+                                <?php echo render_textarea('patr_me_address','patrimoine_conjoint_adresse',  isset($patrimoine->info) ? $patrimoine->info->patr_me_address : ''); ?> 
     
-                                <?php echo render_input('patr_me_tele_perso','patrimonial_conjoint_tel_perso',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_perso : '', 'text'); ?> 
-                                <?php echo render_input('patr_me_tele_m','patrimonial_conjoint_tel_mobile_m',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_m : '', 'text'); ?> 
-                                <?php echo render_input('patr_me_tele_mme','patrimonial_conjoint_tel_mobile_mme',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_mme : '', 'text'); ?> 
-                                <?php echo render_input('patr_me_email_one','patrimonial_conjoint_email_one',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_one : '', 'email'); ?> 
-                                <?php echo render_input('patr_me_email_two','patrimonial_conjoint_email_two',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_two : '', 'email'); ?> 
+                                <?php echo render_input('patr_me_tele_perso','patrimoine_conjoint_tel_perso',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_perso : '', 'text'); ?> 
+                                <?php echo render_input('patr_me_tele_m','patrimoine_conjoint_tel_mobile_m',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_m : '', 'text'); ?> 
+                                <?php echo render_input('patr_me_tele_mme','patrimoine_conjoint_tel_mobile_mme',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_mme : '', 'text'); ?> 
+                                <?php echo render_input('patr_me_email_one','patrimoine_conjoint_email_one',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_one : '', 'email'); ?> 
+                                <?php echo render_input('patr_me_email_two','patrimoine_conjoint_email_two',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_two : '', 'email'); ?> 
                             </div>
                             <div class="col-md-6">
-                                <?php echo render_input('patr_partner_firstname','patrimonial_me_firstname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_firstname : '','text'); ?>
-                                <?php echo render_input('patr_partner_lastname','patrimonial_me_lastname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_lastname : '','text'); ?>
-                                <?php echo render_date_input('patr_partner_birthday','patrimonial_me_date_birth',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_birthday : ''); ?> 
+                                <?php echo render_input('patr_partner_firstname','patrimoine_me_firstname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_firstname : '','text'); ?>
+                                <?php echo render_input('patr_partner_lastname','patrimoine_me_lastname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_lastname : '','text'); ?>
+                                <?php echo render_date_input('patr_partner_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_birthday : ''); ?> 
     
-                                <?php echo render_input('patr_partner_profession','patrimonial_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_profession : '','text'); ?>
-                                <?php echo render_date_input('patr_partner_depart','patrimonial_conjoint_date_depart',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_depart : ''); ?>
-                                <?php echo render_input('patr_partner_nss','patrimonial_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_nss : '','text'); ?> 
-                                <?php echo render_date_input('patr_partner_precedent_marriage_date','patrimonial_conjoint_date_mariage',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_precedent_marriage_date : ''); ?> 
-                                <?php echo render_input('patr_partner_regime','patrimonial_conjoint_regime', isset($patrimoine->info) ? $patrimoine->info->patr_partner_regime : '','text'); ?> 
+                                <?php echo render_input('patr_partner_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_profession : '','text'); ?>
+                                <?php echo render_date_input('patr_partner_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_depart : ''); ?>
+                                <?php echo render_input('patr_partner_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_nss : '','text'); ?> 
+                                <?php echo render_date_input('patr_partner_precedent_marriage_date','patrimoine_conjoint_date_mariage',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_precedent_marriage_date : ''); ?> 
+                                <?php echo render_input('patr_partner_regime','patrimoine_conjoint_regime', isset($patrimoine->info) ? $patrimoine->info->patr_partner_regime : '','text'); ?> 
                                 <div class="input-group">
-                                    <h3><?php echo _l('patrimonial_conjoint_donation'); ?></h3>
+                                    <h3><?php echo _l('patrimoine_conjoint_donation'); ?></h3>
                                     <div class="radio">
                                         <input type="radio" name="patr_partner_donation" id="patr_partner_donation_no"
                                         value="<?php echo isset($patrimoine->info) ? $patrimoine->info->patr_partner_donation : 0 ?>"
@@ -429,11 +430,11 @@
                                 </div>
                                 
                                 <div> 
-                                    <h6 class="font-weight-bold mbot15"><?php echo _l('patrimonial_conjoint_more_question'); ?> </h6>
-                                    <?php echo render_date_input('patr_partner_marriage_date','patrimonial_conjoint_more_question_mariage_date',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_date : ''); ?> 
-                                    <?php echo render_input('patr_partner_marriage_duration','patrimonial_conjoint_more_question_mariage_durée',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_duration : '','number'); ?> 
-                                    <?php echo render_input('patr_partner_situtation','patrimonial_conjoint_more_question_situation',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_situtation : '','text'); ?> 
-                                    <?php echo render_input('patr_partner_finance','patrimonial_conjoint_more_question_finance',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_finance : '','text'); ?> 
+                                    <h6 class="font-weight-bold mbot15"><?php echo _l('patrimoine_conjoint_more_question'); ?> </h6>
+                                    <?php echo render_date_input('patr_partner_marriage_date','patrimoine_conjoint_more_question_mariage_date',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_date : ''); ?> 
+                                    <?php echo render_input('patr_partner_marriage_duration','patrimoine_conjoint_more_question_mariage_durée',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_duration : '','number'); ?> 
+                                    <?php echo render_input('patr_partner_situtation','patrimoine_conjoint_more_question_situation',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_situtation : '','text'); ?> 
+                                    <?php echo render_input('patr_partner_finance','patrimoine_conjoint_more_question_finance',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_finance : '','text'); ?> 
                                 </div>  
                             </div> 
                         </div>

@@ -3777,80 +3777,156 @@ $lang['estimate_convert_to_project']                          = 'Convert to Proj
 $lang['estimate_items_convert_to_tasks']                      = 'Items that will be converted to tasks';
 
 # patremoin
-$lang['new_patrimonial']  = 'new user info';
-$lang['update_patrimonial']  = 'update your information';
-$lang['patrimonial_about']  = 'about';
+$lang['new_patrimoine']  = 'new user info';
+$lang['update_patrimoine']  = 'update your information';
+$lang['patrimoine_about']  = 'about';
 ///tabs
-$lang['patrimonial_info']  = 'information';
-$lang['patrimonial_proches']  = 'proches';
-$lang['patrimonial_votre']  = 'patrimoine';
-$lang['patrimonial_passif']  = 'passif';
-$lang['patrimonial_fiscale']  = 'Particularités fiscales';
-$lang['patrimonial_budget']  = 'budget';
-$lang['patrimonial_administrative']  = 'Situation administrative';
-$lang['patrimonial_taches']  = 'taches';
-$lang['patrimonial_childs']  = 'children';
+$lang['patrimoine_info']  = 'information';
+$lang['patrimoine_proches']  = 'proches';
+$lang['patrimoine_votre']  = 'patrimoine';
+$lang['patrimoine_passif']  = 'passif';
+$lang['patrimoine_fiscale']  = 'Particularités fiscales';
+$lang['patrimoine_budget']  = 'budget';
+$lang['patrimoine_administrative']  = 'Situation administrative';
+$lang['patrimoine_taches']  = 'taches';
+$lang['patrimoine_childs']  = 'children';
 /// new data
-$lang['new_patrimonial_proches']  = 'new proche';
+$lang['new_patrimoine_proches']  = 'new proche';
 ///vous form
-$lang['patrimonial_me'] = 'About You';
-$lang['patrimonial_me_firstname'] = 'First Name :';
-$lang['patrimonial_me_lastname'] = 'Last Name :';
-$lang['patrimonial_me_date_birth'] = 'Date of birth';
+$lang['patrimoine_me'] = 'About You';
+$lang['patrimoine_me_firstname'] = 'First Name :';
+$lang['patrimoine_me_lastname'] = 'Last Name :';
+$lang['patrimoine_me_date_birth'] = 'Date of birth';
 /// Partner
 
-$lang['patrimonial_partner'] = 'you';
-$lang['patrimonial_me_firstname'] = 'Prénom :';
-$lang['patrimonial_me_lastname'] = 'Nom :';
-$lang['patrimonial_me_date_birth'] = 'Date de naissance :';
+$lang['patrimoine_partner'] = 'you';
+$lang['patrimoine_me_firstname'] = 'Prénom :';
+$lang['patrimoine_me_lastname'] = 'Nom :';
+$lang['patrimoine_me_date_birth'] = 'Date de naissance :';
 
 /// Votre conjoint
-$lang['patrimonial_conjoint'] = 'Votre conjoint';
+$lang['patrimoine_conjoint'] = 'Votre conjoint';
 
-$lang['patrimonial_conjoint_situation'] = 'Situation familiale :';
-$lang['patrimonial_conjoint_situation_marie'] = 'Marié';
-$lang['patrimonial_conjoint_situation_celibataire'] = 'Célibataire';
-$lang['patrimonial_conjoint_situation_diverce'] = 'Divorcé';
-$lang['patrimonial_conjoint_situation_veuf'] = 'Veuf';
-$lang['patrimonial_conjoint_situation_union'] = 'Union libre';
-$lang['patrimonial_conjoint_situation_pacs'] = 'PACS';
+$lang['patrimoine_conjoint_situation'] = 'Situation familiale :';
+$lang['patrimoine_conjoint_situation_marie'] = 'Marié';
+$lang['patrimoine_conjoint_situation_celibataire'] = 'Célibataire';
+$lang['patrimoine_conjoint_situation_diverce'] = 'Divorcé';
+$lang['patrimoine_conjoint_situation_veuf'] = 'Veuf';
+$lang['patrimoine_conjoint_situation_union'] = 'Union libre';
+$lang['patrimoine_conjoint_situation_pacs'] = 'PACS';
 
-$lang['patrimonial_conjoint_profession'] = 'Profession :';
-$lang['patrimonial_conjoint_date_depart'] = 'Date dedépart en retraite :';
-$lang['patrimonial_conjoint_NSS'] = 'N°SS:';
-$lang['patrimonial_conjoint_adresse'] = 'Adresse :';
+$lang['patrimoine_conjoint_profession'] = 'Profession :';
+$lang['patrimoine_conjoint_date_depart'] = 'Date dedépart en retraite :';
+$lang['patrimoine_conjoint_NSS'] = 'N°SS:';
+$lang['patrimoine_conjoint_adresse'] = 'Adresse :';
 
-$lang['patrimonial_conjoint_date_mariage'] = 'Date de mariage :';
-$lang['patrimonial_conjoint_regime'] = 'Régime matrimonial :';
-$lang['patrimonial_conjoint_donation'] = 'Donation entre époux :';
-// $lang['patrimonial_conjoint_donation_yes'] = 'Oui';
-// $lang['patrimonial_conjoint_donation_no'] = 'Non';
-// $lang['patrimonial_conjoint_modification'] = 'Si Modification du régime & date :';
+$lang['patrimoine_conjoint_date_mariage'] = 'Date de mariage :';
+$lang['patrimoine_conjoint_regime'] = 'Régime matrimonial :';
+$lang['patrimoine_conjoint_donation'] = 'Donation entre époux :';
+// $lang['patrimoine_conjoint_donation_yes'] = 'Oui';
+// $lang['patrimoine_conjoint_donation_no'] = 'Non';
+// $lang['patrimoine_conjoint_modification'] = 'Si Modification du régime & date :';
 
-$lang['patrimonial_conjoint_tel_perso'] = 'Tél perso :';
-$lang['patrimonial_conjoint_tel_mobile_m'] = 'Tél mobile : M ';
-$lang['patrimonial_conjoint_tel_mobile_mme'] = 'Tél mobile : Mme ';
-$lang['patrimonial_conjoint_email_one'] = 'E-mail Addresse First :';
-$lang['patrimonial_conjoint_email_two'] = 'E-mail Addresse Second :';
+$lang['patrimoine_conjoint_tel_perso'] = 'Tél perso :';
+$lang['patrimoine_conjoint_tel_mobile_m'] = 'Tél mobile : M ';
+$lang['patrimoine_conjoint_tel_mobile_mme'] = 'Tél mobile : Mme ';
+$lang['patrimoine_conjoint_email_one'] = 'E-mail Addresse First :';
+$lang['patrimoine_conjoint_email_two'] = 'E-mail Addresse Second :';
 
-$lang['patrimonial_conjoint_more_question'] = 'Questions complémentaires :';
-$lang['patrimonial_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
-$lang['patrimonial_conjoint_more_question_mariage_durée'] = 'Quelle est la durée des mariages précédents ?';
-$lang['patrimonial_conjoint_more_question_situation'] = 'Quelle est la situation du premier conjoint ?';
-$lang['patrimonial_conjoint_more_question_finance'] = 'Quelles conséquences financières du jugement de divorce ?';
+$lang['patrimoine_conjoint_more_question'] = 'Questions complémentaires :';
+$lang['patrimoine_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
+$lang['patrimoine_conjoint_more_question_mariage_durée'] = 'Quelle est la durée des mariages précédents ?';
+$lang['patrimoine_conjoint_more_question_situation'] = 'Quelle est la situation du premier conjoint ?';
+$lang['patrimoine_conjoint_more_question_finance'] = 'Quelles conséquences financières du jugement de divorce ?';
 
 $lang['add_info'] = 'save information';
 $lang['patrimoines_information_updated_success'] = 'information updated success for patrimoine with id :';
 
-//proches
-// proches data
+//assurance
+$lang['assurance'] = 'Assurance';
+$lang['assurance_lowercase'] = 'assurance';
+$lang['assurance_title'] = 'Assurance';
+$lang['new_patrimoine_assurance'] = 'new assurance';
+$lang['patremoine_passifs_assurance_designation'] = 'Désignation';
+$lang['patremoine_passifs_assurance_capital'] = 'Valeur de rachat ou capital assuré';
+$lang['patremoine_passifs_assurance_souscription'] = 'Date de souscription';
+$lang['patremoine_passifs_assurance_assure'] = 'Assuré';
+$lang['patremoine_passifs_assurance_benef'] = 'Bénéficiaires';
+$lang['patremoine_passifs_assurance_particularites'] = 'Particularités (type de contrat, taux de capi., montant des primes, etc.)';
+
+// Availability
+$lang['availability'] = 'Availability';
+$lang['availability_lowercase'] = 'availability';
+$lang['availability_title'] = 'Disponibilités (comptes courants, comptes à terme, SICAV de trésorerie, CEL, livrets et CODEVI, etc.)';
+$lang['new_patrimoine_availability'] = 'new availability';
+$lang['patremoine_passifs_availability_designation'] = 'Désignation';
+$lang['patremoine_passifs_availability_valeur'] = 'Valeur (en €)';
+$lang['patremoine_passifs_availability_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patremoine_passifs_availability_particularites'] = 'Particularités (différés, etc.)';
+
+//bien
+$lang['bien'] = 'Bien';
+$lang['bien_lowercase'] = 'bien';
+$lang['bien_title'] = 'Biens professionnels (droits sociaux, fonds de commerce, etc.), placements fonciers (terrains, GFA, forêts)';
+$lang['new_patrimoine_bien'] = 'new Bien professionnel';
+$lang['patremoine_bien_designation'] = 'Désignation';
+$lang['patremoine_bien_valeur'] = 'valuer(en $)';
+$lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
+$lang['patremoine_bien_charges'] = 'Charges';
+$lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
+
+// Budget
+$lang['budget'] = 'Budget';
+$lang['budget_lowercase'] = 'budget';
+$lang['budget_title'] = 'Votre budget';
+$lang['new_patrimoine_budget'] = 'new budget';
+$lang['patremoine_budget_designation'] = 'Désignation';
+$lang['patremoine_budget_montant'] = 'Montant annuel   en €';
+
+// Epargne
+$lang['epargne'] = 'Épargne';
+$lang['epargne_lowercase'] = 'épargne';
+$lang['epargne_title'] = 'Épargne et dépôt à moyen et long terme (PEL, PEP bancaire, PEE, etc.)';
+$lang['new_patrimoine_epargne'] = 'new Épargne';
+$lang['patremoine_passifs_epargne_designation'] = 'Désignation';
+$lang['patremoine_passifs_epargne_valeur'] = 'Valeur (en €)';
+$lang['patremoine_passifs_epargne_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patremoine_passifs_epargne_date_ouverture'] = 'Date d\'ouverture';
+$lang['patremoine_passifs_epargne_associee'] = 'Épargne associée';
+$lang['patremoine_passifs_epargne_particularites'] = 'Particularités (taux de rendement, primes, etc.)';
+
+// Estates
+$lang['estates'] = 'Valeurs mobilières';
+$lang['estates_lowercase'] = 'valeurs mobilières';
+$lang['estates_title'] = 'Valeurs mobilières (OPCVM, actions, obligations, FCPI, PEA, etc.)';
+$lang['new_patrimoine_estates'] = 'new mobilières';
+$lang['patremoine_passifs_estates_designation'] = 'Désignation';
+$lang['patremoine_passifs_estates_valeur'] = 'Valeur (en €)';
+$lang['patremoine_passifs_estates_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patremoine_passifs_estates_revenus'] = 'Revenus distribués';
+$lang['patremoine_passifs_estates_revenus_fiscal'] = 'Fiscalité ou revenu (PFL, IR, actions internationales, etc.)';
+$lang['patremoine_passifs_estates_taux'] = 'Taux de revalorisation estimé';
+
+//passifs
+$lang['passif'] = 'Passifs';
+$lang['passif_lowercase'] = 'passifs';
+$lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
+$lang['new_patrimoine_passif'] = 'new passifs';
+$lang['patremoine_passifs_designation'] = 'Désignation';
+$lang['patremoine_passifs_capital'] = 'Capital emprunté ou restant dû';
+$lang['patremoine_passifs_duree'] = 'Durée';
+$lang['patremoine_passifs_taux'] = 'Taux';
+$lang['patremoine_passifs_deces'] = 'Ass. ** Décès';
+$lang['patremoine_passifs_particularites'] = 'Particularités';
+
+// proches
 $lang['proches_username'] = 'prenom nom fr';
 $lang['proches_birthday'] = 'birthday fr';
 $lang['proches_lien'] = 'Lien de parenté fr';
 $lang['proches_charge'] = 'A charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
-$lang['proches_parente_e_petit'] = 'Enfant/petit';
-$lang['proches_parente_e_parent'] = 'Enfant/parent';
+$lang['proches_parente_e_petit'] = 'Enfant';
+$lang['proches_parente_e_parent'] = 'Parent';
 $lang['proches_contact_tel'] = 'Tele';
 $lang['proches_contact_email'] = 'Email';
 $lang['proches_contact_address'] = 'Address';
@@ -3863,7 +3939,7 @@ $lang['proche_contact_no']       = 'No';
 
 // usage
 $lang['usage_title'] = 'Biens d’usage (résidence principale, résidence secondaire, meubles meublants, autres).';
-$lang['new_patrimonial_usage'] = 'new usage';
+$lang['new_patrimoine_usage'] = 'new usage';
 $lang['usage'] = 'Usage';
 $lang['usage_lowercase'] = 'usage';
 $lang['patremoine_usage_designation'] = 'Désignation';
@@ -3877,7 +3953,7 @@ $lang['patremoine_usage_deces'] = 'Ass. ** Décès';
 
 // rapport
 $lang['rapport_title'] = 'Immobilier de rapport (locatif, SCI, SCPI, etc.)';
-$lang['new_patrimonial_rapport'] = 'new rapport';
+$lang['new_patrimoine_rapport'] = 'new rapport';
 $lang['rapport'] = 'rapport';
 $lang['rapport_lowercase'] = 'rapport';
 $lang['patremoine_rapport_designation'] = 'Désignation';
@@ -3890,19 +3966,22 @@ $lang['patremoine_rapport_duree'] = 'Durée';
 $lang['patremoine_rapport_taux'] = 'Taux';
 $lang['patremoine_rapport_deces'] = 'Ass. ** Décès';
 
-//bien
-$lang['bien_title'] = 'Biens professionnels (droits sociaux, fonds de commerce, etc.), placements fonciers (terrains, GFA, forêts)';
-$lang['patremoine_bien_designation'] = 'Désignation';
-$lang['patremoine_bien_valeur'] = 'valuer(en $)';
-$lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
-$lang['patremoine_bien_charges'] = 'Charges';
-$lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
-
-//passifs
-$lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
-$lang['patremoine_passifs_designation'] = 'Désignation';
-$lang['patremoine_passifs_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_passifs_souscription'] = 'Durée';
-$lang['patremoine_passifs_assure'] = 'Taux';
-$lang['patremoine_passifs_benef'] = 'Ass. ** Décès';
-$lang['patremoine_passifs_particularites'] = 'Particularités';
+//situation
+$lang['patremoine_situation_cfe'] = 'CFE';
+$lang['patremoine_situation_cotisation_plus'] = 'Avez-vous 15 ans de cotisation';
+$lang['patremoine_situation_cotisation_minus'] = 'Pension de Réversion 15 ans de cotisation';
+$lang['patremoine_situation_cnss'] = 'CNSS';
+$lang['patremoine_situation_cnarefe'] = 'CNAREFE';
+$lang['patremoine_situation_capitone'] = 'CAPITONE'; 
+$lang['patremoine_situation_rapatriement'] = 'ASSURANCE RAPATRIEMENT';  
+$lang['patremoine_situation_mutuelle'] = 'MUTUELLE FRANCAISE';
+$lang['patremoine_situation_passport'] = 'PASSEPORT SCANNÉ';  
+$lang['patremoine_situation_sejour'] = 'CARTE DE SEJOUR SCANNÉE'; 
+$lang['patremoine_situation_permis'] = 'PERMIS DE CONDUIRE MAROCAIN';        
+$lang['patremoine_situation_assurance_auto'] = 'ASSURANCE AUTO';
+$lang['patremoine_situation_assurance_habitation'] = 'ASSURANCE HABITATION';
+$lang['patremoine_situation_consulat'] = 'INSCRIPTION CONSULAT';
+$lang['patremoine_situation_ufe'] = 'UFE carte à fournir si contrat rapatriement SAHAM';
+$lang['patremoine_situation_csg'] = 'CSG / CRDS';
+$lang['patremoine_situation_Prlvt'] = 'Prlvt';
+$lang['patremoine_situation_cexonéré'] = 'exonéré';

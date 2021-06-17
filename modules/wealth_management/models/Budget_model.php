@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Passif_model extends App_Model
+class Budget_model extends App_Model
 {
     private $values;
 
@@ -11,12 +11,8 @@ class Passif_model extends App_Model
         parent::__construct();
 
         $this->values = [
-            'patr_passifs_designation',
-            'patr_passifs_capital',
-            'patr_passifs_duree',
-            'patr_passifs_taux',
-            'patr_passifs_deces',
-            'patr_passifs_particularites',
+            'patr_budget_designation',
+            'patr_budget_montant'
         ];
     }
 
@@ -36,7 +32,7 @@ class Passif_model extends App_Model
         $data['created_date'] = date('Y-m-d H:i:s');
         $data['updated_date'] = date('Y-m-d H:i:s');
         
-        $this->db->insert(db_prefix() . 'patrimoines_passifs', $data);
+        $this->db->insert(db_prefix() . 'patrimoines_budget', $data);
         $patrimoines_info_id = $this->db->insert_id();
 
         if ($patrimoines_info_id) {
@@ -55,9 +51,9 @@ class Passif_model extends App_Model
     { 
         $this->db->where('id', $id);
         $this->db->where($where);
-        $passif = $this->db->get(db_prefix() . 'patrimoines_passifs')->row();
+        $budget = $this->db->get(db_prefix() . 'patrimoines_budget')->row();
 
-        return hooks()->apply_filters('get_passifs', $passif);
+        return hooks()->apply_filters('get_budget', $budget);
     }
 
     public function update($data)
@@ -67,7 +63,7 @@ class Passif_model extends App_Model
 
         $this->db->select('patrimoineid');
         $this->db->where('id', $postId);
-        $exist_post_patrimoine_id = $this->db->get(db_prefix() . 'patrimoines_passifs')->row()->patrimoineid;
+        $exist_post_patrimoine_id = $this->db->get(db_prefix() . 'patrimoines_budget')->row()->patrimoineid;
 
         if( $exist_post_patrimoine_id == $patrimoine_id) {
             // remova some element from array before save
@@ -81,7 +77,7 @@ class Passif_model extends App_Model
         }
         
         $this->db->where('id', $data['id']);
-        $_id = $this->db->update(db_prefix() . 'patrimoines_passifs', $data); 
+        $_id = $this->db->update(db_prefix() . 'patrimoines_budget', $data); 
 
         if ($_id) { 
             return $_id;
@@ -95,10 +91,10 @@ class Passif_model extends App_Model
      * @param  mixed $id taskid
      * @return boolean
      */
-    public function delete_passif($id)
+    public function delete_budget($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete(db_prefix() . 'patrimoines_passifs');
+        $this->db->delete(db_prefix() . 'patrimoines_budget');
         
         return true;
     }

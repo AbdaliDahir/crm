@@ -287,3 +287,28 @@ $lang['not_staff_added_as_patrimoine_member']                = 'Vous a ajouté e
 $lang['patrimoine_activity_recorded_expense']   = 'Dépense enregistrée';
 $lang['not_patrimoine_file_uploaded']              = 'Nouveau fichier patrimoine ajouté';
 $lang['patrimoine_progress']                       = 'Progression';
+
+//Bien Question
+$lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
+$lang['bien_qst_participations'] = 'Quelles participations ?';
+$lang['bien_qst_immobilier'] = 'Comment
+est détenu l’immobilier professionnel ?';
+$lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
+
+//comment
+$lang['comment_empty'] = '..................................................';
+$lang['comment_title'] = 'Commentaires';
+$lang['new_patrimoine_comment'] = 'new comment';
+$lang['update_patrimoine_comment'] = 'update comment';
+
+//Bien Question
+$lang['bien_qst_title'] = 'Questions complémentaires';
+$lang['update_patrimoine_bien_qst'] = 'update ur response';
+$lang['new_patrimoine_bien_qst'] = 'add new response';
+
+
+$lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
+$lang['bien_qst_participations'] = 'Quelles participations ?';
+$lang['bien_qst_immobilier'] = 'Comment
+est détenu l’immobilier professionnel ?';
+$lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';

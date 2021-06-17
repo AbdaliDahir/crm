@@ -3793,61 +3793,61 @@ $lang['estimate_convert_to_project']                          = 'Convert to Proj
 $lang['estimate_items_convert_to_tasks']                      = 'Items that will be converted to tasks';
 
 # patremoin
-$lang['new_patrimonial']  = 'new user info fr';
-$lang['update_patrimonial']  = 'update your information fr';
-$lang['patrimonial_about']  = 'about fr';
+$lang['new_patrimoine']  = 'new user info fr';
+$lang['update_patrimoine']  = 'update your information fr';
+$lang['patrimoine_about']  = 'about fr';
 ///tabs
-$lang['patrimonial_info']  = 'information fr';
-$lang['patrimonial_proches']  = 'proches fr';
-$lang['patrimonial_votre']  = 'patrimoine fr';
-$lang['patrimonial_passif']  = 'passif fr';
-$lang['patrimonial_fiscale']  = 'Particularités fiscales';
-$lang['patrimonial_budget']  = 'budget fr';
-$lang['patrimonial_administrative']  = 'Situation administrative fr';
-$lang['patrimonial_taches']  = 'taches fr';
-$lang['patrimonial_childs']  = 'children fr';
+$lang['patrimoine_info']  = 'information fr';
+$lang['patrimoine_proches']  = 'proches fr';
+$lang['patrimoine_votre']  = 'patrimoine fr';
+$lang['patrimoine_passif']  = 'passif fr';
+$lang['patrimoine_fiscale']  = 'Particularités fiscales';
+$lang['patrimoine_budget']  = 'budget fr';
+$lang['patrimoine_administrative']  = 'Situation administrative fr';
+$lang['patrimoine_taches']  = 'taches fr';
+$lang['patrimoine_childs']  = 'children fr';
 /// new data
-$lang['new_patrimonial_proches']  = 'new proche fr';
+$lang['new_patrimoine_proches']  = 'new proche fr';
 ///vous form
-$lang['patrimonial_me'] = 'Vous';
-$lang['patrimonial_me_firstname'] = 'Prénom :';
-$lang['patrimonial_me_lastname'] = 'Nom :';
-$lang['patrimonial_me_date_birth'] = 'Date de naissance :';
+$lang['patrimoine_me'] = 'Vous';
+$lang['patrimoine_me_firstname'] = 'Prénom :';
+$lang['patrimoine_me_lastname'] = 'Nom :';
+$lang['patrimoine_me_date_birth'] = 'Date de naissance :';
 
 /// Votre conjoint
-$lang['patrimonial_conjoint'] = 'Votre conjoint :';
+$lang['patrimoine_conjoint'] = 'Votre conjoint :';
 
-$lang['patrimonial_conjoint_situation'] = 'Situation familiale :';
-$lang['patrimonial_conjoint_situation_marie'] = 'Marié';
-$lang['patrimonial_conjoint_situation_celibataire'] = 'Célibataire';
-$lang['patrimonial_conjoint_situation_diverce'] = 'Divorcé';
-$lang['patrimonial_conjoint_situation_veuf'] = 'Veuf';
-$lang['patrimonial_conjoint_situation_union'] = 'Union libre';
-$lang['patrimonial_conjoint_situation_pacs'] = 'PACS';
+$lang['patrimoine_conjoint_situation'] = 'Situation familiale :';
+$lang['patrimoine_conjoint_situation_marie'] = 'Marié';
+$lang['patrimoine_conjoint_situation_celibataire'] = 'Célibataire';
+$lang['patrimoine_conjoint_situation_diverce'] = 'Divorcé';
+$lang['patrimoine_conjoint_situation_veuf'] = 'Veuf';
+$lang['patrimoine_conjoint_situation_union'] = 'Union libre';
+$lang['patrimoine_conjoint_situation_pacs'] = 'PACS';
 
-$lang['patrimonial_conjoint_profession'] = 'Profession :';
-$lang['patrimonial_conjoint_date_depart'] = 'Date dedépart en retraite :';
-$lang['patrimonial_conjoint_NSS'] = 'N°SS:';
-$lang['patrimonial_conjoint_adresse'] = 'Adresse :';
+$lang['patrimoine_conjoint_profession'] = 'Profession :';
+$lang['patrimoine_conjoint_date_depart'] = 'Date dedépart en retraite :';
+$lang['patrimoine_conjoint_NSS'] = 'N°SS:';
+$lang['patrimoine_conjoint_adresse'] = 'Adresse :';
 
-$lang['patrimonial_conjoint_date_mariage'] = 'Date de mariage :';
-$lang['patrimonial_conjoint_regime'] = 'Régime matrimonial :';
-$lang['patrimonial_conjoint_donation'] = 'Donation entre époux :';
-// $lang['patrimonial_conjoint_donation_yes'] = 'Oui';
-// $lang['patrimonial_conjoint_donation_no'] = 'Non';
-// $lang['patrimonial_conjoint_modification'] = 'Si Modification du régime & date :';
+$lang['patrimoine_conjoint_date_mariage'] = 'Date de mariage :';
+$lang['patrimoine_conjoint_regime'] = 'Régime matrimonial :';
+$lang['patrimoine_conjoint_donation'] = 'Donation entre époux :';
+// $lang['patrimoine_conjoint_donation_yes'] = 'Oui';
+// $lang['patrimoine_conjoint_donation_no'] = 'Non';
+// $lang['patrimoine_conjoint_modification'] = 'Si Modification du régime & date :';
 
-$lang['patrimonial_conjoint_tel_perso'] = 'Tél perso :';
-$lang['patrimonial_conjoint_tel_mobile'] = 'Tél mobile : M';
-$lang['patrimonial_conjoint_tel_mobile'] = 'Tél mobile : Mme';
-$lang['patrimonial_conjoint_email_one'] = 'E-mail Addresse First :';
-$lang['patrimonial_conjoint_email_two'] = 'E-mail Addresse Second :';
+$lang['patrimoine_conjoint_tel_perso'] = 'Tél perso :';
+$lang['patrimoine_conjoint_tel_mobile'] = 'Tél mobile : M';
+$lang['patrimoine_conjoint_tel_mobile'] = 'Tél mobile : Mme';
+$lang['patrimoine_conjoint_email_one'] = 'E-mail Addresse First :';
+$lang['patrimoine_conjoint_email_two'] = 'E-mail Addresse Second :';
 
-$lang['patrimonial_conjoint_more_question'] = 'Questions complémentaires :';
-$lang['patrimonial_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
-$lang['patrimonial_conjoint_more_question_mariage_durée'] = 'Quelle est la durée des mariages précédents ?';
-$lang['patrimonial_conjoint_more_question_situation'] = 'Quelle est la situation du premier conjoint ?';
-$lang['patrimonial_conjoint_more_question_finance'] = 'Quelles conséquences
+$lang['patrimoine_conjoint_more_question'] = 'Questions complémentaires :';
+$lang['patrimoine_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
+$lang['patrimoine_conjoint_more_question_mariage_durée'] = 'Quelle est la durée des mariages précédents ?';
+$lang['patrimoine_conjoint_more_question_situation'] = 'Quelle est la situation du premier conjoint ?';
+$lang['patrimoine_conjoint_more_question_finance'] = 'Quelles conséquences
 financières du jugement de divorce ?';
 
 $lang['add_info'] = 'sauvgarder';
@@ -3858,8 +3858,8 @@ $lang['proches_birthday'] = 'birthday fr';
 $lang['proches_lien'] = 'Lien de parenté fr';
 $lang['proches_charge'] = 'A charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
-$lang['proches_parente_e_petit'] = 'Enfant/petit fr';
-$lang['proches_parente_e_parent'] = 'Enfant/parent fr';
+$lang['proches_parente_e_petit'] = 'Enfant';
+$lang['proches_parente_e_parent'] = 'Parent';
 $lang['proches_contact_tel'] = 'Tele fr';
 $lang['proches_contact_email'] = 'email address fr';
 $lang['proches_contact_address'] = 'Adresse fr';
@@ -3882,7 +3882,7 @@ $lang['patremoine_usage_taux'] = 'Taux';
 $lang['patremoine_usage_deces '] = 'Ass. ** Décès';
 
 // rapport
-$lang['new_patrimonial_rapport'] = 'new rapport';
+$lang['new_patrimoine_rapport'] = 'new rapport';
 $lang['rapport'] = 'rapport';
 $lang['rapport_lowercase'] = 'rapport';
 $lang['patremoine_rapport_designation'] = 'Désignation';

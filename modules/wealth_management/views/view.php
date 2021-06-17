@@ -195,7 +195,7 @@ echo form_hidden('patrimoine_percent', $percent);
 
    initDataTable('.table-patrimoines_biens_pro', admin_url + 'wealth_management/bien/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
-   initDataTable('.table-patrimoines_passifs', admin_url + 'wealth_management/passifs/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
+   initDataTable('.table-patrimoines_passifs', admin_url + 'wealth_management/passif/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
    initDataTable('.table-patrimoines_passifs_assurance', admin_url + 'wealth_management/assurance/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
@@ -204,6 +204,8 @@ echo form_hidden('patrimoine_percent', $percent);
    initDataTable('.table-patrimoines_passifs_estates', admin_url + 'wealth_management/estates/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
    initDataTable('.table-patrimoines_passifs_availability', admin_url + 'wealth_management/availability/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
+   
+   initDataTable('.table-patrimoines_budget', admin_url + 'wealth_management/budget/' + <?php echo $patrimoine->id; ?>, undefined, undefined, PatrimoinesServerParams);
 
 </script>
 <script>

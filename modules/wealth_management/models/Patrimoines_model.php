@@ -1082,8 +1082,7 @@ class Patrimoines_model extends App_Model
             unset($data['tags']);
         }
 
-        // add patremoins info //
-        
+        // add patremoins info // 
         $patr_info = [];
         $patr_info_attributes = ['patr_me_firstname', 'patr_me_lastname', 'patr_me_birthday','patr_me_profession','patr_me_depart','patr_me_nss', 'patr_me_address', 'patr_me_tele_perso', 'patr_me_tele_m', 'patr_me_tele_mme', 'patr_me_email_one', 'patr_me_email_two', 'patr_partner_firstname', 'patr_partner_lastname', 'patr_partner_birthday', 'patr_partner_profession', 'patr_partner_depart', 'patr_partner_nss', 'patr_partner_precedent_marriage_date', 'patr_partner_regime', 'patr_partner_marriage_date', 'patr_partner_marriage_duration', 'patr_partner_situtation', 'patr_partner_finance', 'patr_partner_donation'];
         
@@ -1107,7 +1106,9 @@ class Patrimoines_model extends App_Model
             if (isset($patr_info['patr_me_birthday'])) {
                 $patr_info['patr_me_birthday'] = to_sql_date($patr_info['patr_me_birthday']);
             }
-    
+            if($patr_info['patr_partner_donation'] != 0 || $patr_info['patr_partner_donation'] != 1) {
+                unset($patr_info['patr_partner_donation']);
+            }
             // add created date and last updated date.
             $patr_info['created_date'] = date('Y-m-d H:i:s');
             $patr_info['updated_date'] = date('Y-m-d H:i:s');
@@ -1232,6 +1233,28 @@ class Patrimoines_model extends App_Model
             $notify_patrimoine_members_status_change = true;
             unset($data['notify_patrimoine_members_status_change']);
         }
+
+        // update patremoins info // 
+        $patr_info = [];
+        $patr_info_attributes = ['info_id', 'patr_me_firstname', 'patr_me_lastname', 'patr_me_birthday','patr_me_profession','patr_me_depart','patr_me_nss', 'patr_me_address', 'patr_me_tele_perso', 'patr_me_tele_m', 'patr_me_tele_mme', 'patr_me_email_one', 'patr_me_email_two', 'patr_partner_firstname', 'patr_partner_lastname', 'patr_partner_birthday', 'patr_partner_profession', 'patr_partner_depart', 'patr_partner_nss', 'patr_partner_precedent_marriage_date', 'patr_partner_regime', 'patr_partner_marriage_date', 'patr_partner_marriage_duration', 'patr_partner_situtation', 'patr_partner_finance', 'patr_partner_donation', 'patrimoineid'];
+        
+        foreach($patr_info_attributes as $patr) {
+            if(isset($data[$patr])) {
+                $patr_info[$patr] = $data[$patr];
+                unset($data[$patr]);
+            }
+        }
+
+        $patr_info['patrimoineid'] = $id;
+        
+        /*** update information */
+        if(isset($patr_info['info_id']) && !empty($patr_info['info_id'])) {
+            $this->patrimoines_info_model->update($patr_info);
+        } else {
+            $this->patrimoines_info_model->add($patr_info);
+        }
+        /*****./END::save information */
+
         $affectedRows = 0;
         if (!isset($data['settings'])) {
             $this->db->where('patrimoine_id', $id);

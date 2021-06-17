@@ -97,14 +97,14 @@ function app_init_patrimoine_tabs()
     ]);
 
     // $CI->app_tabs->add_patrimoine_tab('patrimoine_about', [
-    //     'name'     => _l('patrimonial_about'),
+    //     'name'     => _l('patrimoine_about'),
     //     'icon'     => 'fa fa-user',
     //     'view'     => 'wealth_management/patrimoine_about',
     //     'position' => 3,
     // ]);
 
     // $CI->app_tabs->add_patrimoine_tab('about', [
-    //     'name'     => _l('patrimonial_about'),
+    //     'name'     => _l('patrimoine_about'),
     //     'icon'     => 'fa fa-user',
     //     'position' => 50,
     //     'collapse' => true,
@@ -119,63 +119,63 @@ function app_init_patrimoine_tabs()
 
     // $CI->app_tabs->add_patrimoine_tab_children_item('about', [
     //     'slug'     => 'patrimoine_about_info',
-    //     'name'     => _l('patrimonial_info'),
+    //     'name'     => _l('patrimoine_info'),
     //     'icon'     => 'fa fa-user',
     //     'view'     => 'wealth_management/patrimoine_about_info',
     //     'position' => 1,
     // ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_proches', [
-        'name'     => _l('patrimonial_proches'),
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_proches', [
+        'name'     => _l('patrimoine_proches'),
         'slug'     => 'patrimoine_proches',
         'icon'     => 'fa fa-users',
         'view'     => 'wealth_management/patrimoine_proches',
         'position' => 2,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_votre', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_votre', [
         'slug'     => 'patrimoine_votre',
-        'name'     => _l('patrimonial_votre'),
+        'name'     => _l('patrimoine_votre'),
         'icon'     => 'fa fa-user-plus',
         'view'     => 'wealth_management/patrimoine_votre_patrimoine',
         'position' => 3,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_passif', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_passif', [
         'slug'     => 'patrimoine_passif',
-        'name'     => _l('patrimonial_passif'),
+        'name'     => _l('patrimoine_passif'),
         'icon'     => 'fa fa-handshake-o',
         'view'     => 'wealth_management/patrimoine_passif',
         'position' => 4,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_budget', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_budget', [
         'slug'     => 'patrimoine_budget',
-        'name'     => _l('patrimonial_budget'),
+        'name'     => _l('patrimoine_budget'),
         'icon'     => 'fa fa-exchange',
         'view'     => 'wealth_management/patrimoine_budget',
         'position' => 5,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_fiscale', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_fiscale', [
         'slug'     => 'patrimoine_fiscale',
-        'name'     => _l('patrimonial_fiscale'),
+        'name'     => _l('patrimoine_fiscale'),
         'icon'     => 'fa fa-bank',
         'view'     => 'wealth_management/patrimoine_fiscale',
         'position' => 6,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_administrative', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_administrative', [
         'slug'     => 'patrimoine_administrative',
-        'name'     => _l('patrimonial_administrative'),
+        'name'     => _l('patrimoine_administrative'),
         'icon'     => 'fa fa-gavel',
         'view'     => 'wealth_management/patrimoine_administrative',
         'position' => 7,
     ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimonial_taches', [
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_taches', [
         'slug'     => 'patrimoine_taches',
-        'name'     => _l('patrimonial_taches'),
+        'name'     => _l('patrimoine_taches'),
         'icon'     => 'fa fa-tasks',
         'view'     => 'wealth_management/patrimoine_taches',
         'position' => 8,
@@ -185,7 +185,7 @@ function app_init_patrimoine_tabs()
     //     'name'                      => _l('tasks'),
     //     'icon'                      => 'fa fa-check-circle',
     //     'slug'     => 'patrimoine_childs',
-    //     'name'     => _l('patrimonial_childs'),
+    //     'name'     => _l('patrimoine_childs'),
     //     'view'     => 'wealth_management/patrimoine_childs',
     //     'position' => 9,
         

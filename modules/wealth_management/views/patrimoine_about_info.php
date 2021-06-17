@@ -11,7 +11,7 @@
                 <div class="info-option text-right">
                 <?php 
                     echo '<a href="'.admin_url('wealth_management/add?patrimoine_id='.$patrimoine->id).'" class="btn btn-info">'. 
-                        ($info ? _l('update_patrimonial') : _l('new_patrimonial'))
+                        ($info ? _l('update_patrimoine') : _l('new_patrimoine'))
                     .'</a>'; 
                 ?>
                 </div> 
@@ -21,7 +21,7 @@
     <div class="panel-body"> 
         <?php if($info) { ?>
             <div class="patrimoine_contracts mtop20">
-                <?php $this->load->view('wealth_management/patrimonial/show/information'); ?>
+                <?php $this->load->view('wealth_management/patrimoine/show/information'); ?>
             </div>
         <?php } else { ?>
             <div class="bg-stripe padding">

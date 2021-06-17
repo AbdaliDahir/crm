@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=assurance'), array('id' => 'assurance-form')); ?> <div
-  class="modal _info_modal fade<?php if (isset($assurance)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
+  class="modal _info_modal fade<?php if (isset($assurance)) { echo ' edit'; } ?>" id="_assurance_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
   <div class="modal-dialog" role="document">
