@@ -1420,7 +1420,11 @@ class Wealth_management extends AdminController
                 $_id     = false;
                 $success = false;
                 $message = '';
-                if ($id) {
+                $return_type = filter_var($id, FILTER_VALIDATE_INT);
+
+                if ($return_type === false) {
+                    $message       = json_encode($id);
+                } else {
                     $success       = true;
                     $_id           = $id;
                     $message       = _l('added_successfully', _l($type));

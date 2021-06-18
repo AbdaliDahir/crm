@@ -36,30 +36,28 @@
     $(function () {
       
       appValidateForm($('#usage-form'), {
-        patr_usage_designation: 'required',
-        patr_usage_valeur: {
-          required: true,
-          number: true
-        },
-        patr_usage_detenteur: 'required',
-        patr_usage_date_achat: {
-          required: true,
-          date: true
-        },
-        patr_usage_capital: {
-          required: true,
-          number: true
-        },
-        patr_usage_charges: {
-          required: true,
-          number: true
-        },
-        patr_usage_duree: 'required',
-        patr_usage_taux: {
-          required: true,
-          number: true
-        },
-        patr_usage_deces: 'required',
+        // patr_usage_designation: 'required',
+        // patr_usage_valeur: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_usage_detenteur: 'required',
+        // patr_usage_date_achat: {
+        //   required: false,
+        //   date: true
+        // },
+        // patr_usage_capital: {
+        //   required: false,
+        //   number: true
+        // },
+        // patr_usage_charges: {
+        //   required: false,
+        //   number: true
+        // },
+        // patr_usage_taux: {
+        //   required: false,
+        //   number: true
+        // }
       }, patrimoine_form_handler);
       init_datepicker();
     });

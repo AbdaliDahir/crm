@@ -125,6 +125,14 @@ function app_init_patrimoine_tabs()
     //     'position' => 1,
     // ]);
 
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_fiscale', [
+        'name'     => _l('patrimoine_fiscale'),
+        'slug'     => 'patrimoine_fiscale',
+        'icon'     => 'fa fa-users',
+        'view'     => 'wealth_management/patrimoine_fiscale',
+        'position' => 2,
+    ]);
+
     $CI->app_tabs->add_patrimoine_tab('patrimoine_proches', [
         'name'     => _l('patrimoine_proches'),
         'slug'     => 'patrimoine_proches',
@@ -192,13 +200,13 @@ function app_init_patrimoine_tabs()
     //     'linked_to_customer_option' => ['view_childs'],
     // ]);
 
-    // $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [
-    //     'name'                      => _l('tasks'),
-    //     'icon'                      => 'fa fa-check-circle',
-    //     'view'                      => 'wealth_management/patrimoine_tasks',
-    //     'position'                  => 10,
-    //     'linked_to_customer_option' => ['view_tasks'],
-    // ]);
+    $CI->app_tabs->add_patrimoine_tab('patrimoine_tasks', [
+        'name'                      => _l('tasks'),
+        'icon'                      => 'fa fa-check-circle',
+        'view'                      => 'wealth_management/patrimoine_tasks',
+        'position'                  => 10,
+        'linked_to_customer_option' => ['view_tasks'],
+    ]);
 
     // $CI->app_tabs->add_patrimoine_tab('patrimoine_timesheets', [
     //     'name'                      => _l('patrimoine_timesheets'),
@@ -240,13 +248,13 @@ function app_init_patrimoine_tabs()
     //     'linked_to_customer_option' => ['view_gantt'],
     // ]);
 
-    $CI->app_tabs->add_patrimoine_tab('patrimoine_tickets', [
-        'name'     => _l('patrimoine_tickets'),
-        'icon'     => 'fa fa-life-ring',
-        'view'     => 'wealth_management/patrimoine_tickets',
-        'position' => 40,
-        'visible'  => (get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member(),
-    ]);
+    // $CI->app_tabs->add_patrimoine_tab('patrimoine_tickets', [
+    //     'name'     => _l('patrimoine_tickets'),
+    //     'icon'     => 'fa fa-life-ring',
+    //     'view'     => 'wealth_management/patrimoine_tickets',
+    //     'position' => 40,
+    //     'visible'  => (get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member(),
+    // ]);
 
     $CI->app_tabs->add_patrimoine_tab('patrimoine_contracts', [
         'name'     => _l('contracts'),

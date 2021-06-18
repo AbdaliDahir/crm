@@ -80,6 +80,16 @@ function patrimoine_form_handler(form) {
             form.reset();
             $('._info_modal').modal('hide');
             $('.btn-dt-reload').click();
+        } else {
+            $errors = JSON.parse(response.message);
+            $message = "<ul>"; 
+            $.each($errors, function(key, value) {
+                $message += "<li> - " + value + "</li>";
+            })
+            $message += "</ul>";  
+            alert_float('danger', $message);
+            console.log($message);
+            $('._info_modal').find('button[type="submit"]').prop('disabled', false);
         }
     }).fail(function (error) {
         alert_float('danger', JSON.parse(error.responseText));

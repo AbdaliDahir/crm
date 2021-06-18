@@ -4,13 +4,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Usage_model extends App_Model
 {
-    private $values;
+    private $attributes;
+    private $float_attributes;
+    private $errors = [];
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->values = ['patr_usage_designation','patr_usage_valeur','patr_usage_detenteur','patr_usage_capital','patr_usage_duree','patr_usage_date_achat','patr_usage_charges','patr_usage_taux','patr_usage_deces'];
+        $this->attributes = ['patr_usage_designation','patr_usage_valeur','patr_usage_detenteur','patr_usage_capital','patr_usage_duree','patr_usage_date_achat','patr_usage_charges','patr_usage_taux','patr_usage_deces'];
+        $this->float_attributes = ['patr_usage_valeur','patr_usage_capital','patr_usage_taux'];
     }
 
     /**
@@ -21,10 +24,38 @@ class Usage_model extends App_Model
     public function add($data)
     {  
 
-        foreach ($this->values as $value) {
-            $data[$value]   = trim($data[$value]);
+        foreach($this->attributes as $attribute) {
+            if(empty($data[$attribute])) {
+                $data[$attribute] = "";
+            } else {
+                $data[$attribute] = $this->test_input($data[$attribute]);
+            }
         }
 
+        // required inputs.
+        if(empty($data['patr_usage_designation'])) {
+            $this->errors['designation'] = 'designation can not be empty'; 
+        } 
+        if(empty($data['patr_usage_valeur'])) {
+            $this->errors['valeur'] = 'valeur can not be empty'; 
+        } 
+
+        // check for float.
+        foreach($this->float_attributes as $float_attribute) {
+            if (isset($data[$float_attribute]) && !empty($data[$float_attribute])) {
+                $capital = filter_var($data[$float_attribute], FILTER_VALIDATE_FLOAT);
+                if ($capital === false) {
+                    $this->errors[$float_attribute] = 'error in float number';
+                } else {
+                    $data[$float_attribute] = $data[$float_attribute];
+                }
+            }
+        }
+
+        if(count($this->errors) > 0) {
+            return $this->errors;
+        }
+        
         if (isset($data['patr_usage_date_achat'])) {
             $data['patr_usage_date_achat'] = to_sql_date($data['patr_usage_date_achat']);
         }
@@ -78,7 +109,7 @@ class Usage_model extends App_Model
             // remova some element from array before save
             unset($data['patrimoineid']);
 
-            foreach ($this->values as $value) {
+            foreach ($this->attributes as $value) {
                 $data[$value]   = trim($data[$value]);
             }
     
@@ -120,6 +151,13 @@ class Usage_model extends App_Model
         $this->db->delete(db_prefix() . 'patrimoines_usage');
         
         return true;
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
 }

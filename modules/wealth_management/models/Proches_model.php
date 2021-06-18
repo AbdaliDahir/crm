@@ -4,8 +4,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Proches_model extends App_Model
 {
+    private $attributes = [];
+    private $errors = [];
+
+    // `patr_proches_username`, 
+    // `patr_proches_birthday`, 
+    // `patr_proches_lien_parente`, 
+    // `patr_proches_charge`, 
+    // `patr_proches_particularites`, 
+    // `patr_proches_tele`, 
+    // `patr_proches_email`, 
+    // `patr_proches_address`, 
+    // `patr_proches_contact`
+
     public function __construct()
     {
+        $this->attributes = [
+            'patr_proches_username',   
+            'patr_proches_lien_parente', 
+            'patr_proches_particularites', 
+            'patr_proches_tele', 
+            'patr_proches_address', 
+            'patr_proches_contact',
+            'patr_proches_email'
+        ];
         parent::__construct();
     }
 
@@ -17,42 +39,59 @@ class Proches_model extends App_Model
     public function add($data)
     {   
 
-        $data['patr_proches_username']   = trim($data['patr_proches_username']);
-        $data['patr_proches_charge']   = trim($data['patr_proches_charge']);
-        $data['patr_proches_particularites']   = trim($data['patr_proches_particularites']);
+        foreach($this->attributes as $attribute) {
+            if(empty($data[$attribute])) {
+                $data[$attribute] = "";
+            } else {
+                $data[$attribute] = $this->test_input($data[$attribute]);
+            }
+        }
+        
+        // required inputs.
+        if(empty($data['patr_proches_username'])) {
+            $this->errors['username'] = 'username can not be empty'; 
+        }
 
         if (isset($data['patr_proches_birthday'])) {
             $data['patr_proches_birthday'] = to_sql_date($data['patr_proches_birthday']);
         }
 
-        //radio
-        if($data['patr_proches_lien_parente'] == 1 || $data['patr_proches_lien_parente'] == 0) {
-            if(isset($data['patr_proches_contact']) && $data['patr_proches_contact'] == 'yes') {
-                $data['patr_proches_contact'] = 1;
+        //email
+        if (isset($data['patr_proches_email']) && !empty($data['patr_proches_email'])) {
+            $email = filter_var($data['patr_proches_email'], FILTER_VALIDATE_EMAIL);
+            if ($email === false) {
+                $this->errors['email'] = 'email error';
             } else {
-                $data['patr_proches_contact'] = 0;
+                $data['patr_proches_email'] = $data['patr_proches_email'];
             }
-            // add created date and last updated date.
-            $data['created_date'] = date('Y-m-d H:i:s');
-            $data['updated_date'] = date('Y-m-d H:i:s');
-            
-            $this->db->insert(db_prefix() . 'patrimoines_proches', $data);
-            $patrimoines_info_id = $this->db->insert_id();
-
-            if ($patrimoines_info_id) {
-
-                // if (isset($custom_fields)) {
-                //     handle_custom_fields_post($patrimoines_info_id, $custom_fields);
-                // }
-
-                // hooks()->do_action('ticket_created', $patrimoines_info_id);
-                // log_activity('patrimoines info has been changed [ID: ' . $patrimoines_info_id . ']');
-
-                return $patrimoines_info_id;
-            } 
-        } else {
-            return false;
         }
+
+        //radio
+        if($data['patr_proches_lien_parente'] != 1 || $data['patr_proches_lien_parente'] != 0) {
+            $this->errors['lien_parente'] = 'teher is problem with prente';
+        }
+
+        if(isset($data['patr_proches_contact']) && $data['patr_proches_contact'] == 'yes') {
+            $data['patr_proches_contact'] = 1;
+        } else {
+            $data['patr_proches_contact'] = 0;
+        }
+
+        if(count($this->errors) > 0) {
+            return $this->errors;
+        }
+        
+        // add created date and last updated date.
+        $data['created_date'] = date('Y-m-d H:i:s');
+        $data['updated_date'] = date('Y-m-d H:i:s');
+        
+        $this->db->insert(db_prefix() . 'patrimoines_proches', $data);
+        $patrimoines_info_id = $this->db->insert_id();
+
+        if ($patrimoines_info_id) {
+            log_activity('new patrimoine proche has been added [ID: ' . $patrimoines_info_id . ']');
+            return $patrimoines_info_id;
+        }  
         return false;
     }
     
@@ -128,6 +167,13 @@ class Proches_model extends App_Model
         $this->db->delete(db_prefix() . 'patrimoines_proches');
         
         return true;
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
 }

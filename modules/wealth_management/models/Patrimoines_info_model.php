@@ -97,4 +97,11 @@ class Patrimoines_info_model extends App_Model
         return false;
     }
 
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
 }

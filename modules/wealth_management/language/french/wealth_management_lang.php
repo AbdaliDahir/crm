@@ -433,3 +433,7 @@ $lang['bien_qst_participations'] = 'Quelles participations ?';
 $lang['bien_qst_immobilier'] = 'Comment
 est détenu l’immobilier professionnel ?';
 $lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
+
+
+//Errors
+$lang['added_error'] = 'there is problem ';

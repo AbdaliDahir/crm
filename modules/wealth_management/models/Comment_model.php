@@ -97,5 +97,11 @@ class Comment_model extends App_Model
 
         return $this->db->get(db_prefix() . 'patrimoines_comments')->row();
     }
-
+    
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 }
