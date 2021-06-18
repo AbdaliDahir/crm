@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addComment?id=' . $id . '&patremoine_id=&type='), array('id' => 'comment-form')); ?> <div
+<?php echo form_open(admin_url('wealth_management/addComment?id=' . $id . '&patrimoine_id=&type='), array('id' => 'comment-form')); ?> <div
   class="modal _comment_modal fade<?php if (isset($comment)) { echo ' edit'; } ?>" id="_comment_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>

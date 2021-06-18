@@ -608,6 +608,9 @@
             clientid: 'required',
             start_date: 'required',
             billing_type: 'required',
+            patr_me_firstname: 'required',
+            patr_me_lastname: 'required',
+            patr_me_birthday: 'required',
             'notify_contacts[]': {
                 required: {
                     depends: function() {

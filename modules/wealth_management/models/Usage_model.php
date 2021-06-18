@@ -10,7 +10,7 @@ class Usage_model extends App_Model
     {
         parent::__construct();
 
-        $this->values = ['patr_usage_designation','patr_usage_valeur','patr_usage_detenteur','patr_usage_capital','patr_usage_duree','patr_usage_taux','patr_usage_deces'];
+        $this->values = ['patr_usage_designation','patr_usage_valeur','patr_usage_detenteur','patr_usage_capital','patr_usage_duree','patr_usage_date_achat','patr_usage_charges','patr_usage_taux','patr_usage_deces'];
     }
 
     /**
@@ -43,7 +43,7 @@ class Usage_model extends App_Model
             // }
 
             // hooks()->do_action('ticket_created', $patrimoines_info_id);
-            // log_activity('Patremoines info has been changed [ID: ' . $patrimoines_info_id . ']');
+            // log_activity('patrimoines info has been changed [ID: ' . $patrimoines_info_id . ']');
 
             return $patrimoines_info_id;
         }  

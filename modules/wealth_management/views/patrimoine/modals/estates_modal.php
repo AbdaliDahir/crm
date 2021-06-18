@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=estates'), array('id' => 'estates-form')); ?> <div
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patrimoine_id=&type=estates'), array('id' => 'estates-form')); ?> <div
   class="modal _info_modal fade<?php if (isset($estates)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
@@ -16,12 +16,12 @@
           
             <?php echo form_hidden('patrimoineid',  isset($estates) ? $estates->patrimoineid : $patrimoine_id) ?>
             <?php echo form_hidden('id', $estates ? $estates->id : '') ?>
-            <?php echo render_input('patr_passifs_designation', 'patremoine_passifs_estates_designation', isset($estates) ? $estates->patr_passifs_designation : '','text'); ?>
-            <?php echo render_input('patr_passifs_valeur', 'patremoine_passifs_estates_valeur', isset($estates) ? $estates->patr_passifs_valeur : '','text'); ?>
-            <?php echo render_input('patr_passifs_detenteur', 'patremoine_passifs_estates_detenteur',  isset($estates) ? $estates->patr_passifs_detenteur : '','text'); ?>
-            <?php echo render_input('patr_passifs_revenus', 'patremoine_passifs_estates_revenus', isset($estates) ? $estates->patr_passifs_revenus : '','text'); ?>
-            <?php echo render_input('patr_passifs_revenus_fiscal', 'patremoine_passifs_estates_revenus_fiscal',  isset($estates) ? $estates->patr_passifs_revenus_fiscal : '','text'); ?> 
-            <?php echo render_input('patr_passifs_taux', 'patremoine_passifs_estates_taux',  isset($estates) ? $estates->patr_passifs_taux : '','text'); ?> 
+            <?php echo render_input('patr_passifs_designation', 'patrimoine_passifs_estates_designation', isset($estates) ? $estates->patr_passifs_designation : '','text'); ?>
+            <?php echo render_input('patr_passifs_valeur', 'patrimoine_passifs_estates_valeur', isset($estates) ? $estates->patr_passifs_valeur : '','number'); ?>
+            <?php echo render_input('patr_passifs_detenteur', 'patrimoine_passifs_estates_detenteur',  isset($estates) ? $estates->patr_passifs_detenteur : '','text'); ?>
+            <?php echo render_input('patr_passifs_revenus', 'patrimoine_passifs_estates_revenus', isset($estates) ? $estates->patr_passifs_revenus : '','text'); ?>
+            <?php echo render_input('patr_passifs_revenus_fiscal', 'patrimoine_passifs_estates_revenus_fiscal',  isset($estates) ? $estates->patr_passifs_revenus_fiscal : '','text'); ?> 
+            <?php echo render_input('patr_passifs_taux', 'patrimoine_passifs_estates_taux',  isset($estates) ? $estates->patr_passifs_taux : '','number'); ?> 
           </div>
         </div>
       </div>
@@ -35,12 +35,18 @@
       
       appValidateForm($('#estates-form'), {
         patr_passifs_designation: 'required',
-        patr_passifs_valeur: 'required',
+        patr_passifs_valeur: {
+          required: true,
+          number: true
+        },
         patr_passifs_detenteur: 'required',
         patr_passifs_revenus: 'required',
         patr_passifs_revenus_fiscal: 'required',
-        patr_passifs_taux: 'required',
-      }, patremoine_form_handler);
+        patr_passifs_taux: {
+          required: true,
+          number: true
+        },
+      }, patrimoine_form_handler);
       init_datepicker();
     });
 

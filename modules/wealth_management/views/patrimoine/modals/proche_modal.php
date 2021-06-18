@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=proche'), array('id' => 'proche-form')); ?> <div
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patrimoine_id=&type=proche'), array('id' => 'proche-form')); ?> <div
   class="modal _info_modal fade<?php if (isset($proche)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
@@ -23,6 +23,7 @@
             <?php echo render_input('patr_proches_email', 'proches_contact_email',  $proche ? $proche->patr_proches_email : '','email'); ?>
             <?php echo render_textarea('patr_proches_address','proches_contact_address',  isset($proche) ? $proche->patr_proches_address : ''); ?> 
             <div class="input-group">
+              <h6><?php echo _l('proches_lien'); ?></h6>
               <div class="radio">
                 <input type="radio" name="patr_proches_lien_parente" id="patr_proches_lien_parente_enfant_petit"
                   value="<?php echo $proche ? $proche->patr_proches_lien_parente : 0 ?>"
@@ -54,17 +55,28 @@
   </div> <?php echo form_close(); ?> <script>
     $(function () {
       
-      appValidateForm($('#proche-form'), {
-        rules: {
-          patr_proches_username: 'required',
-          patr_proches_birthday: {
-            required: true,
-            date: true
-          },
-          patr_proches_charge: 'required',
-          patr_proches_particularites: 'required'
-        }
-      }, patremoine_form_handler);
+      appValidateForm($('#proche-form'), { 
+        patr_proches_username: {
+          required: true
+        },
+        patr_proches_charge: {
+          required: true
+        },
+        patr_proches_particularites: {
+          required: true
+        },
+        patr_proches_birthday: {
+          required: true,
+          date: true
+        },
+        patr_proches_lien_parente: {
+          required: true
+        },
+        patr_proches_email: {
+          required: false,
+          email: true
+        } 
+      }, patrimoine_form_handler);
       init_datepicker();
     });
 

@@ -5,7 +5,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $aColumns = [
     db_prefix() . 'patrimoines_budget.id',
     'patr_budget_designation', 
-    'patr_budget_montant'
+    'patr_budget_montant',
+    'patr_budget_type'
 ];
 
 $sWhere = [];
@@ -36,12 +37,21 @@ foreach ($rResult as $aRow) {
         
         $_data = $aRow[$aColumns[$i]];
 
+        if($aColumns[$i] == 'patr_budget_type') {
+            if($_data === '1') {
+                $_data = _l('patrimoine_budget_type_retraite');
+            }
+            if($_data === '0') {
+                $_data = _l('patrimoine_budget_type_revenus');
+            }
+        }
+
         $row[] = $_data;
     }
 
     $name .= '<div class="actions">';
         
-    $name .=  ' <a href="#" onclick="edit_info_patremoine(' . $aRow[$aColumns[0]] . ', \'budget\'); return false">' . _l('edit') . '</a>';
+    $name .=  ' <a href="#" onclick="edit_info_patrimoine(' . $aRow[$aColumns[0]] . ', \'budget\'); return false">' . _l('edit') . '</a>';
     
     $name .= ' | <a href="' . admin_url('wealth_management/delete_budget/' . $aRow[$aColumns[0]]) . '" class="text-danger _delete">' . _l('delete') . '</a>';
 

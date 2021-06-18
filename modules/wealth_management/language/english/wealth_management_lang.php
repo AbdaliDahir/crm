@@ -359,77 +359,80 @@ $lang['assurance'] = 'Assurance';
 $lang['assurance_lowercase'] = 'assurance';
 $lang['assurance_title'] = 'Assurance';
 $lang['new_patrimoine_assurance'] = 'new assurance';
-$lang['patremoine_passifs_assurance_designation'] = 'Désignation';
-$lang['patremoine_passifs_assurance_capital'] = 'Valeur de rachat ou capital assuré';
-$lang['patremoine_passifs_assurance_souscription'] = 'Date de souscription';
-$lang['patremoine_passifs_assurance_assure'] = 'Assuré';
-$lang['patremoine_passifs_assurance_benef'] = 'Bénéficiaires';
-$lang['patremoine_passifs_assurance_particularites'] = 'Particularités (type de contrat, taux de capi., montant des primes, etc.)';
+$lang['patrimoine_passifs_assurance_designation'] = 'Désignation';
+$lang['patrimoine_passifs_assurance_capital'] = 'Valeur de rachat ou capital assuré';
+$lang['patrimoine_passifs_assurance_souscription'] = 'Date de souscription';
+$lang['patrimoine_passifs_assurance_assure'] = 'Assuré';
+$lang['patrimoine_passifs_assurance_benef'] = 'Bénéficiaires';
+$lang['patrimoine_passifs_assurance_particularites'] = 'Particularités (type de contrat, taux de capi., montant des primes, etc.)';
 
 // Availability
 $lang['availability'] = 'Availability';
 $lang['availability_lowercase'] = 'availability';
 $lang['availability_title'] = 'Disponibilités (comptes courants, comptes à terme, SICAV de trésorerie, CEL, livrets et CODEVI, etc.)';
 $lang['new_patrimoine_availability'] = 'new availability';
-$lang['patremoine_passifs_availability_designation'] = 'Désignation';
-$lang['patremoine_passifs_availability_valeur'] = 'Valeur (en €)';
-$lang['patremoine_passifs_availability_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_passifs_availability_particularites'] = 'Particularités (différés, etc.)';
+$lang['patrimoine_passifs_availability_designation'] = 'Désignation';
+$lang['patrimoine_passifs_availability_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_availability_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_availability_particularites'] = 'Particularités (différés, etc.)';
 
 //bien
 $lang['bien'] = 'Bien';
 $lang['bien_lowercase'] = 'bien';
 $lang['bien_title'] = 'Biens professionnels (droits sociaux, fonds de commerce, etc.), placements fonciers (terrains, GFA, forêts)';
 $lang['new_patrimoine_bien'] = 'new Bien professionnel';
-$lang['patremoine_bien_designation'] = 'Désignation';
-$lang['patremoine_bien_valeur'] = 'valuer(en $)';
-$lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
-$lang['patremoine_bien_charges'] = 'Charges';
-$lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
+$lang['patrimoine_bien_designation'] = 'Désignation';
+$lang['patrimoine_bien_valeur'] = 'valuer(en $)';
+$lang['patrimoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
+$lang['patrimoine_bien_charges'] = 'Charges';
+$lang['patrimoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
 
 // Budget
 $lang['budget'] = 'Budget';
 $lang['budget_lowercase'] = 'budget';
 $lang['budget_title'] = 'Votre budget';
 $lang['new_patrimoine_budget'] = 'new budget';
-$lang['patremoine_budget_designation'] = 'Désignation';
-$lang['patremoine_budget_montant'] = 'Montant annuel   en €';
+$lang['patrimoine_budget_designation'] = 'Désignation';
+$lang['patrimoine_budget_montant'] = 'Montant annuel   en €';
+$lang['patrimoine_budget_type_revenus'] = 'Revenus';
+$lang['patrimoine_budget_type_retraite'] = 'Retraite';
+$lang['patrimoine_budget_type'] = 'choisir type (Revenus/RETRAITE)';
 
 // Epargne
 $lang['epargne'] = 'Épargne';
 $lang['epargne_lowercase'] = 'épargne';
 $lang['epargne_title'] = 'Épargne et dépôt à moyen et long terme (PEL, PEP bancaire, PEE, etc.)';
 $lang['new_patrimoine_epargne'] = 'new Épargne';
-$lang['patremoine_passifs_epargne_designation'] = 'Désignation';
-$lang['patremoine_passifs_epargne_valeur'] = 'Valeur (en €)';
-$lang['patremoine_passifs_epargne_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_passifs_epargne_date_ouverture'] = 'Date d\'ouverture';
-$lang['patremoine_passifs_epargne_associee'] = 'Épargne associée';
-$lang['patremoine_passifs_epargne_particularites'] = 'Particularités (taux de rendement, primes, etc.)';
+$lang['patrimoine_passifs_epargne_designation'] = 'Désignation';
+$lang['patrimoine_passifs_epargne_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_epargne_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_epargne_date_ouverture'] = 'Date d\'ouverture';
+$lang['patrimoine_passifs_epargne_associee'] = 'Épargne associée';
+$lang['patrimoine_passifs_epargne_particularites'] = 'Particularités (taux de rendement, primes, etc.)';
 
 // Estates
 $lang['estates'] = 'Valeurs mobilières';
 $lang['estates_lowercase'] = 'valeurs mobilières';
 $lang['estates_title'] = 'Valeurs mobilières (OPCVM, actions, obligations, FCPI, PEA, etc.)';
 $lang['new_patrimoine_estates'] = 'new mobilières';
-$lang['patremoine_passifs_estates_designation'] = 'Désignation';
-$lang['patremoine_passifs_estates_valeur'] = 'Valeur (en €)';
-$lang['patremoine_passifs_estates_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_passifs_estates_revenus'] = 'Revenus distribués';
-$lang['patremoine_passifs_estates_revenus_fiscal'] = 'Fiscalité ou revenu (PFL, IR, actions internationales, etc.)';
-$lang['patremoine_passifs_estates_taux'] = 'Taux de revalorisation estimé';
+$lang['patrimoine_passifs_estates_designation'] = 'Désignation';
+$lang['patrimoine_passifs_estates_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_estates_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_estates_revenus'] = 'Revenus distribués';
+$lang['patrimoine_passifs_estates_revenus_fiscal'] = 'Fiscalité ou revenu (PFL, IR, actions internationales, etc.)';
+$lang['patrimoine_passifs_estates_taux'] = 'Taux de revalorisation estimé';
 
 //passifs
 $lang['passif'] = 'Passifs';
 $lang['passif_lowercase'] = 'passifs';
 $lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
 $lang['new_patrimoine_passif'] = 'new passifs';
-$lang['patremoine_passifs_designation'] = 'Désignation';
-$lang['patremoine_passifs_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_passifs_duree'] = 'Durée';
-$lang['patremoine_passifs_taux'] = 'Taux';
-$lang['patremoine_passifs_deces'] = 'Ass. ** Décès';
-$lang['patremoine_passifs_particularites'] = 'Particularités';
+$lang['patrimoine_passifs_designation'] = 'Désignation';
+$lang['patrimoine_passifs_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_passifs_duree'] = 'Durée';
+$lang['patrimoine_passifs_taux'] = 'Taux';
+$lang['patrimoine_passifs_deces'] = 'Ass. ** Décès';
+$lang['patrimoine_passifs_particularites'] = 'Particularités';
 
 // proches
 $lang['proches_username'] = 'prenom nom fr';
@@ -454,49 +457,49 @@ $lang['usage_title'] = 'Biens d’usage (résidence principale, résidence secon
 $lang['new_patrimoine_usage'] = 'new usage';
 $lang['usage'] = 'Usage';
 $lang['usage_lowercase'] = 'usage';
-$lang['patremoine_usage_designation'] = 'Désignation';
-$lang['patremoine_usage_valeur'] = 'valuer(en $)';
-$lang['patremoine_usage_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_usage_date_achat'] = 'Charges associées/Date d’achat';
-$lang['patremoine_usage_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_usage_duree'] = 'Durée';
-$lang['patremoine_usage_taux'] = 'Taux';
-$lang['patremoine_usage_deces'] = 'Ass. ** Décès';
+$lang['patrimoine_usage_designation'] = 'Désignation';
+$lang['patrimoine_usage_valeur'] = 'valuer(en $)';
+$lang['patrimoine_usage_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_usage_date_achat'] = 'Charges associées/Date d’achat';
+$lang['patrimoine_usage_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_usage_duree'] = 'Durée';
+$lang['patrimoine_usage_taux'] = 'Taux';
+$lang['patrimoine_usage_deces'] = 'Ass. ** Décès';
 
 // rapport
 $lang['rapport_title'] = 'Immobilier de rapport (locatif, SCI, SCPI, etc.)';
 $lang['new_patrimoine_rapport'] = 'new rapport';
 $lang['rapport'] = 'rapport';
 $lang['rapport_lowercase'] = 'rapport';
-$lang['patremoine_rapport_designation'] = 'Désignation';
-$lang['patremoine_rapport_valeur'] = 'valuer(en $)';
-$lang['patremoine_rapport_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_rapport_revenus_fiscal'] = 'Revenus et Fiscalité';
-$lang['patremoine_rapport_charges'] = 'Charges';
-$lang['patremoine_rapport_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_rapport_duree'] = 'Durée';
-$lang['patremoine_rapport_taux'] = 'Taux';
-$lang['patremoine_rapport_deces'] = 'Ass. ** Décès';
+$lang['patrimoine_rapport_designation'] = 'Désignation';
+$lang['patrimoine_rapport_valeur'] = 'valuer(en $)';
+$lang['patrimoine_rapport_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_rapport_revenus_fiscal'] = 'Revenus et Fiscalité';
+$lang['patrimoine_rapport_charges'] = 'Charges';
+$lang['patrimoine_rapport_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_rapport_duree'] = 'Durée';
+$lang['patrimoine_rapport_taux'] = 'Taux';
+$lang['patrimoine_rapport_deces'] = 'Ass. ** Décès';
 
 //situation
-$lang['patremoine_situation_cfe'] = 'CFE';
-$lang['patremoine_situation_cotisation_plus'] = 'Avez-vous 15 ans de cotisation';
-$lang['patremoine_situation_cotisation_minus'] = 'Pension de Réversion 15 ans de cotisation';
-$lang['patremoine_situation_cnss'] = 'CNSS';
-$lang['patremoine_situation_cnarefe'] = 'CNAREFE';
-$lang['patremoine_situation_capitone'] = 'CAPITONE'; 
-$lang['patremoine_situation_rapatriement'] = 'ASSURANCE RAPATRIEMENT';  
-$lang['patremoine_situation_mutuelle'] = 'MUTUELLE FRANCAISE';
-$lang['patremoine_situation_passport'] = 'PASSEPORT SCANNÉ';  
-$lang['patremoine_situation_sejour'] = 'CARTE DE SEJOUR SCANNÉE'; 
-$lang['patremoine_situation_permis'] = 'PERMIS DE CONDUIRE MAROCAIN';        
-$lang['patremoine_situation_assurance_auto'] = 'ASSURANCE AUTO';
-$lang['patremoine_situation_assurance_habitation'] = 'ASSURANCE HABITATION';
-$lang['patremoine_situation_consulat'] = 'INSCRIPTION CONSULAT';
-$lang['patremoine_situation_ufe'] = 'UFE carte à fournir si contrat rapatriement SAHAM';
-$lang['patremoine_situation_csg'] = 'CSG / CRDS';
-$lang['patremoine_situation_Prlvt'] = 'Prlvt';
-$lang['patremoine_situation_cexonéré'] = 'exonéré';
+$lang['patrimoine_situation_cfe'] = 'CFE';
+$lang['patrimoine_situation_cotisation_plus'] = 'Avez-vous 15 ans de cotisation';
+$lang['patrimoine_situation_cotisation_minus'] = 'Pension de Réversion 15 ans de cotisation';
+$lang['patrimoine_situation_cnss'] = 'CNSS';
+$lang['patrimoine_situation_cnarefe'] = 'CNAREFE';
+$lang['patrimoine_situation_capitone'] = 'CAPITONE'; 
+$lang['patrimoine_situation_rapatriement'] = 'ASSURANCE RAPATRIEMENT';  
+$lang['patrimoine_situation_mutuelle'] = 'MUTUELLE FRANCAISE';
+$lang['patrimoine_situation_passport'] = 'PASSEPORT SCANNÉ';  
+$lang['patrimoine_situation_sejour'] = 'CARTE DE SEJOUR SCANNÉE'; 
+$lang['patrimoine_situation_permis'] = 'PERMIS DE CONDUIRE MAROCAIN';        
+$lang['patrimoine_situation_assurance_auto'] = 'ASSURANCE AUTO';
+$lang['patrimoine_situation_assurance_habitation'] = 'ASSURANCE HABITATION';
+$lang['patrimoine_situation_consulat'] = 'INSCRIPTION CONSULAT';
+$lang['patrimoine_situation_ufe'] = 'UFE carte à fournir si contrat rapatriement SAHAM';
+$lang['patrimoine_situation_csg'] = 'CSG / CRDS';
+$lang['patrimoine_situation_Prlvt'] = 'Prlvt';
+$lang['patrimoine_situation_cexonéré'] = 'exonéré';
 
 
 //Bien Question

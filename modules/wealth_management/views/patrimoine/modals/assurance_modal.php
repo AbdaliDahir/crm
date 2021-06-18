@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=assurance'), array('id' => 'assurance-form')); ?> <div
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patrimoine_id=&type=assurance'), array('id' => 'assurance-form')); ?> <div
   class="modal _info_modal fade<?php if (isset($assurance)) { echo ' edit'; } ?>" id="_assurance_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
@@ -15,12 +15,12 @@
           <div class="col-md-12"> 
             <?php echo form_hidden('patrimoineid',  isset($assurance) ? $assurance->patrimoineid : $patrimoine_id) ?>
             <?php echo form_hidden('id', $assurance ? $assurance->id : '') ?>
-            <?php echo render_input('patr_passifs_designation', 'patremoine_passifs_assurance_designation', isset($assurance) ? $assurance->patr_passifs_designation : '','text'); ?>
-            <?php echo render_input('patr_passifs_capital', 'patremoine_passifs_assurance_capital', isset($assurance) ? $assurance->patr_passifs_capital : '','text'); ?>
-            <?php echo render_input('patr_passifs_souscription', 'patremoine_passifs_assurance_souscription',  isset($assurance) ? $assurance->patr_passifs_souscription : '','text'); ?>
-            <?php echo render_input('patr_passifs_assure', 'patremoine_passifs_assurance_assure',  isset($assurance) ? $assurance->patr_passifs_assure : '','text'); ?>
-            <?php echo render_input('patr_passifs_benef', 'patremoine_passifs_assurance_benef',  isset($assurance) ? $assurance->patr_passifs_benef : '','text'); ?>
-            <?php echo render_input('patr_passifs_particularites', 'patremoine_passifs_assurance_particularites',  isset($assurance) ? $assurance->patr_passifs_particularites : '','text'); ?>
+            <?php echo render_input('patr_passifs_designation', 'patrimoine_passifs_assurance_designation', isset($assurance) ? $assurance->patr_passifs_designation : '','text'); ?>
+            <?php echo render_input('patr_passifs_capital', 'patrimoine_passifs_assurance_capital', isset($assurance) ? $assurance->patr_passifs_capital : '','number'); ?>
+            <?php echo render_input('patr_passifs_souscription', 'patrimoine_passifs_assurance_souscription',  isset($assurance) ? $assurance->patr_passifs_souscription : '','text'); ?>
+            <?php echo render_input('patr_passifs_assure', 'patrimoine_passifs_assurance_assure',  isset($assurance) ? $assurance->patr_passifs_assure : '','text'); ?>
+            <?php echo render_input('patr_passifs_benef', 'patrimoine_passifs_assurance_benef',  isset($assurance) ? $assurance->patr_passifs_benef : '','text'); ?>
+            <?php echo render_input('patr_passifs_particularites', 'patrimoine_passifs_assurance_particularites',  isset($assurance) ? $assurance->patr_passifs_particularites : '','text'); ?>
           </div>
         </div>
       </div>
@@ -34,12 +34,15 @@
       
       appValidateForm($('#assurance-form'), {
         patr_passifs_designation: 'required',
-        patr_passifs_capital: 'required',
+        patr_passifs_capital: {
+          required: true,
+          number: true
+        },
         patr_passifs_souscription: 'required',
         patr_passifs_assure: 'required',
         patr_passifs_benef: 'required',
         patr_passifs_particularites: 'required',
-      }, patremoine_form_handler);
+      }, patrimoine_form_handler);
       init_datepicker();
     });
 

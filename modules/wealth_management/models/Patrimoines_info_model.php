@@ -44,7 +44,7 @@ class Patrimoines_info_model extends App_Model
             // }
 
             // hooks()->do_action('ticket_created', $patrimoines_info_id);
-            // log_activity('Patremoines info has been changed [ID: ' . $patrimoines_info_id . ']');
+            // log_activity('patrimoines info has been changed [ID: ' . $patrimoines_info_id . ']');
 
             return $patrimoines_info_id;
         }

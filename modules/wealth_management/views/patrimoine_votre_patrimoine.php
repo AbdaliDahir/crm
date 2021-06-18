@@ -16,7 +16,7 @@
           <?php echo _l('new_patrimoine_bien') ?> 
         </a> 
 
-        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="edit_comment_patremoine(<?php echo isset($usage_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($usage_comment) ? $usage_comment->id : 0 ?>, 'usage'); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="edit_comment_patrimoine(<?php echo isset($usage_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($usage_comment) ? $usage_comment->id : 0 ?>, 'usage'); return false;">
           <?php echo isset($usage_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
         </a>  
 
@@ -42,7 +42,7 @@
         <div class="info-title text-left mtop5"> <?php echo _l('rapport_title'); ?> </div>
       </div>
       <div class="col-xs-6 text-right"> 
-        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="edit_comment_patremoine(<?php echo isset($rapport_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($rapport_comment) ? $rapport_comment->id : 0 ?>, 'rapport'); return false;">
+        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="edit_comment_patrimoine(<?php echo isset($rapport_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($rapport_comment) ? $rapport_comment->id : 0 ?>, 'rapport'); return false;">
           <?php echo isset($rapport_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
         </a> 
       </div>
@@ -77,7 +77,7 @@
       <h4 class="mbot15 text-primary font-bold text-capitalize"> 
         <?php echo _l('bien_qst_title') ?> 
         <?php if (isset($bien_qst)) { ?>
-          <a href='#' class='btn-link text-underline text-danger h6 mright5 new-rapport-relation' onclick="edit_bien_qst_patremoine(<?php echo $bien_qst->id ?>); return false;">
+          <a href='#' class='btn-link text-underline text-danger h6 mright5 new-rapport-relation' onclick="edit_bien_qst_patrimoine(<?php echo $bien_qst->id ?>); return false;">
             <?php echo _l('update_patrimoine_bien_qst') ?> 
           </a> 
         <?php } else { ?>

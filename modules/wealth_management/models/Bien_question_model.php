@@ -54,7 +54,7 @@ class Bien_question_model extends App_Model
      * @param  mixed $id bienQst id
      * @return object
      */
-    public function get_by_patremoine($id)
+    public function get_by_patrimoine($id)
     { 
       $this->db->where('patrimoineid', $id);
       return $this->db->get(db_prefix() . 'patrimoines_bien_questions')->row();

@@ -21,7 +21,7 @@
           <div class="text mbot15 border-right">
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_cfe') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_cfe') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -45,7 +45,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_cotisation_plus') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_cotisation_plus') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -69,7 +69,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_cotisation_minus') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_cotisation_minus') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -93,7 +93,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_cnss') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_cnss') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -117,7 +117,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_cnarefe') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_cnarefe') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -141,7 +141,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_capitone') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_capitone') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -165,7 +165,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_rapatriement') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_rapatriement') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -189,7 +189,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_mutuelle') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_mutuelle') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -218,7 +218,7 @@
           <div class="text mbot15">
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_passport') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_passport') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -242,7 +242,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_sejour') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_sejour') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -266,7 +266,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_permis') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_permis') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -290,7 +290,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_assurance_auto') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_assurance_auto') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -314,7 +314,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_assurance_habitation') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_assurance_habitation') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -340,7 +340,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_consulat') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_consulat') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -364,7 +364,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_ufe') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_ufe') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -388,7 +388,7 @@
             <!-- ./END ROW -->
             <div class="row mbot15">
               <div class="col-xs-8">
-                <strong><?php echo _l('patremoine_situation_csg') ?></strong>
+                <strong><?php echo _l('patrimoine_situation_csg') ?></strong>
               </div>
               <div class="col-xs-4">
                 <!-- column -->
@@ -397,13 +397,13 @@
                     <input type="radio" name="patr_situation_csg_crds" id="patr_situation_csg_crds_no"
                       value="0"
                       <?php if (isset($situation)) { echo $situation->patr_situation_csg_crds == 0 ? 'checked' : ''; } ?> />
-                    <label for="patr_situation_csg_crds_no"><?php echo _l('patremoine_situation_Prlvt'); ?></label>
+                    <label for="patr_situation_csg_crds_no"><?php echo _l('patrimoine_situation_Prlvt'); ?></label>
                   </div>
                   <div class="radio">
                     <input type="radio" name="patr_situation_csg_crds" id="patr_situation_csg_crds_yes"
                       value="1"
                       <?php if (isset($situation)) { echo $situation->patr_situation_csg_crds == 1 ? 'checked' : ''; } ?> />
-                    <label for="patr_situation_csg_crds_yes"><?php echo _l('patremoine_situation_cexonéré'); ?></label>
+                    <label for="patr_situation_csg_crds_yes"><?php echo _l('patrimoine_situation_cexonéré'); ?></label>
                   </div>
                 </div>
                 <!-- ./END::column -->

@@ -352,7 +352,7 @@ class Wealth_management extends AdminController
             }  elseif ($group == 'patrimoine_votre') {
                 $data['usage_comment'] = $this->comment_model->get_comment($patrimoine->id, 'usage');
                 $data['rapport_comment'] = $this->comment_model->get_comment($patrimoine->id, 'rapport');
-                $data['bien_qst'] = $this->bien_question_model->get_by_patremoine($patrimoine->id);
+                $data['bien_qst'] = $this->bien_question_model->get_by_patrimoine($patrimoine->id);
             } elseif($group == 'patrimoine_passif') {
                 $data['assurance_comment'] = $this->comment_model->get_comment($patrimoine->id, 'assurance');
                 $data['epargne_comment'] = $this->comment_model->get_comment($patrimoine->id, 'epargne');

@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patremoine_id=&type=availability'), array('id' => 'availability-form')); ?> <div
+<?php echo form_open(admin_url('wealth_management/addInfo?id=' . $id . '&patrimoine_id=&type=availability'), array('id' => 'availability-form')); ?> <div
   class="modal _info_modal fade<?php if (isset($availability)) { echo ' edit'; } ?>" id="_info_modal" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel"
   <?php if ($this->input->get('opened_from_lead_id')) { echo 'data-lead-id=' . $this->input->get('opened_from_lead_id'); } ?>>
@@ -16,10 +16,10 @@
           
             <?php echo form_hidden('patrimoineid',  isset($availability) ? $availability->patrimoineid : $patrimoine_id) ?>
             <?php echo form_hidden('id', $availability ? $availability->id : '') ?>
-            <?php echo render_input('patr_passifs_designation', 'patremoine_passifs_availability_designation', isset($availability) ? $availability->patr_passifs_designation : '','text'); ?>
-            <?php echo render_input('patr_passifs_valeur', 'patremoine_passifs_availability_valeur', isset($availability) ? $availability->patr_passifs_valeur : '','text'); ?>
-            <?php echo render_input('patr_passifs_detenteur', 'patremoine_passifs_availability_detenteur',  isset($availability) ? $availability->patr_passifs_detenteur : '','text'); ?>
-            <?php echo render_input('patr_passifs_particularites', 'patremoine_passifs_availability_particularites',  isset($availability) ? $availability->patr_passifs_particularites : '','text'); ?> 
+            <?php echo render_input('patr_passifs_designation', 'patrimoine_passifs_availability_designation', isset($availability) ? $availability->patr_passifs_designation : '','text'); ?>
+            <?php echo render_input('patr_passifs_valeur', 'patrimoine_passifs_availability_valeur', isset($availability) ? $availability->patr_passifs_valeur : '','number'); ?>
+            <?php echo render_input('patr_passifs_detenteur', 'patrimoine_passifs_availability_detenteur',  isset($availability) ? $availability->patr_passifs_detenteur : '','text'); ?>
+            <?php echo render_input('patr_passifs_particularites', 'patrimoine_passifs_availability_particularites',  isset($availability) ? $availability->patr_passifs_particularites : '','text'); ?> 
           </div>
         </div>
       </div>
@@ -33,10 +33,13 @@
       
       appValidateForm($('#availability-form'), {
         patr_passifs_designation: 'required',
-        patr_passifs_valeur: 'required',
+        patr_passifs_valeur: {
+          required: true,
+          number: true
+        },
         patr_passifs_detenteur: 'required',
         patr_passifs_particularites: 'required',
-      }, patremoine_form_handler);
+      }, patrimoine_form_handler);
       init_datepicker();
     });
 

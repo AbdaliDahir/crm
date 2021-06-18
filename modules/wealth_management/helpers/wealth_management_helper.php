@@ -21,6 +21,9 @@ function _maybe_init_admin_patrimoine_assets()
 
         $CI->app_css->add('frappe-gantt-js', 'assets/plugins//frappe/frappe-gantt.css', 'admin', ['vendor-css']);
         $CI->app_css->add('jquery-comments-css', 'assets/plugins/jquery-comments/css/jquery-comments.css', 'admin', ['reset-css']);
+        
+        $CI->app_scripts->add('additional-methods-js', 'assets/plugins/jquery-validation/additional-methods.min.js', 'admin', ['jquery-validation-js']);
+        // $CI->app_scripts->add('test-js', 'modules/wealth_management/assets/js/test.js', 'admin', ['vendor-js']);
     }
 }
 
@@ -33,8 +36,6 @@ function get_patrimoine_tabs_admin()
 {
     return get_instance()->app_tabs->get_patrimoine_tabs();
 }
-
-
 
 /**
  * Check if patrimoine has recurring tasks

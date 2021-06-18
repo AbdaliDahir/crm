@@ -4,14 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $table_data = [
     _l('id'),
-    _l('patremoine_usage_designation'),
-    _l('patremoine_usage_valeur'),
-    _l('patremoine_usage_detenteur'),
-    _l('patremoine_usage_date_achat'),
-    _l('patremoine_usage_capital'),
-    _l('patremoine_usage_duree'),
-    _l('patremoine_usage_taux'),
-    _l('patremoine_usage_deces'),
+    _l('patrimoine_usage_designation'),
+    _l('patrimoine_usage_valeur'),
+    _l('patrimoine_usage_detenteur'),
+    _l('patrimoine_usage_date_achat'),
+    _l('patrimoine_usage_capital'),
+    _l('patrimoine_usage_duree'),
+    _l('patrimoine_usage_taux'),
+    _l('patrimoine_usage_deces'),
     'action'
 ];
 

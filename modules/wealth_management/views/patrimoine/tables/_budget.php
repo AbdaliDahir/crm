@@ -4,8 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $table_data = [
     _l('id'),
-    _l('patremoine_budget_designation'),
-    _l('patremoine_budget_montant'),
+    _l('patrimoine_budget_designation'),
+    _l('patrimoine_budget_montant'),
+    _l('patrimoine_budget_type'),
     'action'
 ];
 

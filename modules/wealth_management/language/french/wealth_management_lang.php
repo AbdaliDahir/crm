@@ -367,46 +367,46 @@ $lang['proche_contact_no']       = 'Non';
 
 
 //usage 
-$lang['patremoine_usage_designation'] = 'Désignation';
-$lang['patremoine_usage_valeur'] = 'valuer(en $)';
-$lang['patremoine_usage_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_usage_date_achat'] = 'Charges associées/Date d’achat';
-$lang['patremoine_usage_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_usage_duree'] = 'Durée';
-$lang['patremoine_usage_taux'] = 'Taux';
-$lang['patremoine_usage_deces '] = 'Ass. ** Décès';
+$lang['patrimoine_usage_designation'] = 'Désignation';
+$lang['patrimoine_usage_valeur'] = 'valuer(en $)';
+$lang['patrimoine_usage_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_usage_date_achat'] = 'Charges associées/Date d’achat';
+$lang['patrimoine_usage_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_usage_duree'] = 'Durée';
+$lang['patrimoine_usage_taux'] = 'Taux';
+$lang['patrimoine_usage_deces '] = 'Ass. ** Décès';
 
 // rapport
 $lang['new_patrimoine_rapport'] = 'new rapport';
 $lang['rapport'] = 'rapport';
 $lang['rapport_lowercase'] = 'rapport';
-$lang['patremoine_rapport_designation'] = 'Désignation';
-$lang['patremoine_rapport_valeur'] = 'valuer(en $)';
-$lang['patremoine_rapport_detenteur'] = 'Détenteur Forme de détention*';
-$lang['patremoine_rapport_revenus_fiscal'] = 'Revenus et Fiscalité';
-$lang['patremoine_rapport_charges'] = 'Charges';
-$lang['patremoine_rapport_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_rapport_duree'] = 'Durée';
-$lang['patremoine_rapport_taux'] = 'Taux';
-$lang['patremoine_rapport_deces'] = 'Ass. ** Décès';
+$lang['patrimoine_rapport_designation'] = 'Désignation';
+$lang['patrimoine_rapport_valeur'] = 'valuer(en $)';
+$lang['patrimoine_rapport_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_rapport_revenus_fiscal'] = 'Revenus et Fiscalité';
+$lang['patrimoine_rapport_charges'] = 'Charges';
+$lang['patrimoine_rapport_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_rapport_duree'] = 'Durée';
+$lang['patrimoine_rapport_taux'] = 'Taux';
+$lang['patrimoine_rapport_deces'] = 'Ass. ** Décès';
 
 
 //bien
-$lang['patremoine_bien_designation'] = 'Désignation';
-$lang['patremoine_bien_valeur'] = 'valuer(en $)';
-$lang['patremoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
-$lang['patremoine_bien_charges'] = 'Charges';
-$lang['patremoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
+$lang['patrimoine_bien_designation'] = 'Désignation';
+$lang['patrimoine_bien_valeur'] = 'valuer(en $)';
+$lang['patrimoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
+$lang['patrimoine_bien_charges'] = 'Charges';
+$lang['patrimoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
 
 
 //passifs
 $lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
-$lang['patremoine_passifs_designation'] = 'Désignation';
-$lang['patremoine_passifs_capital'] = 'Capital emprunté ou restant dû';
-$lang['patremoine_passifs_souscription'] = 'Durée';
-$lang['patremoine_passifs_assure'] = 'Taux';
-$lang['patremoine_passifs_benef'] = 'Ass. ** Décès';
-$lang['patremoine_passifs_particularites'] = 'Particularités';
+$lang['patrimoine_passifs_designation'] = 'Désignation';
+$lang['patrimoine_passifs_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_passifs_souscription'] = 'Durée';
+$lang['patrimoine_passifs_assure'] = 'Taux';
+$lang['patrimoine_passifs_benef'] = 'Ass. ** Décès';
+$lang['patrimoine_passifs_particularites'] = 'Particularités';
 
 
 //Bien Question

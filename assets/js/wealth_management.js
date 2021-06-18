@@ -2,7 +2,7 @@
 /***************| PROCHE |****************** */
 /****************************************** */
 // New task function, various actions performed
-function new_patremoine(url, type) {
+function new_patrimoine(url, type) {
     url = typeof (url) != 'undefined' ? url : admin_url + 'wealth_management/addInfo?id=&patrimoine_id=&type=' + type;
 
     var $leadModal = $('#lead-modal');
@@ -40,11 +40,11 @@ function new_patremoione_info_from_relation(patrimoine_id, type) {
     //   rel_id = $(table).data('new-rel-id');
     // }
     var url = admin_url + 'wealth_management/addInfo?id=&patrimoine_id='+patrimoine_id+'&type='+type; 
-    new_patremoine(url, type);
+    new_patrimoine(url, type);
 }
 
 // Go to edit view
-function edit_info_patremoine(id, type) { 
+function edit_info_patrimoine(id, type) { 
     requestGet('wealth_management/addInfo?id='+id+'&patrimoine_id=&type='+type).done(function (response) {
         $('#_task').html(response);
         $('#'+type+'-modal').modal('hide');
@@ -58,7 +58,7 @@ function edit_info_patremoine(id, type) {
 }
 
 // Handles task add/edit form modal. --proche
-function patremoine_form_handler(form) {
+function patrimoine_form_handler(form) {
     // Disable the save button in cases od duplicate clicks
     $('._info_modal').find('button[type="submit"]').prop('disabled', true);
     
@@ -161,7 +161,7 @@ function comment_form_handler(form) {
 }
 
 // Go to edit view
-function edit_comment_patremoine(patrimoine_id, id, type) { 
+function edit_comment_patrimoine(patrimoine_id, id, type) { 
     if(patrimoine_id) {
         var url = admin_url + 'wealth_management/addComment?id=&patrimoine_id='+patrimoine_id+'&type='+type; 
         new_comment(url, type);
@@ -221,7 +221,7 @@ function new_bien_qst(url) {
 }
 
 // Go to edit view
-function edit_bien_qst_patremoine(id) { 
+function edit_bien_qst_patrimoine(id) { 
     requestGet('wealth_management/addBienQst/'+id).done(function (response) {
         $('#_task').html(response);
         $('#bien_qst-modal').modal('hide');
