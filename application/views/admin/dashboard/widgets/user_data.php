@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('user_widget'); ?>">
    <div class="panel_s user-data">
-      <div class="panel-body home-activity">
+      <div class="panel-body home-activity no-padding-right">
          <div class="widget-dragger"></div>
          <div class="horizontal-scrollable-tabs">
             <div class="scroller scroller-left arrow-left"><i class="fa fa-angle-left"></i></div>
@@ -13,9 +13,14 @@
                         <i class="fa fa-tasks menu-icon"></i> <?php echo _l('home_my_tasks'); ?>
                      </a>
                   </li>
-                  <li role="presentation">
+                  <!-- <li role="presentation">
                      <a href="#home_my_projects" onclick="init_table_staff_projects(true);" aria-controls="home_my_projects" role="tab" data-toggle="tab">
                      <i class="fa fa-bars menu-icon"></i> <?php echo _l('home_my_projects'); ?>
+                     </a>
+                  </li> -->
+                  <li role="presentation">
+                     <a href="#home_my_patrimoines" onclick="init_table_staff_patrimoines(true);" aria-controls="home_my_patrimoines" role="tab" data-toggle="tab">
+                     <i class="fa fa-users menu-icon"></i> <?php echo _l('home_my_patrimoines'); ?>
                      </a>
                   </li>
                   <li role="presentation">
@@ -23,13 +28,13 @@
                      <i class="fa fa-clock-o menu-icon"></i> <?php echo _l('my_reminders'); ?>
                      <?php
                         $total_reminders = total_rows(db_prefix().'reminders',
-                          array(
+                           array(
                            'isnotified'=>0,
                            'staff'=>get_staff_user_id(),
                         )
                         );
                         if($total_reminders > 0){
-                          echo '<span class="badge">'.$total_reminders.'</span>';
+                           echo '<span class="badge">'.$total_reminders.'</span>';
                         }
                         ?>
                      </a>
@@ -67,8 +72,8 @@
                         <?php
                            echo form_hidden('my_tasks',true);
                            foreach($task_statuses as $status){
-                            $val = 'true';
-                            if($status['id'] == Tasks_model::STATUS_COMPLETE){
+                              $val = 'true';
+                              if($status['id'] == Tasks_model::STATUS_COMPLETE){
                               $val = '';
                            }
                            echo form_hidden('task_status_'.$status['id'],$val);
@@ -92,7 +97,7 @@
                      <?php echo AdminTicketsTableStructure(); ?>
                   </div>
                   <?php } ?>
-                  <div role="tabpanel" class="tab-pane" id="home_my_projects">
+                  <!-- <div role="tabpanel" class="tab-pane" id="home_my_projects">
                      <a href="<?php echo admin_url('projects'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
                      <div class="clearfix"></div>
                      <?php render_datatable(array(
@@ -105,6 +110,11 @@
                         'data-default-order'  => get_table_last_order('my-projects'),
                         ]);
                         ?>
+                  </div> -->
+                  <div role="tabpanel" class="tab-pane" id="home_my_patrimoines">
+                     <a href="<?php echo admin_url('wealth_management'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
+                     <div class="clearfix"></div>  
+                     <?php $this->load->view('wealth_management/table_html'); ?>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="home_my_reminders">
                      <a href="<?php echo admin_url('misc/reminders'); ?>" class="mbot20 inline-block full-width">

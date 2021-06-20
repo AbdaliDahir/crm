@@ -25,7 +25,7 @@ class Usage_model extends App_Model
     {  
 
         foreach($this->attributes as $attribute) {
-            if(empty($data[$attribute])) {
+            if(isset($data[$attribute]) && empty($data[$attribute])) {
                 $data[$attribute] = "";
             } else {
                 $data[$attribute] = $this->test_input($data[$attribute]);

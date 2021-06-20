@@ -4,6 +4,145 @@
     <div class="content">
         <div class="row">
             <?php echo form_open($this->uri->uri_string(), array('id' => 'patrimoine_form')); ?>
+            
+            <!-- added --> 
+            <div class="col-xs-12 mtop30">
+                <div class="panel_s">
+                    <div class="panel-body" id="patrimoine-settings-area">
+                        <h4 class="no-margin">
+                            <?php echo _l('patrimoine_information_title'); ?>
+                        </h4>
+                        <hr class="hr-panel-heading" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <?php echo form_hidden('info_id', isset($patrimoine->info) ? $patrimoine->info->id : '') ?>
+                                <h6 class="text-primary h5"> vous </h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <?php echo render_input('patr_me_firstname','patrimoine_me_firstname', isset($patrimoine->info) ? $patrimoine->info->patr_me_firstname : '','text'); ?>
+                                    </div>
+                                    <div class="col-md-4"> 
+                                        <?php echo render_input('patr_me_lastname','patrimoine_me_lastname', isset($patrimoine->info) ? $patrimoine->info->patr_me_lastname : '','text'); ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php echo render_date_input('patr_me_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_birthday) : ''); ?>
+                                    </div>
+                                </div>
+                                
+                                <?php echo render_input('patr_me_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_me_profession: '','text'); ?>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <?php echo render_date_input('patr_me_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_depart) : ''); ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_me_nss : '','text'); ?> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="text-primary h5"> Votre conjoint </h6>
+                                <div class="row">
+                                    <div class="col-md-4"> 
+                                        <?php echo render_input('patr_partner_firstname','patrimoine_me_firstname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_firstname : '','text'); ?>
+                                    </div>
+                                    <div class="col-md-4">  
+                                        <?php echo render_input('patr_partner_lastname','patrimoine_me_lastname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_lastname : '','text'); ?>
+                                    </div>
+                                    <div class="col-md-4"> 
+                                        <?php echo render_date_input('patr_partner_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_birthday : ''); ?> 
+                                    </div>
+                                </div>
+    
+                                <?php echo render_input('patr_partner_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_profession : '','text'); ?>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <?php echo render_date_input('patr_partner_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_depart : ''); ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_partner_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_nss : '','text'); ?> 
+                                    </div> 
+                                </div>
+                            </div> 
+                        </div> 
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <?php echo render_textarea('patr_me_address','patrimoine_conjoint_adresse',  isset($patrimoine->info) ? $patrimoine->info->patr_me_address : ''); ?> 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_tele_perso','patrimoine_conjoint_tel_perso',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_perso : '', 'text'); ?> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_tele_mme','patrimoine_conjoint_tel_mobile_mme',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_mme : '', 'text'); ?> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <?php echo render_date_input('patr_partner_precedent_marriage_date','patrimoine_conjoint_date_mariage',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_precedent_marriage_date : ''); ?> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_partner_regime','patrimoine_conjoint_regime', isset($patrimoine->info) ? $patrimoine->info->patr_partner_regime : '','text'); ?> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <h6><?php echo _l('patrimoine_conjoint_donation'); ?></h6>
+                                            <div class="form-inline">
+                                                <div class="radio">
+                                                    <input type="radio" name="patr_partner_donation" id="patr_partner_donation_no"
+                                                    value="<?php echo isset($patrimoine->info) ? $patrimoine->info->patr_partner_donation : 0 ?>"
+                                                    <?php if (isset($patrimoine->info)) { echo $patrimoine->info->patr_partner_donation == 0 ? 'checked' : ''; } ?> />
+                                                    <label for="patr_partner_donation_no"><?php echo _l('settings_no'); ?></label>
+                                                </div>
+                                                <div class="radio">
+                                                    <input type="radio" name="patr_partner_donation" id="patr_partner_donation_yes"
+                                                    value="<?php echo isset($patrimoine->info) ? $patrimoine->info->patr_partner_donation : 1 ?>"
+                                                    <?php if (isset($patrimoine->info)) { echo $patrimoine->info->patr_partner_donation == 1 ? 'checked' : ''; } ?> />
+                                                    <label
+                                                    for="patr_partner_donation_yes"><?php echo _l('settings_yes'); ?></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_tele_m','patrimoine_conjoint_tel_mobile_m',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_m : '', 'text'); ?> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_email_one','patrimoine_conjoint_email_one',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_one : '', 'email'); ?> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php echo render_input('patr_me_email_two','patrimoine_conjoint_email_two',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_two : '', 'email'); ?> 
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h6 class="font-weight-bold mbot15"><?php echo _l('patrimoine_conjoint_more_question'); ?> </h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <?php echo render_date_input('patr_partner_marriage_date','patrimoine_conjoint_more_question_mariage_date',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_date : ''); ?> 
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php echo render_input('patr_partner_marriage_duration','patrimoine_conjoint_more_question_mariage_durée',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_duration : '','number'); ?> 
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php echo render_input('patr_partner_situtation','patrimoine_conjoint_more_question_situation',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_situtation : '','text'); ?> 
+                                    </div>
+                                </div>
+                                <div> 
+                                    <?php echo render_input('patr_partner_finance','patrimoine_conjoint_more_question_finance',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_finance : '','text'); ?> 
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- ./END:: ADDEDD --> 
+            
             <div class="col-md-6">
                 <div class="panel_s">
                     <div class="panel-body">
@@ -11,7 +150,17 @@
                             <?php echo $title; ?>
                         </h4>
                         <hr class="hr-panel-heading" />
-                        <div class="row">
+                        <?php
+                            $disable_type_edit = '';
+                            if (isset($patrimoine)) {
+                                if ($patrimoine->billing_type != 1) {
+                                    if (total_rows(db_prefix() . 'tasks', array('rel_id' => $patrimoine->id, 'rel_type' => 'patrimoine', 'billable' => 1, 'billed' => 1)) > 0) {
+                                        $disable_type_edit = 'disabled';
+                                    }
+                                }
+                            }
+                        ?>
+                        <!-- <div class="row">
                             <div class="col-md-6">
                                 <?php
                                 $disable_type_edit = '';
@@ -42,7 +191,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -393,144 +542,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- added --> 
-            <div class="col-xs-12 mtop30">
-                <div class="panel_s">
-                    <div class="panel-body" id="patrimoine-settings-area">
-                        <h4 class="no-margin">
-                            <?php echo _l('patrimoine_information_title'); ?>
-                        </h4>
-                        <hr class="hr-panel-heading" />
-                        <div class="row">
-                            <div class="col-md-6">
-                                <?php echo form_hidden('info_id', isset($patrimoine->info) ? $patrimoine->info->id : '') ?>
-                                <h6 class="text-primary h5"> vous </h6>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <?php echo render_input('patr_me_firstname','patrimoine_me_firstname', isset($patrimoine->info) ? $patrimoine->info->patr_me_firstname : '','text'); ?>
-                                    </div>
-                                    <div class="col-md-4"> 
-                                        <?php echo render_input('patr_me_lastname','patrimoine_me_lastname', isset($patrimoine->info) ? $patrimoine->info->patr_me_lastname : '','text'); ?>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <?php echo render_date_input('patr_me_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_birthday) : ''); ?>
-                                    </div>
-                                </div>
-                                
-                                <?php echo render_input('patr_me_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_me_profession: '','text'); ?>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php echo render_date_input('patr_me_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? _d($patrimoine->info->patr_me_depart) : ''); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_me_nss : '','text'); ?> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="text-primary h5"> Votre conjoint </h6>
-                                <div class="row">
-                                    <div class="col-md-4"> 
-                                        <?php echo render_input('patr_partner_firstname','patrimoine_me_firstname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_firstname : '','text'); ?>
-                                    </div>
-                                    <div class="col-md-4">  
-                                        <?php echo render_input('patr_partner_lastname','patrimoine_me_lastname',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_lastname : '','text'); ?>
-                                    </div>
-                                    <div class="col-md-4"> 
-                                        <?php echo render_date_input('patr_partner_birthday','patrimoine_me_date_birth',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_birthday : ''); ?> 
-                                    </div>
-                                </div>
-    
-                                <?php echo render_input('patr_partner_profession','patrimoine_conjoint_profession',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_profession : '','text'); ?>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php echo render_date_input('patr_partner_depart','patrimoine_conjoint_date_depart',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_depart : ''); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_partner_nss','patrimoine_conjoint_NSS',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_nss : '','text'); ?> 
-                                    </div> 
-                                </div>
-                            </div> 
-                        </div> 
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <?php echo render_textarea('patr_me_address','patrimoine_conjoint_adresse',  isset($patrimoine->info) ? $patrimoine->info->patr_me_address : ''); ?> 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_tele_perso','patrimoine_conjoint_tel_perso',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_perso : '', 'text'); ?> 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_tele_mme','patrimoine_conjoint_tel_mobile_mme',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_mme : '', 'text'); ?> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php echo render_date_input('patr_partner_precedent_marriage_date','patrimoine_conjoint_date_mariage',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_precedent_marriage_date : ''); ?> 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_partner_regime','patrimoine_conjoint_regime', isset($patrimoine->info) ? $patrimoine->info->patr_partner_regime : '','text'); ?> 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-group">
-                                            <h6><?php echo _l('patrimoine_conjoint_donation'); ?></h6>
-                                            <div class="form-inline">
-                                                <div class="radio">
-                                                    <input type="radio" name="patr_partner_donation" id="patr_partner_donation_no"
-                                                    value="<?php echo isset($patrimoine->info) ? $patrimoine->info->patr_partner_donation : 0 ?>"
-                                                    <?php if (isset($patrimoine->info)) { echo $patrimoine->info->patr_partner_donation == 0 ? 'checked' : ''; } ?> />
-                                                    <label for="patr_partner_donation_no"><?php echo _l('settings_no'); ?></label>
-                                                </div>
-                                                <div class="radio">
-                                                    <input type="radio" name="patr_partner_donation" id="patr_partner_donation_yes"
-                                                    value="<?php echo isset($patrimoine->info) ? $patrimoine->info->patr_partner_donation : 1 ?>"
-                                                    <?php if (isset($patrimoine->info)) { echo $patrimoine->info->patr_partner_donation == 1 ? 'checked' : ''; } ?> />
-                                                    <label
-                                                    for="patr_partner_donation_yes"><?php echo _l('settings_yes'); ?></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_tele_m','patrimoine_conjoint_tel_mobile_m',  isset($patrimoine->info) ? $patrimoine->info->patr_me_tele_m : '', 'text'); ?> 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_email_one','patrimoine_conjoint_email_one',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_one : '', 'email'); ?> 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php echo render_input('patr_me_email_two','patrimoine_conjoint_email_two',  isset($patrimoine->info) ? $patrimoine->info->patr_me_email_two : '', 'email'); ?> 
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h6 class="font-weight-bold mbot15"><?php echo _l('patrimoine_conjoint_more_question'); ?> </h6>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <?php echo render_date_input('patr_partner_marriage_date','patrimoine_conjoint_more_question_mariage_date',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_date : ''); ?> 
-                                    </div>
-                                    <div class="col-md-4">
-                                        <?php echo render_input('patr_partner_marriage_duration','patrimoine_conjoint_more_question_mariage_durée',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_marriage_duration : '','number'); ?> 
-                                    </div>
-                                    <div class="col-md-4">
-                                        <?php echo render_input('patr_partner_situtation','patrimoine_conjoint_more_question_situation',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_situtation : '','text'); ?> 
-                                    </div>
-                                </div>
-                                <div> 
-                                    <?php echo render_input('patr_partner_finance','patrimoine_conjoint_more_question_finance',  isset($patrimoine->info) ? $patrimoine->info->patr_partner_finance : '','text'); ?> 
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- ./END:: ADDEDD --> 
 
             <?php echo form_close(); ?>
         </div>

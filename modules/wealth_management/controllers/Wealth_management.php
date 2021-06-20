@@ -27,6 +27,8 @@ class Wealth_management extends AdminController
         $this->load->model('situation_model');
         $this->load->model('currencies_model');
         $this->load->model('comment_model');
+        $this->load->model('fiscale_model');
+        $this->load->model('donation_model');
         $this->load->model('bien_question_model');
         $this->load->helper('date');
     }
@@ -358,6 +360,9 @@ class Wealth_management extends AdminController
                 $data['epargne_comment'] = $this->comment_model->get_comment($patrimoine->id, 'epargne');
                 $data['estates_comment'] = $this->comment_model->get_comment($patrimoine->id, 'estates');
                 $data['availability_comment'] = $this->comment_model->get_comment($patrimoine->id, 'availability');
+            } elseif ($group == 'patrimoine_fiscale') {
+                $data['fiscale'] = $this->fiscale_model->get_fiscale_text($id);
+                $data['donation'] = $this->donation_model->get_donation_text($id);
             }
 
             // Discussions
@@ -1860,6 +1865,28 @@ class Wealth_management extends AdminController
         $data['id']    = $id;
         $data['title'] = $title;
         $this->load->view('wealth_management/patrimoine/modals/bien_qst_modal', $data);
+    }
+
+    public function save_fiscale($patrimoine_id)
+    {
+        if ($this->input->post()) {
+            $success = $this->fiscale_model->save_fiscale($this->input->post(null, false), $patrimoine_id);
+            if ($success) {
+                set_alert('success', _l('updated_successfully', _l('patrimoine_fiscale')));
+            }
+            redirect(admin_url('wealth_management/view/' . $patrimoine_id . '?group=patrimoine_fiscale'));
+        }
+    }
+
+    public function save_donation($patrimoine_id)
+    {
+        if ($this->input->post()) {
+            $success = $this->donation_model->save_donation($this->input->post(null, false), $patrimoine_id);
+            if ($success) {
+                set_alert('success', _l('updated_successfully', _l('patrimoine_donation')));
+            }
+            redirect(admin_url('wealth_management/view/' . $patrimoine_id . '?group=patrimoine_fiscale'));
+        }
     }
     
 }

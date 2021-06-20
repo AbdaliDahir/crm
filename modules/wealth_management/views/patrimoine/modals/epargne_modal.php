@@ -38,10 +38,10 @@
           required: true,
           number: true
         },
-        patr_passifs_detenteur: 'required',
-        patr_passifs_date_ouverture: 'required',
-        patr_passifs_associee: 'required',
-        patr_passifs_particularites: 'required',
+        // patr_passifs_detenteur: 'required',
+        // patr_passifs_date_ouverture: 'required',
+        // patr_passifs_associee: 'required',
+        // patr_passifs_particularites: 'required',
       }, patrimoine_form_handler);
       init_datepicker();
     });

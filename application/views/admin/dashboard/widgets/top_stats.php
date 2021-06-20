@@ -59,13 +59,13 @@
             </div>
          </div>
          <?php } ?>
-         <div class="quick-stats-projects col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <!-- <div class="quick-stats-projects col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="top_stats_wrapper">
                <?php
                   $_where = '';
                   $project_status = get_project_status_by_id(2);
                   if(!has_permission('projects','','view')){
-                    $_where = 'id IN (SELECT project_id FROM '.db_prefix().'project_members WHERE staff_id='.get_staff_user_id().')';
+                     $_where = 'id IN (SELECT project_id FROM '.db_prefix().'project_members WHERE staff_id='.get_staff_user_id().')';
                   }
                   $total_projects = total_rows(db_prefix().'projects',$_where);
                   $where = ($_where == '' ? '' : $_where.' AND ').'status = 2';
@@ -79,13 +79,34 @@
                   </div>
                </div>
             </div>
+         </div> -->
+         <div class="quick-stats-patrimoines col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+            <div class="top_stats_wrapper">
+               <?php
+                  $_where = '';
+                  $patrimoine_status = get_patrimoine_status_by_id(2);
+                  if(!has_permission('patrimoines','','view')){
+                     $_where = '';
+                  }
+                  $total_patrimoines = total_rows(db_prefix().'patrimoines',$_where);
+                  $where = ($_where == '' ? '' : $_where.' AND ').'status = 2';
+                  $total_patrimoines_in_progress = total_rows(db_prefix().'patrimoines',$where);
+                  $percent_in_progress_patrimoines = ($total_patrimoines > 0 ? number_format(($total_patrimoines_in_progress * 100) / $total_patrimoines,2) : 0);
+                  ?>
+               <p class="text-uppercase mtop5"><i class="hidden-sm fa fa-users"></i> <?php echo _l('patrimoines') . ' ' . $patrimoine_status['name']; ?><span class="pull-right"><?php echo $total_patrimoines_in_progress; ?> / <?php echo $total_patrimoines; ?></span></p>
+               <div class="clearfix"></div>
+               <div class="progress no-margin progress-bar-mini">
+                  <div class="progress-bar no-percent-text not-dynamic" style="background:<?php echo $patrimoine_status['color']; ?>" role="progressbar" aria-valuenow="<?php echo $percent_in_progress_patrimoines; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent_in_progress_patrimoines; ?>">
+                  </div>
+               </div>
+            </div>
          </div>
          <div class="quick-stats-tasks col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="top_stats_wrapper">
                <?php
                   $_where = '';
                   if (!has_permission('tasks', '', 'view')) {
-                    $_where = db_prefix().'tasks.id IN (SELECT taskid FROM '.db_prefix().'task_assigned WHERE staffid = ' . get_staff_user_id() . ')';
+                     $_where = db_prefix().'tasks.id IN (SELECT taskid FROM '.db_prefix().'task_assigned WHERE staffid = ' . get_staff_user_id() . ')';
                   }
                   $total_tasks = total_rows(db_prefix().'tasks',$_where);
                   $where = ($_where == '' ? '' : $_where.' AND ').'status != '.Tasks_model::STATUS_COMPLETE;

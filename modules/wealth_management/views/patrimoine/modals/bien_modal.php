@@ -37,12 +37,12 @@
           required: true,
           number: true
         },
-        patr_bien_detenteur: 'required',
-        patr_bien_charges: {
-          required: true,
-          number: true
-        },
-        patr_bien_particularites: 'required',
+        // patr_bien_detenteur: 'required',
+        // patr_bien_charges: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_bien_particularites: 'required',
       }, patrimoine_form_handler);
       init_datepicker();
     });

@@ -36,11 +36,11 @@
     $(function () {
       
       appValidateForm($('#usage-form'), {
-        // patr_usage_designation: 'required',
-        // patr_usage_valeur: {
-        //   required: true,
-        //   number: true
-        // },
+        patr_usage_designation: 'required',
+        patr_usage_valeur: {
+          required: true,
+          number: true
+        },
         // patr_usage_detenteur: 'required',
         // patr_usage_date_achat: {
         //   required: false,

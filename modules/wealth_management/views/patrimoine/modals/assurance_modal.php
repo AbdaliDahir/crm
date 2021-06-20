@@ -34,14 +34,14 @@
       
       appValidateForm($('#assurance-form'), {
         patr_passifs_designation: 'required',
-        patr_passifs_capital: {
-          required: true,
-          number: true
-        },
-        patr_passifs_souscription: 'required',
-        patr_passifs_assure: 'required',
-        patr_passifs_benef: 'required',
-        patr_passifs_particularites: 'required',
+        // patr_passifs_capital: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_passifs_souscription: 'required',
+        // patr_passifs_assure: 'required',
+        // patr_passifs_benef: 'required',
+        // patr_passifs_particularites: 'required',
       }, patrimoine_form_handler);
       init_datepicker();
     });

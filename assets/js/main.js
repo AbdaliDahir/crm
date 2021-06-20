@@ -4821,6 +4821,25 @@ function init_table_staff_projects(manual) {
     initDataTable('.table-staff-projects', admin_url + 'projects/staff_projects', 'undefined', 'undefined', staffProjectsParams, [2, 'asc']);
 }
 
+// Staff projects table in staff profile
+function init_table_staff_patrimoines(manual) {
+    if (typeof (manual) == 'undefined' && $("body").hasClass('dashboard')) {
+        return false;
+    }
+    if ($("body").find('.table-patrimoines').length === 0) {
+        return;
+    }
+
+    var staffPatrimoinesParams = {},
+        Staff_Patrimoines_Filters = $('._hidden_inputs._filters.staff_patrimoines_filter input');
+
+    $.each(Staff_Patrimoines_Filters, function () {
+        staffPatrimoinesParams[$(this).attr('name')] = '[name="' + $(this).attr('name') + '"]';
+    });
+
+    initDataTable('.table-patrimoines', admin_url + 'wealth_management/table', 'undefined', 'undefined', staffPatrimoinesParams, [2, 'asc']);
+}
+
 // Fix task checklist content textarea height
 function do_task_checklist_items_height(task_checklist_items) {
     if (typeof (task_checklist_items) == 'undefined') {

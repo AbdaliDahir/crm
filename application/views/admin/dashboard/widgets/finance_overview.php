@@ -189,4 +189,3 @@ switch(count(array_filter([$canViewInvoices, $canViewEstimates,$canViewProposals
          </div>
          <?php } ?>
       </div>
-

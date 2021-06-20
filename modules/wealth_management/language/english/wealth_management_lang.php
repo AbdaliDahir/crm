@@ -526,3 +526,21 @@ $lang['bien_qst_participations'] = 'Quelles participations ?';
 $lang['bien_qst_immobilier'] = 'Comment
 est détenu l’immobilier professionnel ?';
 $lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
+
+//fiscale
+$lang['patrimoine_fiscale_title'] = 'Tax particularities (capital gains, deficits not yet charged, income received abroad, etc.)';
+$lang['patrimoine_fiscale'] = 'Tax particularities.';
+$lang['patrimoine_save_fiscale'] = 'Save Cahnges';
+
+//donation
+$lang['patrimoine_donation_title'] = 'The donations granted (specify the characteristics of donations and wills: date, beneficiaries, property concerned, type of gifts, etc.)';
+$lang['patrimoine_donation'] = 'The donations granted';
+$lang['patrimoine_save_donation'] = 'Save Changes';
+
+// $lang['patrimoine_fiscale_title'] = 'Particularités fiscales (plus-values, déficits non encore imputés, revenus perçus à l’étranger, etc.)';
+// $lang['patrimoine_fiscale'] = 'Particularités fiscales.';
+// $lang['patrimoine_save_fiscale'] = 'Save fiscale';
+
+// $lang['patrimoine_fiscale_title'] = 'Particularités fiscales (plus-values, déficits non encore imputés, revenus perçus à l’étranger, etc.)';
+// $lang['patrimoine_fiscale'] = 'Particularités fiscales.';
+// $lang['patrimoine_save_fiscale'] = 'Save fiscale';

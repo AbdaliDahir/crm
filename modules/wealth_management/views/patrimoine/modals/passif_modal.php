@@ -34,17 +34,17 @@
       
       appValidateForm($('#passif-form'), {
         patr_passifs_designation: 'required',
-        patr_passifs_capital: {
-          required: true,
-          number: true
-        },
-        patr_passifs_duree: 'required',
-        patr_passifs_taux: {
-          required: true,
-          number: true
-        },
-        patr_passifs_deces: 'required',
-        patr_passifs_particularites: 'required',
+        // patr_passifs_capital: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_passifs_duree: 'required',
+        // patr_passifs_taux: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_passifs_deces: 'required',
+        // patr_passifs_particularites: 'required',
       }, patrimoine_form_handler);
       init_datepicker();
     });

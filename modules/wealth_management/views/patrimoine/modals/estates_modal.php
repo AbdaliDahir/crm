@@ -39,13 +39,13 @@
           required: true,
           number: true
         },
-        patr_passifs_detenteur: 'required',
-        patr_passifs_revenus: 'required',
-        patr_passifs_revenus_fiscal: 'required',
-        patr_passifs_taux: {
-          required: true,
-          number: true
-        },
+        // patr_passifs_detenteur: 'required',
+        // patr_passifs_revenus: 'required',
+        // patr_passifs_revenus_fiscal: 'required',
+        // patr_passifs_taux: {
+        //   required: true,
+        //   number: true
+        // },
       }, patrimoine_form_handler);
       init_datepicker();
     });

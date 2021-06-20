@@ -4,13 +4,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Bien_model extends App_Model
 {
-    private $values;
+    private $attributes;
+    private $float_attributes;
+    private $errors = [];
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->values = ['patr_bien_designation','patr_bien_valeur','patr_bien_detenteur','patr_bien_charges','patr_bien_particularites'];
+        $this->attributes = ['patr_bien_designation','patr_bien_valeur','patr_bien_detenteur','patr_bien_charges','patr_bien_particularites'];
+
+        $this->float_attributes = ['patr_usage_valeur','patr_usage_charges'];
     }
 
     /**
@@ -21,8 +25,36 @@ class Bien_model extends App_Model
     public function add($data)
     {  
 
-        foreach ($this->values as $value) {
-            $data[$value]   = trim($data[$value]);
+        foreach($this->attributes as $attribute) {
+            if(isset($data[$attribute]) && empty($data[$attribute])) {
+                $data[$attribute] = "";
+            } else {
+                $data[$attribute] = $this->test_input($data[$attribute]);
+            }
+        }
+
+        // required inputs.
+        if(empty($data['patr_bien_designation'])) {
+            $this->errors['designation'] = 'designation can not be empty'; 
+        } 
+        if(empty($data['patr_bien_valeur'])) {
+            $this->errors['valeur'] = 'valeur can not be empty'; 
+        } 
+
+        // check for float.
+        foreach($this->float_attributes as $float_attribute) {
+            if (isset($data[$float_attribute]) && !empty($data[$float_attribute])) {
+                $capital = filter_var($data[$float_attribute], FILTER_VALIDATE_FLOAT);
+                if ($capital === false) {
+                    $this->errors[$float_attribute] = 'error in float number';
+                } else {
+                    $data[$float_attribute] = $data[$float_attribute];
+                }
+            }
+        }
+
+        if(count($this->errors) > 0) {
+            return $this->errors;
         }
 
         // add created date and last updated date.
@@ -91,15 +123,6 @@ class Bien_model extends App_Model
      */
     public function delete_bien($id)
     {
-        // $patrimoine_name = get_patrimoine_name_by_id($patrimoine_id);
-
-        // $this->db->where('id', $patrimoine_id);
-        // $this->db->delete(db_prefix() . 'patrimoines');
-
-        // if($this->db->affected_rows() > 0) {
-
-        // }
-
         $this->db->where('id', $id);
         $this->db->delete(db_prefix() . 'patrimoines_biens_pro');
         

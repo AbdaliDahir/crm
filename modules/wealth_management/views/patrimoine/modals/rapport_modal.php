@@ -42,23 +42,22 @@
           required: true,
           number: true
         },
-        patr_rapport_detenteur: 'required',
-        patr_rapport_revenus_fiscal: 'required',
-        patr_rapport_charges: {
-          required: true,
-          number: true
-        },
-            patr_rapport_capital: {
-          required: true,
-          number: true
-        },
-        patr_rapport_duree: 'required',
-        patr_rapport_taux: {
-          required: true,
-          number: true
-        },
-        patr_rapport_deces: 'required',
-        
+        // patr_rapport_detenteur: 'required',
+        // patr_rapport_revenus_fiscal: 'required',
+        // patr_rapport_charges: {
+        //   required: true,
+        //   number: true
+        // },
+        //     patr_rapport_capital: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_rapport_duree: 'required',
+        // patr_rapport_taux: {
+        //   required: true,
+        //   number: true
+        // },
+        // patr_rapport_deces: 'required', 
       }, patrimoine_form_handler);
       init_datepicker();
     });

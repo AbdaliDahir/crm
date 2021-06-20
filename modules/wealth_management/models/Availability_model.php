@@ -4,18 +4,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Availability_model extends App_Model
 {
-    private $values;
+    private $attributes;
+    private $float_attributes;
+    private $errors = [];
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->values = [
+        $this->attributes = [
             'patr_passifs_designation',
             'patr_passifs_valeur',
             'patr_passifs_detenteur',
             'patr_passifs_particularites'
         ];
+        $this->float_attributes = ['patr_passifs_valeur'];
     }
 
     /**
@@ -25,9 +28,36 @@ class Availability_model extends App_Model
      */
     public function add($data)
     {  
+        foreach($this->attributes as $attribute) {
+            if(isset($data[$attribute]) && empty($data[$attribute])) {
+                $data[$attribute] = "";
+            } else {
+                $data[$attribute] = $this->test_input($data[$attribute]);
+            }
+        }
 
-        foreach ($this->values as $value) {
-            $data[$value]   = trim($data[$value]);
+        // required inputs.
+        if(empty($data['patr_passifs_designation'])) {
+            $this->errors['designation'] = 'designation can not be empty'; 
+        } 
+        if(empty($data['patr_passifs_valeur'])) {
+            $this->errors['valeur'] = 'valeur can not be empty'; 
+        } 
+
+        // check for float.
+        foreach($this->float_attributes as $float_attribute) {
+            if (isset($data[$float_attribute]) && !empty($data[$float_attribute])) {
+                $capital = filter_var($data[$float_attribute], FILTER_VALIDATE_FLOAT);
+                if ($capital === false) {
+                    $this->errors[$float_attribute] = 'error in float number';
+                } else {
+                    $data[$float_attribute] = $data[$float_attribute];
+                }
+            }
+        }
+
+        if(count($this->errors) > 0) {
+            return $this->errors;
         }
 
         // add created date and last updated date.
