@@ -41,7 +41,7 @@
             <div class="col-md-4" data-container="bottom-left-4">
                 <?php render_dashboard_widgets('bottom-left-4'); ?>
             </div>
-             <div class="col-md-4" data-container="bottom-middle-4">
+            <div class="col-md-4" data-container="bottom-middle-4">
                 <?php render_dashboard_widgets('bottom-middle-4'); ?>
             </div>
             <div class="col-md-4" data-container="bottom-right-4">

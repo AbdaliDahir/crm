@@ -4826,7 +4826,12 @@ function init_table_staff_patrimoines(manual) {
     if (typeof (manual) == 'undefined' && $("body").hasClass('dashboard')) {
         return false;
     }
-    if ($("body").find('.table-patrimoines').length === 0) {
+    // if ($("body").find('.table-patrimoines').length === 0) {
+    //     console.log('upppppppppppppp');
+    //     return;
+    // }
+    if ($("body").find('.table-patrimoines_dashboard').length === 0) {
+        console.log('upppppppppppppp 22');
         return;
     }
 
@@ -4837,7 +4842,9 @@ function init_table_staff_patrimoines(manual) {
         staffPatrimoinesParams[$(this).attr('name')] = '[name="' + $(this).attr('name') + '"]';
     });
 
-    initDataTable('.table-patrimoines', admin_url + 'wealth_management/table', 'undefined', 'undefined', staffPatrimoinesParams, [2, 'asc']);
+    // initDataTable('.table-patrimoines', admin_url + 'wealth_management/table', 'undefined', 'undefined', staffPatrimoinesParams, [2, 'asc']);
+
+    initDataTable('.table-patrimoines_dashboard', admin_url + 'wealth_management/table_dashboard', undefined, undefined, staffPatrimoinesParams);
 }
 
 // Fix task checklist content textarea height

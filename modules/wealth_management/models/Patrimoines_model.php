@@ -68,7 +68,7 @@ class Patrimoines_model extends App_Model
             ],
             [
                 'id'             => 5,
-                'color'          => '#989898',
+                'color'          => '#e91e63',
                 'name'           => _l('patrimoine_status_5'),
                 'order'          => 4,
                 'filter_default' => false,
@@ -2512,6 +2512,9 @@ class Patrimoines_model extends App_Model
 
             $this->db->where('patrimoine_id', $patrimoine_id);
             $this->db->delete(db_prefix() . 'milestones');
+
+            $this->db->where('patrimoineid', $patrimoine_id);
+            $this->db->delete(db_prefix() . 'patrimoines_info');
 
             // Delete the custom field values
             $this->db->where('relid', $patrimoine_id);

@@ -219,7 +219,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group select-placeholder">
+                                    <label for="clientid" class="control-label"><?php echo _l('patrimoine_customer'); ?></label>
+                                    <input type="text" id="clientid" name="clientid" value="6" placeholder="CRM" disable="true" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group select-placeholder">
                                     <label for="billing_type"><?php echo _l('patrimoine_billing_type'); ?></label>
                                     <div class="clearfix"></div>
@@ -241,7 +247,7 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group select-placeholder">
                                     <label for="status"><?php echo _l('patrimoine_status'); ?></label>
                                     <div class="clearfix"></div>
@@ -396,6 +402,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="panel_s">
                     <div class="panel-body" id="patrimoine-settings-area">
@@ -743,5 +750,4 @@
     });
 </script>
 </body>
-
 </html>

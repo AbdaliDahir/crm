@@ -88,7 +88,7 @@
 
         $('.screen-options-area').append(widgetsOptionsHTML);
         $('body').find('#dashboard-options input.widget-visibility').on('change',function(){
-          if($(this).prop('checked') == false) {
+        if($(this).prop('checked') == false) {
             $('#widget-'+$(this).val()).addClass('hide');
         } else {
             $('#widget-'+$(this).val()).removeClass('hide');
@@ -117,6 +117,7 @@
         var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
         var leads_chart = $('#leads_status_stats');
         var projects_chart = $('#projects_status_stats');
+        var patrimoines_chart = $('#patrimoines_status_stats');
 
         if (tickets_chart_departments.length > 0) {
             // Tickets awaiting reply by department chart
@@ -131,7 +132,7 @@
                 type: 'doughnut',
                 data: <?php echo $tickets_reply_by_status; ?>,
                 options: {
-                   onClick:function(evt){
+                    onClick:function(evt){
                     onChartClickRedirect(evt,this);
                 }
             },
@@ -158,10 +159,23 @@
                 options: {
                     maintainAspectRatio:false,
                     onClick:function(evt){
-                       onChartClickRedirect(evt,this);
-                   }
-               }
-           });
+                        onChartClickRedirect(evt,this);
+                    }
+                }
+            });
+        }
+        if(patrimoines_chart.length > 0){
+            // Patrimoines statuses
+            new Chart(patrimoines_chart, {
+                type: 'doughnut',
+                data: <?php echo $patrimoine_status_stats; ?>,
+                options: {
+                    maintainAspectRatio:false,
+                    onClick:function(evt){
+                        onChartClickRedirect(evt,this);
+                    }
+                }
+            });
         }
 
         if($(window).width() < 500) {

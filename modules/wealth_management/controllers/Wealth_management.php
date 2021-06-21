@@ -49,6 +49,13 @@ class Wealth_management extends AdminController
         ]);
     }
 
+    public function table_dashboard($clientid = '')
+    {
+        $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/patrimoines_dashboard'), [
+            'clientid' => $clientid,
+        ]);
+    }
+
     public function proches($id = '')
     { 
         $this->app->get_table_data(module_views_path(MODULE_WEALTH_MANAGEMENT, 'tables/proches'), [

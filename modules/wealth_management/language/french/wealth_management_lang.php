@@ -288,21 +288,21 @@ $lang['patrimoine_progress']                       = 'Progression';
 
 
 # patremoin
-$lang['new_patrimoine']  = 'new user info fr';
-$lang['update_patrimoine']  = 'update your information fr';
-$lang['patrimoine_about']  = 'about fr';
+$lang['new_patrimoine']  = 'new user info';
+$lang['update_patrimoine']  = 'update your information';
+$lang['patrimoine_about']  = 'about';
 ///tabs
-$lang['patrimoine_info']  = 'information fr';
-$lang['patrimoine_proches']  = 'proches fr';
-$lang['patrimoine_votre']  = 'patrimoine fr';
-$lang['patrimoine_passif']  = 'passif fr';
+$lang['patrimoine_info']  = 'information';
+$lang['patrimoine_proches']  = 'proches';
+$lang['patrimoine_votre']  = 'patrimoine';
+$lang['patrimoine_passif']  = 'passif';
 $lang['patrimoine_fiscale']  = 'Particularités fiscales';
-$lang['patrimoine_budget']  = 'budget fr';
-$lang['patrimoine_administrative']  = 'Situation administrative fr';
-$lang['patrimoine_taches']  = 'taches fr';
-$lang['patrimoine_childs']  = 'children fr';
+$lang['patrimoine_budget']  = 'budget';
+$lang['patrimoine_administrative']  = 'Situation administrative';
+$lang['patrimoine_taches']  = 'taches';
+$lang['patrimoine_childs']  = 'children';
 /// new data
-$lang['new_patrimoine_proches']  = 'new proche fr';
+$lang['new_patrimoine_proches']  = 'new proche';
 ///vous form
 $lang['patrimoine_me'] = 'Vous';
 $lang['patrimoine_me_firstname'] = 'Prénom :';
@@ -348,16 +348,16 @@ financières du jugement de divorce ?';
 $lang['add_info'] = 'sauvgarder';
 
 // proches data
-$lang['proches_username'] = 'prenom nom fr';
-$lang['proches_birthday'] = 'birthday fr';
-$lang['proches_lien'] = 'Lien de parenté fr';
+$lang['proches_username'] = 'prenom nom';
+$lang['proches_birthday'] = 'birthday';
+$lang['proches_lien'] = 'Lien de parenté';
 $lang['proches_charge'] = 'A charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
 $lang['proches_parente_e_petit'] = 'Enfant';
 $lang['proches_parente_e_parent'] = 'Parent';
-$lang['proches_contact_tel'] = 'Tele fr';
-$lang['proches_contact_email'] = 'email address fr';
-$lang['proches_contact_address'] = 'Adresse fr';
+$lang['proches_contact_tel'] = 'Tele';
+$lang['proches_contact_email'] = 'email address';
+$lang['proches_contact_address'] = 'Adresse';
 $lang['proches_contact_option'] = 'peut-on les contacter ?';
 $lang['proches'] = 'Proches';
 $lang['proches_lowercase'] = 'proches';

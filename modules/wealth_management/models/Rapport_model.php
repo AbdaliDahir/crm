@@ -61,12 +61,13 @@ class Rapport_model extends App_Model
         $data['updated_date'] = date('Y-m-d H:i:s');
         
         $this->db->insert(db_prefix() . 'patrimoines_immo_rapport', $data);
-        $patrimoines_info_id = $this->db->insert_id();
+        $insert_id = $this->db->insert_id();
 
-        if ($patrimoines_info_id) {
-            log_activity('patrimoines rapport info has been changed [ID: ' . $patrimoines_info_id . ']');
-            return $patrimoines_info_id;
-        }  
+        if ($insert_id) {
+            $this->log_activity($data['patrimoineid'], 'New_Patrimoine_Rapport_Added');
+            log_activity('Patrimoine Rapport Added [ID:' . $insert_id . ']');
+            return $insert_id;
+        } 
 
         return false;
     }
@@ -132,6 +133,19 @@ class Rapport_model extends App_Model
         $this->db->delete(db_prefix() . 'patrimoines_immo_rapport');
         
         return true;
+    }
+
+    public function log_activity($patrimoine_id, $description_key)
+    {
+        $data['description_key']     = $description_key;
+        $data['additional_data']     = "";
+        $data['visible_to_customer'] = 1;
+        $data['patrimoine_id']          = $patrimoine_id;
+        $data['dateadded']           = date('Y-m-d H:i:s');
+
+        $data = hooks()->apply_filters('before_log_patrimoine_activity', $data);
+
+        $this->db->insert(db_prefix() . 'patrimoine_activity', $data);
     }
 
     function test_input($data) {

@@ -35,19 +35,11 @@ class Patrimoines_info_model extends App_Model
         $data['updated_date'] = date('Y-m-d H:i:s');
 
         $this->db->insert(db_prefix() . 'patrimoines_info', $data);
-        $patrimoines_info_id = $this->db->insert_id();
+        $insert_id = $this->db->insert_id();
 
-        if ($patrimoines_info_id) {
-
-            // if (isset($custom_fields)) {
-            //     handle_custom_fields_post($patrimoines_info_id, $custom_fields);
-            // }
-
-            // hooks()->do_action('ticket_created', $patrimoines_info_id);
-            // log_activity('patrimoines info has been changed [ID: ' . $patrimoines_info_id . ']');
-
-            return $patrimoines_info_id;
-        }
+        if ($insert_id) {
+            return $insert_id;
+        } 
 
         return false;
     }
@@ -95,6 +87,19 @@ class Patrimoines_info_model extends App_Model
         }
 
         return false;
+    }
+
+    public function log_activity($patrimoine_id, $description_key)
+    {
+        $data['description_key']     = $description_key;
+        $data['additional_data']     = "";
+        $data['visible_to_customer'] = 1;
+        $data['patrimoine_id']          = $patrimoine_id;
+        $data['dateadded']           = date('Y-m-d H:i:s');
+
+        $data = hooks()->apply_filters('before_log_patrimoine_activity', $data);
+
+        $this->db->insert(db_prefix() . 'patrimoine_activity', $data);
     }
 
     function test_input($data) {

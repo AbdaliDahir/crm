@@ -114,7 +114,7 @@
                   <div role="tabpanel" class="tab-pane" id="home_my_patrimoines">
                      <a href="<?php echo admin_url('wealth_management'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
                      <div class="clearfix"></div>  
-                     <?php $this->load->view('wealth_management/table_html'); ?>
+                     <?php $this->load->view('wealth_management/table_dashboard'); ?>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="home_my_reminders">
                      <a href="<?php echo admin_url('misc/reminders'); ?>" class="mbot20 inline-block full-width">

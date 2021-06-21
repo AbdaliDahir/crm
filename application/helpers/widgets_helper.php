@@ -43,8 +43,12 @@ function get_dashboard_widgets()
             'path'      => 'admin/dashboard/widgets/leads_chart',
             'container' => 'right-4',
         ],
+        // [
+        //     'path'      => 'admin/dashboard/widgets/projects_chart',
+        //     'container' => 'right-4',
+        // ], 
         [
-            'path'      => 'admin/dashboard/widgets/projects_chart',
+            'path'      => 'admin/dashboard/widgets/patrimoines_chart',
             'container' => 'right-4',
         ],
         [

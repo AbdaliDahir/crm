@@ -65,10 +65,12 @@ class Assurance_model extends App_Model
         $data['updated_date'] = date('Y-m-d H:i:s');
         
         $this->db->insert(db_prefix() . 'patrimoines_passifs_assurance', $data);
-        $patrimoines_info_id = $this->db->insert_id();
+        $insert_id = $this->db->insert_id();
 
-        if ($patrimoines_info_id) {
-            return $patrimoines_info_id;
+        if ($insert_id) {
+            $this->log_activity($data['patrimoineid'], 'New_Patrimoine_Assurance_Added');
+            log_activity('Patrimoine Assurance Added [ID:' . $insert_id . ']');
+            return $insert_id;
         }  
 
         return false;
@@ -112,7 +114,8 @@ class Assurance_model extends App_Model
         $_id = $this->db->update(db_prefix() . 'patrimoines_passifs_assurance', $data); 
 
         if ($_id) {
-
+            $this->log_activity($data['patrimoineid'], 'Patrimoine_Assurance_Updated');
+            log_activity('Patrimoine Assurance Updated [ID:' . $_id . ']');
             return $_id;
         }
 
@@ -128,8 +131,22 @@ class Assurance_model extends App_Model
     {
         $this->db->where('id', $id);
         $this->db->delete(db_prefix() . 'patrimoines_passifs_assurance');
-        
+        log_activity('Patrimoine Assurance Deleted [ID:' . $id . ']');
+
         return true;
+    }
+
+    public function log_activity($patrimoine_id, $description_key)
+    {
+        $data['description_key']     = $description_key;
+        $data['additional_data']     = "";
+        $data['visible_to_customer'] = 1;
+        $data['patrimoine_id']          = $patrimoine_id;
+        $data['dateadded']           = date('Y-m-d H:i:s');
+
+        $data = hooks()->apply_filters('before_log_patrimoine_activity', $data);
+
+        $this->db->insert(db_prefix() . 'patrimoine_activity', $data);
     }
 
     function test_input($data) {

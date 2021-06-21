@@ -1,5 +1,6 @@
 <?php
 # Projects
+$lang['patrimoines_summary']                       = 'Summary of Heritage';
 $lang['patrimoine_cant_change_billing_type_billed_tasks_found']         = 'You cant change billing type. Billed tasks already found for this heritage.';
 $lang['patrimoine_customer_permission_warning']                 = 'The system indicated that the primary contact do not have permission for heritages. The primary contact won\'t be able to see the heritage. Consider add permission in the contact profile.';
 $lang['patrimoine_invoice_timesheet_start_time']                = 'Start time: %s';
@@ -435,9 +436,9 @@ $lang['patrimoine_passifs_deces'] = 'Ass. ** Décès';
 $lang['patrimoine_passifs_particularites'] = 'Particularités';
 
 // proches
-$lang['proches_username'] = 'prenom nom fr';
-$lang['proches_birthday'] = 'birthday fr';
-$lang['proches_lien'] = 'Lien de parenté fr';
+$lang['proches_username'] = 'prenom nom';
+$lang['proches_birthday'] = 'birthday';
+$lang['proches_lien'] = 'Lien de parenté';
 $lang['proches_charge'] = 'A charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
 $lang['proches_parente_e_petit'] = 'Enfant';
@@ -544,3 +545,46 @@ $lang['patrimoine_save_donation'] = 'Save Changes';
 // $lang['patrimoine_fiscale_title'] = 'Particularités fiscales (plus-values, déficits non encore imputés, revenus perçus à l’étranger, etc.)';
 // $lang['patrimoine_fiscale'] = 'Particularités fiscales.';
 // $lang['patrimoine_save_fiscale'] = 'Save fiscale';
+
+
+// Activity.
+$lang['New_Patrimoine_Assurance_Added'] = '';
+$lang['Patrimoine_Assurance_Updated'] = '';
+
+$lang['New_Patrimoine_Availability_Added'] = '';
+$lang['Patrimoine_Availability_Updated'] = '';
+
+$lang['New_Patrimoine_Bien_Added'] = '';
+$lang['Patrimoine_Bien_Updated'] = '';
+
+$lang['New_Patrimoine_bien_questions'] = '';
+
+$lang['New_Patrimoine_Budget_Added'] = '';
+$lang['Patrimoine_Budget_Updated'] = '';
+
+$lang['New_Patrimoine_Comment_Added'] = '';
+$lang['Patrimoine_Comment_Updated'] = '';
+
+$lang['New_Patrimoine_Epargne_Added'] = '';
+$lang['Patrimoine_Epargne_Updated'] = '';
+
+$lang['New_Patrimoine_Estates_Added'] = '';
+$lang['Patrimoine_Estates_Updated'] = '';
+
+$lang['New_Patrimoine_Fiscale_Added'] = '';
+$lang['Patrimoine_Fiscale_Updated'] = '';
+
+$lang['New_Patrimoine_Passif_Added'] = '';
+$lang['Patrimoine_Passif_Updated'] = '';
+
+$lang['New_Patrimoine_Proche_Added'] = '';
+$lang['Patrimoine_Proche_Updated'] = '';
+
+$lang['New_Patrimoine_Rapport_Added'] = '';
+$lang['Patrimoine_Rapport_Updated'] = '';
+
+$lang['New_Patrimoine_Situation_Added'] = '';
+$lang['Patrimoine_Situation_Updated'] = '';
+
+$lang['New_Patrimoine_Usage_Added'] = '';
+$lang['Patrimoine_Usage_Updated'] = '';
