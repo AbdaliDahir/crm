@@ -439,3 +439,10 @@ $lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
 $lang['added_error'] = 'there is problem ';
 
 $lang['wealth_management_home_title'] = 'wealth management home';
+
+// Menu Reports.
+$lang['reports_sales'] = 'Ventes';
+$lang['reports_expenses'] = 'Dépenses';
+$lang['reports_expenses_vs_income'] = 'Dépenses vs Ventes';
+$lang['reports_leads'] = 'Prospects';
+$lang['reports_knowledge_base_articles'] = 'Articles (FAQ)';

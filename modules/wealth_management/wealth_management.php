@@ -68,21 +68,42 @@ function wealth_management_module_init_menu_items()
         $CI->app_menu->add_sidebar_menu_item('wealth-management', [
             'collapse' => true,
             'name'     => 'Wealth Management',
-            'position' => 3,
+            'position' => 1,
         ]);
 
         $CI->app_menu->add_sidebar_children_item('wealth-management', [
             'slug'     => 'main-fiche-setup',
             'name'     =>  'Fiche Client',
             'href'     => admin_url('wealth_management'),
-            'position' => 1,
+            'position' => 2,
         ]);
 
         $CI->app_menu->add_sidebar_children_item('wealth-management', [
-            'slug'     => 'main-patrimoines-rapports',
-            'name'     =>  'Rapports',
-            'href'     => admin_url('wealth_management/rapports'),
-            'position' => 1,
+            'slug'     => 'main-patrimoines-reports-sales',
+            'name'     =>  'reports_sales',
+            'href'     => admin_url('wealth_management/patrimoine_reports/expenses'),
+            'position' => 3,
+        ]);
+
+        $CI->app_menu->add_sidebar_children_item('wealth-management', [
+            'slug'     => 'main-patrimoines-reports-expenses-vs-income',
+            'name'     =>  'reports_expenses_vs_income',
+            'href'     => admin_url('wealth_management/patrimoine_reports/expenses_vs_income'),
+            'position' => 4,
+        ]);
+
+        $CI->app_menu->add_sidebar_children_item('wealth-management', [
+            'slug'     => 'main-patrimoines-reports-leads',
+            'name'     =>  'reports_leads',
+            'href'     => admin_url('wealth_management/patrimoine_reports/leads'),
+            'position' => 5,
+        ]);
+
+        $CI->app_menu->add_sidebar_children_item('wealth-management', [
+            'slug'     => 'main-patrimoines-reports-knowledge-base-articles',
+            'name'     =>  'reports_knowledge_base_articles',
+            'href'     => admin_url('wealth_management/patrimoine_reports/knowledge_base_articles'),
+            'position' => 6,
         ]);
     }
 }

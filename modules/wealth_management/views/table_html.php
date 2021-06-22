@@ -3,10 +3,6 @@
 $table_data = [
   _l('the_number_sign'),
   _l('patrimoine_name'),
-  [
-    'name'     => _l('patrimoine_customer'),
-    'th_attrs' => ['class' => isset($client) ? 'not_visible' : ''],
-  ],
   _l('tags'),
   _l('patrimoine_start_date'),
   _l('patrimoine_deadline'),

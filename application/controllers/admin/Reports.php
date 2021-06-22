@@ -37,11 +37,11 @@ class Reports extends AdminController
     }
 
     /*
-        public function tax_summary(){
-           $this->load->model('taxes_model');
-           $this->load->model('payments_model');
-           $this->load->model('invoices_model');
-           $data['taxes'] = $this->db->query("SELECT DISTINCT taxname,taxrate FROM ".db_prefix()."item_tax WHERE rel_type='invoice'")->result_array();
+        public function tax_summary() {
+            $this->load->model('taxes_model');
+            $this->load->model('payments_model');
+            $this->load->model('invoices_model');
+            $data['taxes'] = $this->db->query("SELECT DISTINCT taxname,taxrate FROM ".db_prefix()."item_tax WHERE rel_type='invoice'")->result_array();
             $this->load->view('admin/reports/tax_summary',$data);
         }*/
     /* Repoert leads conversions */

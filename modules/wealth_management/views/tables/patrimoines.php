@@ -9,7 +9,6 @@ $hasPermissionCreate = has_permission('patrimoines', '', 'create');
 $aColumns = [
     db_prefix() . 'patrimoines.id as id',
     'name',
-    get_sql_select_client_company(),
     '(SELECT GROUP_CONCAT(name SEPARATOR ",") FROM ' . db_prefix() . 'taggables JOIN ' . db_prefix() . 'tags ON ' . db_prefix() . 'taggables.tag_id = ' . db_prefix() . 'tags.id WHERE rel_id = ' . db_prefix() . 'patrimoines.id and rel_type="patrimoine" ORDER by tag_order ASC) as tags',
     'start_date',
     'deadline',
@@ -21,16 +20,16 @@ $aColumns = [
 $sIndexColumn = 'id';
 $sTable       = db_prefix() . 'patrimoines';
 
-$join = [
-    'JOIN ' . db_prefix() . 'clients ON ' . db_prefix() . 'clients.userid = ' . db_prefix() . 'patrimoines.clientid',
-];
+// $join = [
+//     'JOIN ' . db_prefix() . 'clients ON ' . db_prefix() . 'clients.userid = ' . db_prefix() . 'patrimoines.clientid',
+// ];
 
 $where  = [];
 $filter = [];
 
-if ($clientid != '') {
-    array_push($where, ' AND clientid=' . $this->ci->db->escape_str($clientid));
-}
+// if ($clientid != '') {
+//     array_push($where, ' AND clientid=' . $this->ci->db->escape_str($clientid));
+// }
 
 if (!has_permission('patrimoines', '', 'view') || $this->ci->input->post('my_patrimoines')) {
     array_push($where, ' AND ' . db_prefix() . 'patrimoines.id IN (SELECT patrimoine_id FROM ' . db_prefix() . 'patrimoine_members WHERE staff_id=' . get_staff_user_id() . ')');
@@ -68,8 +67,8 @@ if (count($custom_fields) > 4) {
     @$this->ci->db->query('SET SQL_BIG_SELECTS=1');
 }
 
-$result = data_tables_init($aColumns, $sIndexColumn, $sTable, $join, $where, [
-    'clientid',
+$result = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, [
+    // 'clientid',
     '(SELECT GROUP_CONCAT(staff_id SEPARATOR ",") FROM ' . db_prefix() . 'patrimoine_members WHERE patrimoine_id=' . db_prefix() . 'patrimoines.id ORDER BY staff_id) as members_ids',
 ]);
 
@@ -106,7 +105,7 @@ foreach ($rResult as $aRow) {
 
     $row[] = $name;
 
-    $row[] = '<a href="' . admin_url('clients/client/' . $aRow['clientid']) . '">' . $aRow['company'] . '</a>';
+    // $row[] = '<a href="' . admin_url('clients/client/' . $aRow['clientid']) . '">' . $aRow['company'] . '</a>';
 
     $row[] = render_tags($aRow['tags']);
 
