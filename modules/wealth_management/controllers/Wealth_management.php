@@ -38,7 +38,7 @@ class Wealth_management extends AdminController
     {
         close_setup_menu();
         $data['statuses'] = $this->patrimoines_model->get_patrimoine_statuses();
-        $data['title'] = 'test';
+        $data['title'] = _l('wealth_management_home_title');
         $this->load->view('manage', $data);
     }
 

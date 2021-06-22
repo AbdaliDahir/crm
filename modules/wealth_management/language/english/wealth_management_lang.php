@@ -588,3 +588,5 @@ $lang['Patrimoine_Situation_Updated'] = '';
 
 $lang['New_Patrimoine_Usage_Added'] = '';
 $lang['Patrimoine_Usage_Updated'] = '';
+
+$lang['wealth_management_home_title'] = 'wealth management home';

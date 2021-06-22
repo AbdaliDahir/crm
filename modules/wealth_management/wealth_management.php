@@ -62,7 +62,6 @@ function wealth_management_module_init_menu_items()
 {
     if (is_admin()) {
         $CI = &get_instance();
-        //$CI->load->model(MODULE_WEALTH_MANAGEMENT . '/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_model');
         $CI->load->model('wealth_management/patrimoines_info_model');
 
@@ -76,6 +75,13 @@ function wealth_management_module_init_menu_items()
             'slug'     => 'main-fiche-setup',
             'name'     =>  'Fiche Client',
             'href'     => admin_url('wealth_management'),
+            'position' => 1,
+        ]);
+
+        $CI->app_menu->add_sidebar_children_item('wealth-management', [
+            'slug'     => 'main-patrimoines-rapports',
+            'name'     =>  'Rapports',
+            'href'     => admin_url('wealth_management/rapports'),
             'position' => 1,
         ]);
     }

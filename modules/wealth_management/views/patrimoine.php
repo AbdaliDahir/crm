@@ -220,9 +220,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group select-placeholder">
+                                <div class="form-group">
                                     <label for="clientid" class="control-label"><?php echo _l('patrimoine_customer'); ?></label>
-                                    <input type="text" id="clientid" name="clientid" value="6" placeholder="CRM" disable="true" />
+                                    <input type="text" id="clientid" name="clientid" value="6" placeholder="CRM" disabled="true" class="form-control" />
                                 </div>
                             </div>
                             <div class="col-md-4">

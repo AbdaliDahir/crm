@@ -1038,6 +1038,9 @@ class Patrimoines_model extends App_Model
             }
         }
 
+        // fixed cleintId vallue.
+        $data['clientid'] = 6;
+
         $data['patrimoine_cost']    = !empty($data['patrimoine_cost']) ? $data['patrimoine_cost'] : null;
         $data['estimated_hours'] = !empty($data['estimated_hours']) ? $data['estimated_hours'] : null;
 
@@ -1225,6 +1228,9 @@ class Patrimoines_model extends App_Model
             $notify_patrimoine_members_status_change = true;
             unset($data['notify_patrimoine_members_status_change']);
         }
+        
+        // fixed cleintId vallue.
+        $data['clientid'] = 6;
 
         // update patremoins info // 
         $patr_info = [];

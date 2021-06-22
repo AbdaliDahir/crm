@@ -27,11 +27,11 @@
                         <?php echo _l('report_leads_sources_conversions'); ?>
                     </div>
                     <div class="panel-body">
-                       <canvas class="leads-sources-report" height="150" id="leads-sources-report"></canvas>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-12 animated fadeIn">
+                        <canvas class="leads-sources-report" height="150" id="leads-sources-report"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 animated fadeIn">
             <div class="panel_s">
 
                 <div class="panel-heading">
@@ -43,17 +43,17 @@
                             <?php
                             echo '<select name="month" class="selectpicker" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
                             for ($m=1; $m<=12; $m++) {
-                             $_selected = '';
-                             if($m == date('m')){
-                              $_selected  = ' selected';
-                          }
-                          echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
-                      }
-                      echo '</select>' . PHP_EOL;
-                      ?>
-                  </div>
-              </div>
-              <div class="relative" style="max-height:400px;">
+                                $_selected = '';
+                                if($m == date('m')){
+                                $_selected  = ' selected';
+                            }
+                            echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
+                        }
+                        echo '</select>' . PHP_EOL;
+                        ?>
+                    </div>
+                </div>
+                <div class="relative" style="max-height:400px;">
                 <canvas class="leads-monthly chart mtop20" id="leads-monthly" height="400"></canvas>
             </div>
         </div>

@@ -437,3 +437,5 @@ $lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
 
 //Errors
 $lang['added_error'] = 'there is problem ';
+
+$lang['wealth_management_home_title'] = 'wealth management home';
