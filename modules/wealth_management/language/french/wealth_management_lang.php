@@ -288,9 +288,10 @@ $lang['patrimoine_progress']                       = 'Progression';
 
 
 # patremoin
-$lang['new_patrimoine']  = 'new user info';
-$lang['update_patrimoine']  = 'update your information';
-$lang['patrimoine_about']  = 'about';
+$lang['new_patrimoine']  = 'nouveau patrimoine info';
+$lang['update_patrimoine']  = 'mettre à jour vos informations';
+$lang['patrimoine_about']  = 'à propos';
+
 ///tabs
 $lang['patrimoine_info']  = 'information';
 $lang['patrimoine_proches']  = 'proches';
@@ -300,17 +301,21 @@ $lang['patrimoine_fiscale']  = 'Particularités fiscales';
 $lang['patrimoine_budget']  = 'budget';
 $lang['patrimoine_administrative']  = 'Situation administrative';
 $lang['patrimoine_taches']  = 'taches';
-$lang['patrimoine_childs']  = 'children';
+$lang['patrimoine_childs']  = 'enfants';
+
+$lang['patrimoine_information_title']  = 'patrimoine information';
+
 /// new data
-$lang['new_patrimoine_proches']  = 'new proche';
+$lang['new_patrimoine_proches']  = 'nouvelle proche';
+
 ///vous form
-$lang['patrimoine_me'] = 'Vous';
+$lang['patrimoine_me'] = 'à propos de vous';
 $lang['patrimoine_me_firstname'] = 'Prénom :';
 $lang['patrimoine_me_lastname'] = 'Nom :';
 $lang['patrimoine_me_date_birth'] = 'Date de naissance :';
 
 /// Votre conjoint
-$lang['patrimoine_conjoint'] = 'Votre conjoint :';
+$lang['patrimoine_conjoint'] = 'à propos de conjoint :';
 
 $lang['patrimoine_conjoint_situation'] = 'Situation familiale :';
 $lang['patrimoine_conjoint_situation_marie'] = 'Marié';
@@ -335,8 +340,8 @@ $lang['patrimoine_conjoint_donation'] = 'Donation entre époux :';
 $lang['patrimoine_conjoint_tel_perso'] = 'Tél perso :';
 $lang['patrimoine_conjoint_tel_mobile'] = 'Tél mobile : M';
 $lang['patrimoine_conjoint_tel_mobile'] = 'Tél mobile : Mme';
-$lang['patrimoine_conjoint_email_one'] = 'E-mail Addresse First :';
-$lang['patrimoine_conjoint_email_two'] = 'E-mail Addresse Second :';
+$lang['patrimoine_conjoint_email_one'] = 'adresse e-mail :';
+$lang['patrimoine_conjoint_email_two'] = 'adresse e-mail :';
 
 $lang['patrimoine_conjoint_more_question'] = 'Questions complémentaires :';
 $lang['patrimoine_conjoint_more_question_mariage_date'] = 'S&#39;il y a eu des mariages précédents : quelle est la date du mariage ?';
@@ -345,19 +350,101 @@ $lang['patrimoine_conjoint_more_question_situation'] = 'Quelle est la situation 
 $lang['patrimoine_conjoint_more_question_finance'] = 'Quelles conséquences
 financières du jugement de divorce ?';
 
-$lang['add_info'] = 'sauvgarder';
+$lang['add_info'] = 'sauvegarder';
+$lang['patrimoines_information_updated_success'] = 'informations a été modifié avec succès pour patrimoine avec id :';
 
-// proches data
-$lang['proches_username'] = 'prenom nom';
-$lang['proches_birthday'] = 'birthday';
-$lang['proches_lien'] = 'Lien de parenté';
-$lang['proches_charge'] = 'A charge fiscalement ?';
+//assurance
+$lang['assurance'] = 'Assurance';
+$lang['assurance_lowercase'] = 'assurance';
+$lang['assurance_title'] = 'Assurances (contrats en euros, multisupports, contrats de prévoyance individuel, loi Madelin, contrats retraite, etc.)';
+$lang['new_patrimoine_assurance'] = 'ajouter';
+$lang['patrimoine_passifs_assurance_designation'] = 'Désignation';
+$lang['patrimoine_passifs_assurance_capital'] = 'Valeur de rachat ou capital assuré';
+$lang['patrimoine_passifs_assurance_souscription'] = 'Date de souscription';
+$lang['patrimoine_passifs_assurance_assure'] = 'Assuré';
+$lang['patrimoine_passifs_assurance_benef'] = 'Bénéficiaires';
+$lang['patrimoine_passifs_assurance_particularites'] = 'Particularités (type de contrat, taux de capi., montant des primes, etc.)';
+
+// Availability
+$lang['availability'] = 'Availability';
+$lang['availability_lowercase'] = 'availability';
+$lang['availability_title'] = 'Disponibilités (comptes courants, comptes à terme, SICAV de trésorerie, CEL, livrets et CODEVI, etc.)';
+$lang['new_patrimoine_availability'] = 'ajouter';
+$lang['patrimoine_passifs_availability_designation'] = 'Désignation';
+$lang['patrimoine_passifs_availability_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_availability_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_availability_particularites'] = 'Particularités (différés, etc.)';
+
+//bien
+$lang['bien'] = 'Bien';
+$lang['bien_lowercase'] = 'bien';
+$lang['bien_title'] = 'Biens professionnels (droits sociaux, fonds de commerce, etc.), placements fonciers (terrains, GFA, forêts)';
+$lang['new_patrimoine_bien'] = 'ajouter une nouvelle';
+$lang['patrimoine_bien_designation'] = 'Désignation';
+$lang['patrimoine_bien_valeur'] = 'valuer(en $)';
+$lang['patrimoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
+$lang['patrimoine_bien_charges'] = 'Charges';
+$lang['patrimoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
+
+// Budget
+$lang['budget'] = 'Budget';
+$lang['budget_lowercase'] = 'budget';
+$lang['budget_title'] = 'Votre budget';
+$lang['new_patrimoine_budget'] = 'ajouter';
+$lang['patrimoine_budget_designation'] = 'Désignation';
+$lang['patrimoine_budget_montant'] = 'Montant annuel   en €';
+$lang['patrimoine_budget_type_revenus'] = 'Revenus';
+$lang['patrimoine_budget_type_retraite'] = 'Retraite';
+$lang['patrimoine_budget_type'] = 'choisir type (Revenus/RETRAITE)';
+
+// Epargne
+$lang['epargne'] = 'Épargne';
+$lang['epargne_lowercase'] = 'épargne';
+$lang['epargne_title'] = 'Épargne et dépôt à moyen et long terme (PEL, PEP bancaire, PEE, etc.)';
+$lang['new_patrimoine_epargne'] = 'ajouter';
+$lang['patrimoine_passifs_epargne_designation'] = 'Désignation';
+$lang['patrimoine_passifs_epargne_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_epargne_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_epargne_date_ouverture'] = 'Date d\'ouverture';
+$lang['patrimoine_passifs_epargne_associee'] = 'Épargne associée';
+$lang['patrimoine_passifs_epargne_particularites'] = 'Particularités (taux de rendement, primes, etc.)';
+
+// Estates
+$lang['estates'] = 'Valeurs mobilières';
+$lang['estates_lowercase'] = 'valeurs mobilières';
+$lang['estates_title'] = 'Valeurs mobilières (OPCVM, actions, obligations, FCPI, PEA, etc.)';
+$lang['new_patrimoine_estates'] = 'ajouter';
+$lang['patrimoine_passifs_estates_designation'] = 'Désignation';
+$lang['patrimoine_passifs_estates_valeur'] = 'Valeur (en €)';
+$lang['patrimoine_passifs_estates_detenteur'] = 'Détenteur Forme de détention*';
+$lang['patrimoine_passifs_estates_revenus'] = 'Revenus distribués';
+$lang['patrimoine_passifs_estates_revenus_fiscal'] = 'Fiscalité ou revenu (PFL, IR, actions internationales, etc.)';
+$lang['patrimoine_passifs_estates_taux'] = 'Taux de revalorisation estimé';
+
+
+//passifs
+$lang['passif'] = 'Passifs';
+$lang['passif_lowercase'] = 'passifs';
+$lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
+$lang['new_patrimoine_passif'] = 'ajouter';
+$lang['patrimoine_passifs_designation'] = 'Désignation';
+$lang['patrimoine_passifs_capital'] = 'Capital emprunté ou restant dû';
+$lang['patrimoine_passifs_duree'] = 'Durée';
+$lang['patrimoine_passifs_taux'] = 'Taux';
+$lang['patrimoine_passifs_deces'] = 'Ass. ** Décès';
+$lang['patrimoine_passifs_particularites'] = 'Particularités';
+
+// proches
+$lang['proches_username'] = 'prénom nom';
+$lang['proches_birthday'] = 'date d\'anniversaire';
+$lang['proches_lien'] = 'lien de parenté';
+$lang['proches_charge'] = 'À charge fiscalement ?';
 $lang['proches_particularité'] = 'Particularités';
 $lang['proches_parente_e_petit'] = 'Enfant';
 $lang['proches_parente_e_parent'] = 'Parent';
 $lang['proches_contact_tel'] = 'Tele';
-$lang['proches_contact_email'] = 'email address';
-$lang['proches_contact_address'] = 'Adresse';
+$lang['proches_contact_email'] = 'adresse e-mail';
+$lang['proches_contact_address'] = 'adresse';
 $lang['proches_contact_option'] = 'peut-on les contacter ?';
 $lang['proches'] = 'Proches';
 $lang['proches_lowercase'] = 'proches';
@@ -365,8 +452,11 @@ $lang['proches_lowercase'] = 'proches';
 $lang['proche_contact_yes']      = 'Oui';
 $lang['proche_contact_no']       = 'Non';
 
-
 //usage 
+$lang['usage_title'] = 'Biens d’usage (résidence principale, résidence secondaire, meubles meublants, autres).';
+$lang['new_patrimoine_usage'] = 'ajouter une nouvelle';
+$lang['usage'] = 'Biens d\'usage';
+$lang['usage_lowercase'] = 'biens d\'usage';
 $lang['patrimoine_usage_designation'] = 'Désignation';
 $lang['patrimoine_usage_valeur'] = 'valuer(en $)';
 $lang['patrimoine_usage_detenteur'] = 'Détenteur Forme de détention*';
@@ -377,8 +467,9 @@ $lang['patrimoine_usage_taux'] = 'Taux';
 $lang['patrimoine_usage_deces '] = 'Ass. ** Décès';
 
 // rapport
-$lang['new_patrimoine_rapport'] = 'new rapport';
-$lang['rapport'] = 'rapport';
+$lang['rapport_title'] = 'Immobilier de rapport (locatif, SCI, SCPI, etc.)';
+$lang['new_patrimoine_rapport'] = 'nouveau rapport';
+$lang['rapport'] = 'Rapport';
 $lang['rapport_lowercase'] = 'rapport';
 $lang['patrimoine_rapport_designation'] = 'Désignation';
 $lang['patrimoine_rapport_valeur'] = 'valuer(en $)';
@@ -390,55 +481,48 @@ $lang['patrimoine_rapport_duree'] = 'Durée';
 $lang['patrimoine_rapport_taux'] = 'Taux';
 $lang['patrimoine_rapport_deces'] = 'Ass. ** Décès';
 
-
-//bien
-$lang['patrimoine_bien_designation'] = 'Désignation';
-$lang['patrimoine_bien_valeur'] = 'valuer(en $)';
-$lang['patrimoine_bien_detenteur'] = 'Détenteur Forme de détention*'; 
-$lang['patrimoine_bien_charges'] = 'Charges';
-$lang['patrimoine_bien_particularite'] = 'Particularités (crédits en cours, distributions des dividendes, pactes d\'actionnaires, etc.)';
-
-
-//passifs
-$lang['passif_title'] = 'Vos passifs(dettes familiales, crédit consommation, etc.)';
-$lang['patrimoine_passifs_designation'] = 'Désignation';
-$lang['patrimoine_passifs_capital'] = 'Capital emprunté ou restant dû';
-$lang['patrimoine_passifs_souscription'] = 'Durée';
-$lang['patrimoine_passifs_assure'] = 'Taux';
-$lang['patrimoine_passifs_benef'] = 'Ass. ** Décès';
-$lang['patrimoine_passifs_particularites'] = 'Particularités';
-
+//situation
+$lang['patrimoine_situation_cfe'] = 'CFE';
+$lang['patrimoine_situation_cotisation_plus'] = 'Avez-vous 15 ans de cotisation';
+$lang['patrimoine_situation_cotisation_minus'] = 'Pension de Réversion 15 ans de cotisation';
+$lang['patrimoine_situation_cnss'] = 'CNSS';
+$lang['patrimoine_situation_cnarefe'] = 'CNAREFE';
+$lang['patrimoine_situation_capitone'] = 'CAPITONE'; 
+$lang['patrimoine_situation_rapatriement'] = 'ASSURANCE RAPATRIEMENT';  
+$lang['patrimoine_situation_mutuelle'] = 'MUTUELLE FRANCAISE';
+$lang['patrimoine_situation_passport'] = 'PASSEPORT SCANNÉ';  
+$lang['patrimoine_situation_sejour'] = 'CARTE DE SEJOUR SCANNÉE'; 
+$lang['patrimoine_situation_permis'] = 'PERMIS DE CONDUIRE MAROCAIN';        
+$lang['patrimoine_situation_assurance_auto'] = 'ASSURANCE AUTO';
+$lang['patrimoine_situation_assurance_habitation'] = 'ASSURANCE HABITATION';
+$lang['patrimoine_situation_consulat'] = 'INSCRIPTION CONSULAT';
+$lang['patrimoine_situation_ufe'] = 'UFE carte à fournir si contrat rapatriement SAHAM';
+$lang['patrimoine_situation_csg'] = 'CSG / CRDS';
+$lang['patrimoine_situation_Prlvt'] = 'Prlvt';
+$lang['patrimoine_situation_cexonéré'] = 'exonéré';
 
 //Bien Question
 $lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
 $lang['bien_qst_participations'] = 'Quelles participations ?';
-$lang['bien_qst_immobilier'] = 'Comment
-est détenu l’immobilier professionnel ?';
+$lang['bien_qst_immobilier'] = 'Comment est détenu l’immobilier professionnel ?';
 $lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
 
 //comment
 $lang['comment_empty'] = '..................................................';
-$lang['comment_title'] = 'Commentaires';
-$lang['new_patrimoine_comment'] = 'new comment';
-$lang['update_patrimoine_comment'] = 'update comment';
+$lang['comment_title'] = 'Commentaire';
+$lang['new_patrimoine_comment'] = 'Ajouter un commentaire';
+$lang['update_patrimoine_comment'] = 'modifier votre commentaire';
 
 //Bien Question
 $lang['bien_qst_title'] = 'Questions complémentaires';
-$lang['update_patrimoine_bien_qst'] = 'update ur response';
-$lang['new_patrimoine_bien_qst'] = 'add new response';
-
-
-$lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
-$lang['bien_qst_participations'] = 'Quelles participations ?';
-$lang['bien_qst_immobilier'] = 'Comment
-est détenu l’immobilier professionnel ?';
-$lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
+$lang['update_patrimoine_bien_qst'] = 'mettre à jour votre réponses';
+$lang['new_patrimoine_bien_qst'] = 'répondre aux questions';
 
 
 //Errors
-$lang['added_error'] = 'there is problem ';
+$lang['added_error'] = 'Il y a un problème ';
 
-$lang['wealth_management_home_title'] = 'wealth management home';
+$lang['wealth_management_home_title'] = 'gestion de patrimoine Accueil';
 
 // Menu Reports.
 $lang['reports_sales'] = 'Ventes';
@@ -446,3 +530,57 @@ $lang['reports_expenses'] = 'Dépenses';
 $lang['reports_expenses_vs_income'] = 'Dépenses vs Ventes';
 $lang['reports_leads'] = 'Prospects';
 $lang['reports_knowledge_base_articles'] = 'Articles (FAQ)';
+
+
+//fiscale
+$lang['patrimoine_fiscale_title'] = 'Tax particularities (capital gains, deficits not yet charged, income received abroad, etc.)';
+$lang['patrimoine_fiscale'] = 'Tax particularities.';
+$lang['patrimoine_save_fiscale'] = 'Sauvegarder les modifications';
+
+//donation
+$lang['patrimoine_donation_title'] = 'The donations granted (specify the characteristics of donations and wills: date, beneficiaries, property concerned, type of gifts, etc.)';
+$lang['patrimoine_donation'] = 'The donations granted';
+$lang['patrimoine_save_donation'] = 'Sauvegarder les modifications';
+
+
+// Activity.
+$lang['New_Patrimoine_Assurance_Added'] = '';
+$lang['Patrimoine_Assurance_Updated'] = '';
+
+$lang['New_Patrimoine_Availability_Added'] = '';
+$lang['Patrimoine_Availability_Updated'] = '';
+
+$lang['New_Patrimoine_Bien_Added'] = '';
+$lang['Patrimoine_Bien_Updated'] = '';
+
+$lang['New_Patrimoine_bien_questions'] = '';
+
+$lang['New_Patrimoine_Budget_Added'] = '';
+$lang['Patrimoine_Budget_Updated'] = '';
+
+$lang['New_Patrimoine_Comment_Added'] = '';
+$lang['Patrimoine_Comment_Updated'] = '';
+
+$lang['New_Patrimoine_Epargne_Added'] = '';
+$lang['Patrimoine_Epargne_Updated'] = '';
+
+$lang['New_Patrimoine_Estates_Added'] = '';
+$lang['Patrimoine_Estates_Updated'] = '';
+
+$lang['New_Patrimoine_Fiscale_Added'] = '';
+$lang['Patrimoine_Fiscale_Updated'] = '';
+
+$lang['New_Patrimoine_Passif_Added'] = '';
+$lang['Patrimoine_Passif_Updated'] = '';
+
+$lang['New_Patrimoine_Proche_Added'] = '';
+$lang['Patrimoine_Proche_Updated'] = '';
+
+$lang['New_Patrimoine_Rapport_Added'] = '';
+$lang['Patrimoine_Rapport_Updated'] = '';
+
+$lang['New_Patrimoine_Situation_Added'] = '';
+$lang['Patrimoine_Situation_Updated'] = '';
+
+$lang['New_Patrimoine_Usage_Added'] = '';
+$lang['Patrimoine_Usage_Updated'] = '';

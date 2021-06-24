@@ -9,17 +9,7 @@
       <div class="col-xs-6 text-right"> 
         <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'usage'); return false;">
           <?php echo _l('new_patrimoine_usage') ?> 
-        </a> 
-        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'rapport'); return false;">
-          <?php echo _l('new_patrimoine_rapport') ?> 
-        <a href='#' class='btn btn-info pull-right mright5 new-bien-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'bien'); return false;">
-          <?php echo _l('new_patrimoine_bien') ?> 
-        </a> 
-
-        <a href='#' class='btn btn-info pull-right mright5 new-usage-relation' onclick="edit_comment_patrimoine(<?php echo isset($usage_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($usage_comment) ? $usage_comment->id : 0 ?>, 'usage'); return false;">
-          <?php echo isset($usage_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
-        </a>  
-
+        </a>   
       </div>
     </div>
   </div>
@@ -27,7 +17,10 @@
     <div class="tasks-table">
       <?php $this->load->view('wealth_management/patrimoine/tables/_usage'); ?>
       <hr/>
-      <h4 class="mbot15 text-primary font-bold text-capitalize"><?php echo _l('comment_title') ?></h4>
+      <h4 class="mbot15 text-primary font-bold text-capitalize"><?php echo _l('comment_title') ?> <a href='#' class='btn-link text-underline text-warning h6 mright5 new-usage-relation' onclick="edit_comment_patrimoine(<?php echo isset($usage_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($usage_comment) ? $usage_comment->id : 0 ?>, 'usage'); return false;">
+          <?php echo isset($usage_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a>   
+      </h4>
       <p id="usage_comment_text">
         <?php echo isset($usage_comment) ? $usage_comment->patr_comment_text : _l('comment_empty') ?>
       </p>
@@ -41,10 +34,11 @@
       <div class="col-xs-6">
         <div class="info-title text-left mtop5"> <?php echo _l('rapport_title'); ?> </div>
       </div>
-      <div class="col-xs-6 text-right"> 
-        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="edit_comment_patrimoine(<?php echo isset($rapport_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($rapport_comment) ? $rapport_comment->id : 0 ?>, 'rapport'); return false;">
-          <?php echo isset($rapport_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
-        </a> 
+
+      <div class="col-xs-6 text-right">  
+        <a href='#' class='btn btn-info pull-right mright5 new-rapport-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'rapport'); return false;">
+          <?php echo _l('new_patrimoine_rapport') ?>  
+        </a>  
       </div>
     </div>
   </div>
@@ -53,7 +47,12 @@
     <div class="tasks-table">
       <?php $this->load->view('wealth_management/patrimoine/tables/_rapport'); ?>
       <hr/>
-      <h4 class="mbot15 text-primary font-bold text-capitalize"> <?php echo _l('comment_title') ?></h4>
+      <h4 class="mbot15 text-primary font-bold text-capitalize"> 
+        <?php echo _l('comment_title') ?>
+        <a href='#' class='btn-link h6 text-underline text-warning mright5 new-rapport-relation' onclick="edit_comment_patrimoine(<?php echo isset($rapport_comment) ? 0 : $patrimoine->id ?>, <?php echo isset($rapport_comment) ? $rapport_comment->id : 0 ?>, 'rapport'); return false;">
+          <?php echo isset($rapport_comment) ? _l('update_patrimoine_comment') : _l('new_patrimoine_comment') ?> 
+        </a> 
+      </h4>
       <p id="rapport_comment_text">
         <?php echo isset($rapport_comment) ? $rapport_comment->patr_comment_text : _l('comment_empty') ?>
       </p>
@@ -68,6 +67,12 @@
       <div class="col-xs-6">
         <div class="info-title text-left mtop5"> <?php echo _l('bien_title'); ?> </div>
       </div> 
+
+      <div class="col-xs-6 text-right"> 
+        <a href='#' class='btn btn-info pull-right mright5 new-bien-relation' onclick="new_patremoione_info_from_relation(<?php echo $patrimoine->id ?>, 'bien'); return false;">
+          <?php echo _l('new_patrimoine_bien') ?> 
+        </a>  
+      </div>
     </div>
   </div>
   <div class="panel-body">       

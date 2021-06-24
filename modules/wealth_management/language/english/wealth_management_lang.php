@@ -290,6 +290,7 @@ $lang['patrimoine_progress']                       = 'Progression';
 $lang['new_patrimoine']  = 'new user info';
 $lang['update_patrimoine']  = 'update your information';
 $lang['patrimoine_about']  = 'about';
+
 ///tabs
 $lang['patrimoine_info']  = 'information';
 $lang['patrimoine_proches']  = 'proches';
@@ -502,7 +503,6 @@ $lang['patrimoine_situation_csg'] = 'CSG / CRDS';
 $lang['patrimoine_situation_Prlvt'] = 'Prlvt';
 $lang['patrimoine_situation_cexonéré'] = 'exonéré';
 
-
 //Bien Question
 $lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
 $lang['bien_qst_participations'] = 'Quelles participations ?';
@@ -520,13 +520,6 @@ $lang['update_patrimoine_comment'] = 'update comment';
 $lang['bien_qst_title'] = 'Questions complémentaires';
 $lang['update_patrimoine_bien_qst'] = 'update ur response';
 $lang['new_patrimoine_bien_qst'] = 'add new response';
-
-
-$lang['bien_qst_capital'] = 'quelle répartition du capital et des pouvoirs dans l’entreprise ?';
-$lang['bien_qst_participations'] = 'Quelles participations ?';
-$lang['bien_qst_immobilier'] = 'Comment
-est détenu l’immobilier professionnel ?';
-$lang['bien_qst_pact'] = 'Un pacte d&#39;actionnaires a-t-il été signé ?';
 
 //fiscale
 $lang['patrimoine_fiscale_title'] = 'Tax particularities (capital gains, deficits not yet charged, income received abroad, etc.)';
