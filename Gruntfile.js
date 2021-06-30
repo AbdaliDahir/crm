@@ -29,7 +29,6 @@ module.exports = function(grunt) {
                     'assets/themes/perfex/js/clients.min.js': ['assets/themes/perfex/js/clients.js'],
                     'assets/themes/perfex/js/global.min.js': ['assets/themes/perfex/js/global.js'],
                     'assets/js/main.min.js': ['assets/js/main.js'],
-                    'assets/js/wealth_management.min.js': ['assets/js/wealth_management.js'],
                     'assets/js/map.min.js': ['assets/js/map.js'],
                     'assets/js/projects.min.js': ['assets/js/projects.js'],
                     'assets/js/tickets.min.js': ['assets/js/tickets.js'],
@@ -38,6 +37,8 @@ module.exports = function(grunt) {
                     'assets/plugins/tagsinput/js/tag-it.min.js': ['assets/plugins/tagsinput/js/tag-it.js'], // tag-it.js is modified
                     'assets/builds/vendor-admin.js': ['assets/builds/vendor-admin.js'],
                     'assets/builds/common.js': ['assets/builds/common.js'],
+                    'modules/wealth_management/assets/js/wealth_management.min.js': ['modules/wealth_management/assets/js/wealth_management.js'],
+                    'modules/wealth_management/assets/js/wealth_management_first.min.js': ['modules/wealth_management/assets/js/wealth_management_first.js']
                 }
             }
         },
@@ -276,7 +277,8 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'assets/js/main.min.js': 'assets/js/main.min.js',
-                    'assets/js/wealth_management.min.js': 'assets/js/wealth_management.min.js',
+                    'modules/wealth_management/assets/js/wealth_management.min.js': 'modules/wealth_management/assets/js/wealth_management.min.js',
+                    'modules/wealth_management/assets/js/wealth_management_first.min.js': 'modules/wealth_management/assets/js/wealth_management_first.min.js',
                     'assets/js/map.min.js': 'assets/js/map.min.js',
                     'assets/js/projects.min.js': 'assets/js/projects.min.js',
                     'assets/js/tickets.min.js': 'assets/js/tickets.min.js',

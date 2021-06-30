@@ -7,7 +7,7 @@
                 <div class="panel_s">
                     <div class="panel-body">
                         <div class="pull-right">
-                            <a href="<?php echo admin_url('reports/expenses/detailed_report'); ?>" class="btn btn-success"><?php echo _l('expenses_detailed_report'); ?></a>
+                            <a href="<?php echo admin_url('/wealth_management/patrimoine_reports/expenses/detailed_report'); ?>" class="btn btn-success"><?php echo _l('expenses_detailed_report'); ?></a>
                         </div>
                         <?php if($export_not_supported){ ?>
                         <p class="text-danger">Exporting not support in IE. To export this data please try another browser</p>

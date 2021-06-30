@@ -78,33 +78,50 @@ function wealth_management_module_init_menu_items()
             'position' => 2,
         ]);
 
-        $CI->app_menu->add_sidebar_children_item('wealth-management', [
-            'slug'     => 'main-patrimoines-reports-sales',
-            'name'     =>  'reports_sales',
-            'href'     => admin_url('wealth_management/patrimoine_reports/expenses'),
-            'position' => 3,
-        ]);
+        if (is_admin()) {
+            $CI->app_menu->add_sidebar_children_item('wealth-management', [
+                'slug'     => 'timesheets-reports',
+                'name'     => _l('timesheets_overview'),
+                'href'     => admin_url('wealth_management/patrimoine_reports/timesheets?view=all'),
+                'position' => 3,
+                'badge'    => [],
+            ]);
+        }
+        
+        // $CI->app_menu->add_sidebar_children_item('wealth-management', [
+        //     'slug'     => 'main-patrimoines-reports-sales',
+        //     'name'     =>  'reports_sales',
+        //     'href'     => admin_url('wealth_management/patrimoine_reports/sales'),
+        //     'position' => 3,
+        // ]);
 
-        $CI->app_menu->add_sidebar_children_item('wealth-management', [
-            'slug'     => 'main-patrimoines-reports-expenses-vs-income',
-            'name'     =>  'reports_expenses_vs_income',
-            'href'     => admin_url('wealth_management/patrimoine_reports/expenses_vs_income'),
-            'position' => 4,
-        ]);
+        // $CI->app_menu->add_sidebar_children_item('wealth-management', [
+        //     'slug'     => 'main-patrimoines-reports-sales',
+        //     'name'     =>  'reports_expenses',
+        //     'href'     => admin_url('wealth_management/patrimoine_reports/expenses'),
+        //     'position' => 3,
+        // ]);
 
-        $CI->app_menu->add_sidebar_children_item('wealth-management', [
-            'slug'     => 'main-patrimoines-reports-leads',
-            'name'     =>  'reports_leads',
-            'href'     => admin_url('wealth_management/patrimoine_reports/leads'),
-            'position' => 5,
-        ]);
+        // $CI->app_menu->add_sidebar_children_item('wealth-management', [
+        //     'slug'     => 'main-patrimoines-reports-expenses-vs-income',
+        //     'name'     =>  'reports_expenses_vs_income',
+        //     'href'     => admin_url('wealth_management/patrimoine_reports/expenses_vs_income'),
+        //     'position' => 4,
+        // ]);
 
-        $CI->app_menu->add_sidebar_children_item('wealth-management', [
-            'slug'     => 'main-patrimoines-reports-knowledge-base-articles',
-            'name'     =>  'reports_knowledge_base_articles',
-            'href'     => admin_url('wealth_management/patrimoine_reports/knowledge_base_articles'),
-            'position' => 6,
-        ]);
+        // $CI->app_menu->add_sidebar_children_item('wealth-management', [
+        //     'slug'     => 'main-patrimoines-reports-leads',
+        //     'name'     =>  'reports_leads',
+        //     'href'     => admin_url('wealth_management/patrimoine_reports/leads'),
+        //     'position' => 5,
+        // ]);
+
+        // $CI->app_menu->add_sidebar_children_item('wealth-management', [
+        //     'slug'     => 'main-patrimoines-reports-knowledge-base-articles',
+        //     'name'     =>  'reports_knowledge_base_articles',
+        //     'href'     => admin_url('wealth_management/patrimoine_reports/knowledge_base_articles'),
+        //     'position' => 6,
+        // ]);
     }
 }
 
@@ -341,15 +358,15 @@ function app_init_patrimoine_tabs()
     ]);
 
     // auto create custom js file
-    if (!file_exists(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js')) {
-        mkdir(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js', 0755, true);
-        file_put_contents(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js/' . MODULE_WEALTH_MANAGEMENT . '.js', '');
-    }
-    //  auto create custom css file
-    if (!file_exists(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css')) {
-        mkdir(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css', 0755, true);
-        file_put_contents(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css/' . MODULE_WEALTH_MANAGEMENT . '.css', '');
-    }
+    // if (!file_exists(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js')) {
+    //     mkdir(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js', 0755, true);
+    //     file_put_contents(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/js/' . MODULE_WEALTH_MANAGEMENT . '.js', '');
+    // }
+    // //  auto create custom css file
+    // if (!file_exists(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css')) {
+    //     mkdir(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css', 0755, true);
+    //     file_put_contents(APP_MODULES_PATH . MODULE_WEALTH_MANAGEMENT . '/assets/css/' . MODULE_WEALTH_MANAGEMENT . '.css', '');
+    // }
     //$CI->app_css->add(MODULE_WEALTH_MANAGEMENT.'-css', base_url('modules/'.MODULE_WEALTH_MANAGEMENT.'/assets/css/'.MODULE_WEALTH_MANAGEMENT.'.css'));
     //$CI->app_scripts->add(MODULE_WEALTH_MANAGEMENT.'-js', base_url('modules/'.MODULE_WEALTH_MANAGEMENT.'/assets/js/'.MODULE_WEALTH_MANAGEMENT.'.js'));
 

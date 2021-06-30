@@ -73,6 +73,9 @@ class Patrimoine_reports_model extends App_Model
         $categories = $this->expenses_model->get_category();
         foreach ($categories as $category) {
             $_where['category']   = $category['id'];
+            /*  TODO :: filter project id 
+                $_where['project_id']   = $category['id'];
+            */
             $_where['YEAR(date)'] = $year;
             if (count($where) > 0) {
                 foreach ($where as $key => $val) {

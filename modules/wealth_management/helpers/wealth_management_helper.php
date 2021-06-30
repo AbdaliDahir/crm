@@ -21,6 +21,11 @@ function _maybe_init_admin_patrimoine_assets()
 
         $CI->app_css->add('frappe-gantt-js', 'assets/plugins//frappe/frappe-gantt.css', 'admin', ['vendor-css']);
         $CI->app_css->add('jquery-comments-css', 'assets/plugins/jquery-comments/css/jquery-comments.css', 'admin', ['reset-css']);
+
+        // WEALTH MANAGEMENT.
+        $CI->app_css->add('wealth_management_css', 'modules/wealth_management/assets/css/wealth_management.css', 'admin', ['app-css']);
+        $CI->app_scripts->add('wealth_management_js_first', 'modules/wealth_management/assets/js/wealth_management_first.min.js', 'admin', ['vendor-js']);
+        $CI->app_scripts->add('wealth_management_js', 'modules/wealth_management/assets/js/wealth_management.min.js', 'admin', ['wealth_management_js_first']);
         
         $CI->app_scripts->add('additional-methods-js', 'assets/plugins/jquery-validation/additional-methods.min.js', 'admin', ['jquery-validation-js']);
         // $CI->app_scripts->add('test-js', 'modules/wealth_management/assets/js/test.js', 'admin', ['vendor-js']);
