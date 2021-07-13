@@ -6,7 +6,7 @@
          <div class="panel_s events">
             <div class="panel-body padding-10">
                <div class="widget-dragger"></div>
-              <p class="padding-5">
+            <p class="padding-5">
                <?php echo _l('home_this_week_events'); ?>
             </p>
             <hr class="hr-panel-heading-dashboard">
@@ -33,4 +33,3 @@
 </div>
 <?php } ?>
 </div>
-

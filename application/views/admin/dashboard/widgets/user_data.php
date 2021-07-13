@@ -1,4 +1,7 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+$ci = &get_instance();
+$modules = $ci->app_modules->get();
+?>
 <div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('user_widget'); ?>">
    <div class="panel_s user-data">
       <div class="panel-body home-activity no-padding-right">
@@ -18,11 +21,15 @@
                      <i class="fa fa-bars menu-icon"></i> <?php echo _l('home_my_projects'); ?>
                      </a>
                   </li> -->
-                  <li role="presentation">
-                     <a href="#home_my_patrimoines" onclick="init_table_staff_patrimoines(true);" aria-controls="home_my_patrimoines" role="tab" data-toggle="tab">
-                     <i class="fa fa-users menu-icon"></i> <?php echo _l('home_my_patrimoines'); ?>
-                     </a>
-                  </li>
+                  <?php if($modules[6]['activated'] !== 0) { ?>
+                     <li role="presentation">
+                        <a href="#home_my_patrimoines" onclick="init_table_staff_patrimoines(true);" aria-controls="home_my_patrimoines" role="tab" data-toggle="tab">
+                        <i class="fa fa-users menu-icon"></i> <?php echo _l('home_my_patrimoines'); ?>
+                        </a>
+                     </li>
+                  <?php 
+                     }
+                  ?>
                   <li role="presentation">
                      <a href="#home_my_reminders" onclick="initDataTable('.table-my-reminders', admin_url + 'misc/my_reminders', undefined, undefined,undefined,[2,'asc']);" aria-controls="home_my_reminders" role="tab" data-toggle="tab">
                      <i class="fa fa-clock-o menu-icon"></i> <?php echo _l('my_reminders'); ?>
@@ -111,11 +118,13 @@
                         ]);
                         ?>
                   </div> -->
+                  <?php if($modules[6]['activated'] !== 0) { ?>
                   <div role="tabpanel" class="tab-pane" id="home_my_patrimoines">
                      <a href="<?php echo admin_url('wealth_management'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
                      <div class="clearfix"></div>  
                      <?php $this->load->view('wealth_management/table_dashboard'); ?>
                   </div>
+                  <?php } ?>
                   <div role="tabpanel" class="tab-pane" id="home_my_reminders">
                      <a href="<?php echo admin_url('misc/reminders'); ?>" class="mbot20 inline-block full-width">
                      <?php echo _l('home_widget_view_all'); ?>

@@ -194,54 +194,61 @@ class Dashboard_model extends App_Model
 
     public function patrimoine_status_stats()
     {
-        $this->load->model('patrimoines_model');
-        $statuses = $this->patrimoines_model->get_patrimoine_statuses();
-        $colors   = get_system_favourite_colors();
-
-        $chart = [
-            'labels'   => [],
-            'datasets' => [],
-        ];
-
-        $_data                         = [];
-        $_data['data']                 = [];
-        $_data['backgroundColor']      = [];
-        $_data['hoverBackgroundColor'] = [];
-        $_data['statusLink']           = [];
-
-
-        // $has_permission = has_permission('patrimoines', '', 'view');
-        $sql            = '';
-        foreach ($statuses as $status) {
-            $sql .= ' SELECT COUNT(*) as total';
-            $sql .= ' FROM ' . db_prefix() . 'patrimoines';
-            $sql .= ' WHERE status=' . $status['id'];
-            // if (!$has_permission) {
-            //     $sql .= ' AND id IN (SELECT project_id FROM ' . db_prefix() . 'project_members WHERE staff_id=' . get_staff_user_id() . ')';
-            // }
-            $sql .= ' UNION ALL ';
-            $sql = trim($sql);
+        $ci = &get_instance();
+        $modules = $ci->app_modules->get();
+        if($modules[6]) { 
+            if($modules[6]['activated'] !== 0) {
+                    $this->load->model('patrimoines_model');
+                    $statuses = $this->patrimoines_model->get_patrimoine_statuses();
+                    $colors   = get_system_favourite_colors();
+            
+                    $chart = [
+                        'labels'   => [],
+                        'datasets' => [],
+                    ];
+            
+                    $_data                         = [];
+                    $_data['data']                 = [];
+                    $_data['backgroundColor']      = [];
+                    $_data['hoverBackgroundColor'] = [];
+                    $_data['statusLink']           = [];
+            
+            
+                    // $has_permission = has_permission('patrimoines', '', 'view');
+                    $sql            = '';
+                    foreach ($statuses as $status) {
+                        $sql .= ' SELECT COUNT(*) as total';
+                        $sql .= ' FROM ' . db_prefix() . 'patrimoines';
+                        $sql .= ' WHERE status=' . $status['id'];
+                        // if (!$has_permission) {
+                        //     $sql .= ' AND id IN (SELECT project_id FROM ' . db_prefix() . 'project_members WHERE staff_id=' . get_staff_user_id() . ')';
+                        // }
+                        $sql .= ' UNION ALL ';
+                        $sql = trim($sql);
+                    }
+            
+                    $result = [];
+                    if ($sql != '') {
+                        // Remove the last UNION ALL
+                        $sql    = substr($sql, 0, -10);
+                        $result = $this->db->query($sql)->result();
+                    }
+            
+                    foreach ($statuses as $key => $status) {
+                        array_push($_data['statusLink'], admin_url('patrimoines?status=' . $status['id']));
+                        array_push($chart['labels'], $status['name']);
+                        array_push($_data['backgroundColor'], $status['color']);
+                        array_push($_data['hoverBackgroundColor'], adjust_color_brightness($status['color'], -20));
+                        array_push($_data['data'], $result[$key]->total);
+                    }
+            
+                    $chart['datasets'][]           = $_data;
+                    $chart['datasets'][0]['label'] = _l('home_stats_by_project_status');
+            
+                    return $chart;
+            }
         }
-
-        $result = [];
-        if ($sql != '') {
-            // Remove the last UNION ALL
-            $sql    = substr($sql, 0, -10);
-            $result = $this->db->query($sql)->result();
-        }
-
-        foreach ($statuses as $key => $status) {
-            array_push($_data['statusLink'], admin_url('patrimoines?status=' . $status['id']));
-            array_push($chart['labels'], $status['name']);
-            array_push($_data['backgroundColor'], $status['color']);
-            array_push($_data['hoverBackgroundColor'], adjust_color_brightness($status['color'], -20));
-            array_push($_data['data'], $result[$key]->total);
-        }
-
-        $chart['datasets'][]           = $_data;
-        $chart['datasets'][0]['label'] = _l('home_stats_by_project_status');
-
-        return $chart;
+        return false;
     }
 
     public function leads_status_stats()

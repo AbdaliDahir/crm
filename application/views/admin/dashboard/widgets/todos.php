@@ -17,10 +17,10 @@
          <ul class="list-unstyled todo unfinished-todos todos-sortable sortable">
             <?php foreach($todos as $todo) { ?>
                <li>
-                <?php echo form_hidden('todo_order',$todo['item_order']); ?>
-                <?php echo form_hidden('finished',0); ?>
-                <div class="media">
-                 <div class="media-left no-padding-right">
+               <?php echo form_hidden('todo_order',$todo['item_order']); ?>
+               <?php echo form_hidden('finished',0); ?>
+               <div class="media">
+               <div class="media-left no-padding-right">
                   <div class="dragger todo-dragger"></div>
                   <div class="checkbox checkbox-default todo-checkbox">
                      <input type="checkbox" name="todo_id" value="<?php echo $todo['todoid']; ?>">

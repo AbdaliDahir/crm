@@ -1,5 +1,9 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('patrimoines_chart'); ?>">
+<?php 
+  defined('BASEPATH') or exit('No direct script access allowed'); 
+  $ci = &get_instance();
+  $modules = $ci->app_modules->get(); 
+  if($modules[6]['activated'] !== 0) { ?>
+  <div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('patrimoines_chart'); ?>">
   <div class="row">
     <div class="col-md-12">
       <div class="panel_s">
@@ -15,3 +19,6 @@
     </div>
   </div>
 </div>
+<?php
+} 
+?>

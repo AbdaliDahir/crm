@@ -4,7 +4,7 @@
   <div class="panel_s">
    <div class="panel-body padding-10">
     <div class="widget-dragger"></div>
-     <div class="row">
+    <div class="row">
       <div class="col-md-12 mbot10">
         <p class="padding-5"> <?php echo _l('home_tickets_awaiting_reply_by_status'); ?></p>
         <hr class="hr-panel-heading-dashboard">
@@ -14,13 +14,12 @@
       <hr class="no-margin" />
       <div class="clearfix mtop10"></div>
       <div class="col-md-12">
-       <p class="padding-5"><?php echo _l('home_tickets_awaiting_reply_by_department'); ?></p>
-       <hr class="hr-panel-heading-dashboard">
-       <canvas height="170" id="tickets-awaiting-reply-by-department"></canvas>
-     </div>
+        <p class="padding-5"><?php echo _l('home_tickets_awaiting_reply_by_department'); ?></p>
+        <hr class="hr-panel-heading-dashboard">
+        <canvas height="170" id="tickets-awaiting-reply-by-department"></canvas>
+      </div>
    </div>
  </div>
 </div>
 <?php } ?>
 </div>
-

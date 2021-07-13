@@ -8,6 +8,7 @@ class Dashboard extends AdminController
     {
         parent::__construct();
         $this->load->model('dashboard_model');
+        
     }
 
     /* This is admin dashboard view */
@@ -44,7 +45,11 @@ class Dashboard extends AdminController
         $data['tickets_awaiting_reply_by_department_no_json'] = $tickets_awaiting_reply_by_department;
 
         $data['projects_status_stats'] = json_encode($this->dashboard_model->projects_status_stats());
-        $data['patrimoine_status_stats'] = json_encode($this->dashboard_model->patrimoine_status_stats());
+        $ci = &get_instance();
+        $modules = $ci->app_modules->get(); 
+        if($modules[6]['activated'] !== 0) {
+            $data['patrimoine_status_stats'] = json_encode($this->dashboard_model->patrimoine_status_stats());
+        } 
         $data['leads_status_stats']    = json_encode($this->dashboard_model->leads_status_stats());
         $data['google_ids_calendars']  = $this->misc_model->get_google_calendar_ids();
         $data['bodyclass']             = 'dashboard invoices-total-manual';

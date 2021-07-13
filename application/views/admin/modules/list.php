@@ -37,6 +37,7 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($modules as $module) {
+                                    
                                     $system_name = $module['system_name'];
                                     $database_upgrade_is_required = $this->app_modules->is_database_upgrade_required($system_name);
                                      ?>

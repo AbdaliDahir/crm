@@ -117,7 +117,26 @@
         var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
         var leads_chart = $('#leads_status_stats');
         var projects_chart = $('#projects_status_stats');
-        var patrimoines_chart = $('#patrimoines_status_stats');
+        <?php 
+            $ci = &get_instance();
+            $modules = $ci->app_modules->get(); 
+            if($modules[6]['activated'] !== 0) 
+        { ?>
+            var patrimoines_chart = $('#patrimoines_status_stats');
+            if(patrimoines_chart.length > 0){
+            // Patrimoines statuses
+            new Chart(patrimoines_chart, {
+                type: 'doughnut',
+                data: <?php echo $patrimoine_status_stats; ?>,
+                options: {
+                    maintainAspectRatio:false,
+                    onClick:function(evt){
+                        onChartClickRedirect(evt,this);
+                    }
+                }
+            });
+        }
+        <?php } ?>
 
         if (tickets_chart_departments.length > 0) {
             // Tickets awaiting reply by department chart
@@ -164,19 +183,7 @@
                 }
             });
         }
-        if(patrimoines_chart.length > 0){
-            // Patrimoines statuses
-            new Chart(patrimoines_chart, {
-                type: 'doughnut',
-                data: <?php echo $patrimoine_status_stats; ?>,
-                options: {
-                    maintainAspectRatio:false,
-                    onClick:function(evt){
-                        onChartClickRedirect(evt,this);
-                    }
-                }
-            });
-        }
+        
 
         if($(window).width() < 500) {
             // Fix for small devices weekly payment statistics
