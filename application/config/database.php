@@ -103,9 +103,8 @@ $db['default'] = array_merge([
     'compress'     => false,
     'failover'     => [],
     'save_queries' => true,
-    'port' => 25060,
 ], defined('APP_DB_STRICTON') && APP_DB_STRICTON || !defined('APP_DB_STRICTON') ? ['stricton' => false] : []);
-
+$db['default']['port'] = 25060;
 // $db['default'] = array_merge([
 //     'dsn'          => '', // Not Supported
 //     'hostname'     => 'db-mysql-perfex-284-do-user-9801366-0.b.db.ondigitalocean.com',
