@@ -38,7 +38,7 @@ define('APP_ENC_KEY', '67fe7641a0778b1db9726c371fb76a89');
  * Database Credentials
  * The hostname of your database server
  */
-define('APP_DB_HOSTNAME', 'db-mysql-perfex-284-do-user-9801366-0.b.db.ondigitalocean.com');
+define('APP_DB_HOSTNAME', 'db-mysql-perfex-284-do-user-9801366-0.b.db.ondigitalocean.com:25060');
 /**
  * The username used to connect to the database
  */
