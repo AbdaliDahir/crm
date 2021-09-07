@@ -38,7 +38,7 @@ define('APP_ENC_KEY', '67fe7641a0778b1db9726c371fb76a89');
  * Database Credentials
  * The hostname of your database server
  */
-define('APP_DB_HOSTNAME', 'db-mysql-perfex-284-do-user-9801366-0.b.db.ondigitalocean.com:25060');
+define('APP_DB_HOSTNAME', 'db-mysql-lon1-69973-do-user-9801366-0.b.db.ondigitalocean.com:25060');
 /**
  * The username used to connect to the database
  */
@@ -46,11 +46,11 @@ define('APP_DB_USERNAME', 'doadmin');
 /**
  * The password used to connect to the database
  */
-define('APP_DB_PASSWORD', 'sc1yoTfB_6QQIssq');
+define('APP_DB_PASSWORD', 'XNTHX7KsMmGQVpFf');
 /**
  * The name of the database you want to connect to
  */
-define('APP_DB_NAME', 'perfex_crm');
+define('APP_DB_NAME', 'defaultdb');
 
 /**
  * @since  2.3.0
