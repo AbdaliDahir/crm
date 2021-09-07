@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 * environments.
 *
 */
-define('APP_BASE_URL', 'http://localhost/perfex_crm/');
+define('APP_BASE_URL', 'https://crm-patrimoines-oo4ko.ondigitalocean.app/');
 
 /*
 * --------------------------------------------------------------------------
@@ -38,19 +38,19 @@ define('APP_ENC_KEY', '67fe7641a0778b1db9726c371fb76a89');
  * Database Credentials
  * The hostname of your database server
  */
-define('APP_DB_HOSTNAME', 'localhost');
+define('APP_DB_HOSTNAME', 'db-mysql-perfex-284-do-user-9801366-0.b.db.ondigitalocean.com:25060');
 /**
  * The username used to connect to the database
  */
-define('APP_DB_USERNAME', 'master');
+define('APP_DB_USERNAME', 'doadmin');
 /**
  * The password used to connect to the database
  */
-define('APP_DB_PASSWORD', 'masterLimbo0$');
+define('APP_DB_PASSWORD', 'sc1yoTfB_6QQIssq');
 /**
  * The name of the database you want to connect to
  */
-define('APP_DB_NAME', 'perfex_284');
+define('APP_DB_NAME', 'perfex_crm');
 
 /**
  * @since  2.3.0
