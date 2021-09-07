@@ -50,7 +50,7 @@ define('APP_DB_PASSWORD', 'sc1yoTfB_6QQIssq');
 /**
  * The name of the database you want to connect to
  */
-define('APP_DB_NAME', 'defaultdb');
+define('APP_DB_NAME', 'perfex_crm');
 
 /**
  * @since  2.3.0

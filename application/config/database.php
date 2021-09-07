@@ -104,7 +104,8 @@ $db['default'] = array_merge([
     'failover'     => [],
     'save_queries' => true,
     'port' => 25060
-], defined('APP_DB_STRICTON') && APP_DB_STRICTON || !defined('APP_DB_STRICTON') ? ['stricton' => false] : []);
+]);
+// ], defined('APP_DB_STRICTON') && APP_DB_STRICTON || !defined('APP_DB_STRICTON') ? ['stricton' => false] : []);
 $db['default']['port'] = 25060;
 
 // $db['default'] = array_merge([
